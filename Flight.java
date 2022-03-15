@@ -43,7 +43,7 @@ public class Flight
      */
     public String printFlightDetail()
     {
-
+        return "";
     }
 
     /**
@@ -53,6 +53,7 @@ public class Flight
     public String printTicket()
     {
         // Aren't this and printFlightDetail basically a toString method? Do we need both?
+        return "";
     }
 
     /**
@@ -71,6 +72,7 @@ public class Flight
     public String displayLayover()
     {
         // Shouldn't this be included in the printFlightDetail?
+        return "";
     }
 
     /**
@@ -79,9 +81,10 @@ public class Flight
      * @param numOfLuggage
      * @return
      */
-    public ArrayList <Baggage> addBaggage (boolean carryOn, int numOfLuggage)
+    public ArrayList <Object> addBaggage (boolean carryOn, int numOfLuggage)
     {
         // We would need a class for Baggage
         // Is this really necessary?
+        return null;
     }
 }
