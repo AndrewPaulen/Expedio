@@ -18,7 +18,7 @@ public class Guest implements User {
     public ArrayList<Hotel> hotelBookings;
 
     /**
-     * Initializes the characteristics of a guest user
+     * nitializes the characteristics of a guest user
      * 
      * @param firstName   The user's first name
      * @param lastName    The user's last name
