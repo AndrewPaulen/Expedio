@@ -18,14 +18,14 @@ public class Guest implements User {
     public ArrayList<Hotel> hotelBookings;
 
     /**
-     * nitializes the characteristics of a guest user
+     * Initializes the characteristics of a guest user
      * 
      * @param firstName   The user's first name
      * @param lastName    The user's last name
      * @param passportID  The user's passport ID
      * @param email       The user's email
      * @param phoneNumber The user's phone number
-     * @param address     The user's home addresss
+     * @param address     The user's home address
      */
     public Guest(String firstName, String lastName, String passportID, String email, String phoneNumber,
             String address) {
