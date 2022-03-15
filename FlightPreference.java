@@ -29,9 +29,10 @@ public class FlightPreference
      * @param animals
      * @return
      */
-    public ArrayList <FlightPreference> newPreferences (Class classType, Orientation seatOrientation, String departureTime, String departureLocation, String airline, boolean animals)
+    public ArrayList <FlightPreference> newPreferences (FlightClass classType, Orientation seatOrientation, String departureTime, String departureLocation, String airline, boolean animals)
     {
         // If we are going to have it in the constructor it needs to be a class attribute
+        return null;
     }
 
     /**

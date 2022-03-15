@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * 
  */
-public class RegisteredUser implements User
+public class RegisteredUser extends User
 {
     private ArrayList<Preferences> preferences;
     private ArrayList<RegisteredUser> friends;
@@ -47,7 +47,7 @@ public class RegisteredUser implements User
      * @param lastName
      * @return
      */
-    public ArrayList <Preferences> login (String firstName, String lastName)
+    public ArrayList <Preferences> login(String firstName, String lastName)
     {
 
     }

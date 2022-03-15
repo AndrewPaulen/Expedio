@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class FlightSingleton {
     private static FlightSingleton flights;
-    private ArrayList<Object> flightList;    
+    private ArrayList<Flight> flightList;    
 
     private FlightSingleton() {
         flightList = FlightLoader.getFlights();

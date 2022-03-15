@@ -7,9 +7,9 @@ import org.json.simple.parser.JSONParser;
 
 public class FlightLoader extends FlightCosntants{
     
-        public static ArrayList<Object> getFlights(){
+        public static ArrayList<Flight> getFlights(){
             
-            ArrayList<Object> flights = new ArrayList<Object>();
+            ArrayList<Flight> flights = new ArrayList<Flight>();
 
             try {
                 FileReader reader = new FileReader(FLIGHTS_FILE_NAME);

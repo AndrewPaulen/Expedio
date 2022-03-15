@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * 
  * @author Sophia Riley
  */
-public class Guest implements User {
+public class Guest extends User {
     private ArrayList<Preferences> preferences;
     public String userID;
     public String firstName;
