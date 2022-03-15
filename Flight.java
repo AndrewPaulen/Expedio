@@ -87,4 +87,8 @@ public class Flight
         // Is this really necessary?
         return null;
     }
+
+    public String getFlightID(){
+        return this.flightID;
+    }
 }

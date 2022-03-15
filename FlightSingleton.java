@@ -17,18 +17,18 @@ public class FlightSingleton {
         return flights;
     }
 
-    public boolean hasFlight(String flightName){ //fix
+    public boolean hasFlight(String flightID){ //fix
         for (Flight flight: flightList){
-            if(flight.getFlightName.equals(flightName)){
+            if(flight.getFlightID().equals(flightID)){
                 return true;
             }
         }
         return false;
     }
 
-    public Flight getFlight(String flightName){
+    public Flight getFlight(String flightID){
         for(Flight flight: flightList){
-            if(flight.getFlightName().equals(flightName)){
+            if(flight.getFlightID().equals(flightID)){
                 return flight;
             }
         }
