@@ -1,4 +1,3 @@
-package json;
 
 public class LocationsConstants {
     protected static final String CITY = "city";

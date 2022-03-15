@@ -1,4 +1,3 @@
-package json;
 public class UserConstants {
     protected static final String USER_FILE_NAME = "things/users.json";
     protected static final String USER_ID = "id";
