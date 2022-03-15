@@ -10,8 +10,8 @@ public class FlightPreference
     // Class is a reserved word, need to change
     // Also this is not how enums work, need to fix
     // We can make reference to the enums that exists in the flight part for these two 
-    public Class ClassType;
-    public Orientaion seatOrientation;
+    public FlightClass ClassType;
+    public Orientation seatOrientation;
     public String departureTime;
     public String departureLocation;
     public String airline;
