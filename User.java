@@ -1,27 +1,67 @@
-import java.util.ArrayList;
+package json;
 
-/**
- * 
- */
-public interface User 
-{
-    // No clue what these errors are for
-    public ArrayList <Preferences> askPreferences();
-    public String printBookingHistory();
-    public String getUserID();
-    public void setUserID(String userID);
-    public String getFirstName();
-    public void setFirstName(String firstName);
-    public String getLastName();
-    public void setLastName(String lastName);
-    public String getPassportID();
-    public void setPassportID(String passportID);
-    public String getEmail();
-    public void setEmail(String email);
-    public String getPhoneNumber();
-    public void setPhoneNUmber(String phoneNumber);
-    public String getAddress();
-    public void setAddress(String address);
-    public ArrayList<Flight> getFlightBookings();
-    public ArrayList<Hotel> getHotelBookings();
+import java.util.UUID;
+
+public class User {
+	private UUID id;
+	private String userName;
+	private String firstName;
+	private String lastName;
+	private int age;
+	private String phoneNumber;
+	
+	public User(String userName, String firstName, String lastName, int age, String phoneNumber) {
+		this.id = UUID.randomUUID();
+		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.phoneNumber = phoneNumber;
+	}
+	
+	public User(UUID id, String userName, String firstName, String lastName, int age, String phoneNumber) {
+		this.id = id;
+		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.phoneNumber = phoneNumber;
+	}
+	
+	public UUID getId() {
+		return id;
+	}
+	
+	public String getUserName() {
+		return userName;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
 }
