@@ -1,4 +1,4 @@
-package things;
+package json;
 
 public class FlightWriter {
     

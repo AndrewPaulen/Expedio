@@ -1,4 +1,4 @@
-package things;
+package json;
 import java.util.*;
 
 public class Hotel {

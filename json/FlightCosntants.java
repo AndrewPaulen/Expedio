@@ -1,4 +1,4 @@
-package things;
+package json
 
 public class FlightCosntants {
     protected static final String FLIGHTS_FILE_NAME = "things/flights.json";

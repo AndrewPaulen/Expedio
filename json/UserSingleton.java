@@ -1,4 +1,4 @@
-package things;
+package json;
 import java.util.ArrayList;
 
 public class UserSingleton {
