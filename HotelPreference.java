@@ -30,7 +30,7 @@ public class HotelPreference implements Preferences
     /**
      * 
      */
-    public void setNumBeds()
+    public void setNumBeds(int numberOfBeds)
     {
         // Needs to take in something
     }
@@ -38,7 +38,7 @@ public class HotelPreference implements Preferences
     /**
      * 
      */
-    public void setBedType()
+    public void setBedType(String bedType)
     {
         // Needs to take in something
     }
@@ -46,7 +46,7 @@ public class HotelPreference implements Preferences
     /**
      * 
      */
-    public void setSmoking()
+    public void setSmoking(boolean smoking)
     {
         // Needs to take in something
     }

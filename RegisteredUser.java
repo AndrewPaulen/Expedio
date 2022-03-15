@@ -5,8 +5,8 @@ import java.util.ArrayList;
  */
 public class RegisteredUser implements User
 {
-    private ArrayList <Preferences> preferences;
-    private ArrayList <RegisteredUser> friends;
+    private ArrayList<Preferences> preferences;
+    private ArrayList<RegisteredUser> friends;
     public String userID;
     public String firstName;
     public String lastName;
@@ -43,15 +43,6 @@ public class RegisteredUser implements User
 
     /**
      * 
-     * @param preferences
-     */
-    private void savePreferences (ArrayList <Preferences> preferences)
-    {
-
-    }
-
-    /**
-     * 
      * @param firstName
      * @param lastName
      * @return
@@ -73,9 +64,18 @@ public class RegisteredUser implements User
      * 
      * @return
      */
-    public ArrayList <Preferences> askPreferences()
+    public ArrayList<Preferences> askPreferences()
     {
-            
+        return preferences;
+    }
+
+    /**
+     * 
+     * @param preferences
+     */
+    private void savePreferences (ArrayList <Preferences> preferences)
+    {
+
     }
 
     /**
@@ -101,5 +101,71 @@ public class RegisteredUser implements User
     public void addFriend()
     {
 
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;        
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPassportID() {
+        return passportID;
+    }
+
+    public void setPassportID(String passportID) {
+        this.passportID = passportID;        
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNUmber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;        
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public ArrayList<Flight> getFlightBookings() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+    public ArrayList<Hotel> getHotelBookings() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
