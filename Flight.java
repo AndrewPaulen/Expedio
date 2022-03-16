@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 /**
- * 
+ * The flight class
+ * @author Andrew Paulen
  */
 public class Flight 
 {
@@ -15,9 +16,7 @@ public class Flight
     protected String arrivalTime;
     protected int duration;
     protected ArrayList <FlightType> flightType;
-    protected ArrayList <Preferences> flightPreferences;
     protected Plane plane;
-    // I say we don't worry about luggage but let's consult the requirements 
     protected boolean carryOn;
     protected int numOfLuggage;
 
@@ -48,21 +47,11 @@ public class Flight
     }
 
     /**
-     * 
-     * @return
+     * Method that will allow the program to print out the users flight details 
+     * @return The users flight details
      */
-    public String printFlightDetail()
+    public String toString()
     {
-        return "";
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public String printTicket()
-    {
-        // Aren't this and printFlightDetail basically a toString method? Do we need both?
         return "";
     }
 
@@ -73,16 +62,6 @@ public class Flight
     public void sortFlights (ArrayList <Preferences> preferences)
     {
 
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public String displayLayover()
-    {
-        // Shouldn't this be included in the printFlightDetail?
-        return "";
     }
 
     /**
