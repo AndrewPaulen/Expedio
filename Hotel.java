@@ -20,12 +20,43 @@ public class Hotel {
         this.vacancy = vacancy;
     }
 
-    public String getHotelName(){
-        return this.name;
+    public UUID getID()
+    {
+        return id;
     }
 
-    public UUID getId(){
-        return this.id;
+    public void setID (UUID id) 
+    {
+        this.id = id;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName (String name)
+    {
+        this.name = name;
+    }
+
+    public String getLocation()
+    {
+        return location;
+    }
+
+    public void setLocation (String location)
+    {
+        this.location = location;
+    }
+
+    public boolean getVacancy()
+    {
+        return vacancy;
+    }
+
+    public void setVacancy (boolean vacancy)
+    {
+        this.vacancy = vacancy;
+    }
 }
