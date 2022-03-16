@@ -160,12 +160,35 @@ public class RegisteredUser extends User
     }
 
     public ArrayList<Flight> getFlightBookings() {
-        // TODO Auto-generated method stub
-        return null;
+        return flightBookings;
+    }
+
+    public void setFlightBookings (ArrayList<Flight> flightBookings) {
+        this.flightBookings = flightBookings;
     }
     
     public ArrayList<Hotel> getHotelBookings() {
-        // TODO Auto-generated method stub
-        return null;
+        return hotelBookings;
+    }
+
+    public void setHotelBookings (ArrayList<Hotel> hotelBookings) {
+        this.hotelBookings = hotelBookings;
+    }
+
+    public ArrayList<Preferences> getPreferences() {
+        return preferences;
+    }
+
+    public void setPreferences (ArrayList<Preferences> preferences) {
+        this.preferences = preferences;
+    }
+
+    public ArrayList<RegisteredUser> getFriends() {
+        return friends;
+    }
+
+    public void setFriends (ArrayList <RegisteredUser> friends)
+    {
+        this.friends = friends;
     }
 }

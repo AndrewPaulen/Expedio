@@ -1,5 +1,6 @@
 /**
  * Methods to be implemented for rating
+ * @author Andrew Paulen
  */
 public interface Rating
 {
