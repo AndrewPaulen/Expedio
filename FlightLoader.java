@@ -5,7 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class FlightLoader extends FlightCosntants{
+public class FlightLoader extends FlightConstants{
     
         public static ArrayList<Flight> getFlights(){
             

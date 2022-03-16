@@ -4,7 +4,7 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-public class FlightWriter extends FlightCosntants{
+public class FlightWriter extends FlightConstants{
     
     public static void saveFlights(){
         FlightSingleton flights = FlightSingleton.getInstance();
