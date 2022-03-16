@@ -4,9 +4,47 @@
 public class HotelRoom 
 {
     protected int numBeds;
-    // Needs to be able to change
-    protected int numGuests;
+    private int numGuests;
     protected String bedType;
-    // Needs to be able to change
-    protected String bookingDate;
+    private String bookingDate;
+
+    public int getNumBeds()
+    {
+        return numBeds;
+    }
+
+    public void setNumBeds (int numBeds)
+    {
+        this.numBeds = numBeds;
+    }
+
+    public int getNumGuests()
+    {
+        return numGuests;
+    }
+
+    public void setNumGuests (int numGuests)
+    {
+        this.numGuests = numGuests;
+    }
+
+    public String getBedType()
+    {
+        return bedType;
+    }
+
+    public void setBedType (String bedType)
+    {
+        this.bedType = bedType;
+    }
+
+    public String getBookingDate()
+    {
+        return bookingDate;
+    }
+
+    public void setBookingDate (String bookingDate)
+    {
+        this.bookingDate = bookingDate;
+    }
 }
