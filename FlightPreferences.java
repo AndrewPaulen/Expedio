@@ -1,9 +1,9 @@
 /**
- * 
+ * Unused enum for flight preferences
+ * @author Andrew Paulen
  */
 public enum FlightPreferences 
 {
-    // These seem more like variable than options
     CLASS,
     ORIENTATION,
     DEPARTURE_TIME,
