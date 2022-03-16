@@ -1,53 +1,88 @@
 import java.util.ArrayList;
 
 /**
- * 
+ * The hotel preferences for the user
+ * @author Andrew Paulen
  */
-// Changed to HotelPreference to allow for enum file
 public class HotelPreference implements Preferences
 {
     public Rating rating;
-    public String none;
+    public boolean none;
     public int numberOfBeds;
     public String bedType;
     public boolean smoking;
+    public boolean petFriendly;
     public ArrayList <HotelPreference> preferences;
 
-    /**
-     * 
-     * @param NumberOfBeds
-     * @param bedType
-     * @param smoking
-     * @param numGuests
-     * @param animal
-     * @return
-     */
-    public ArrayList <HotelPreference> newPreferences (int NumberOfBeds, String bedType, boolean smoking, int numGuests, boolean animal)
+    // Call the set methods from UI to be added to the ArrayList of preferences, do not think we need any other methods in here
+
+    public Rating getRating()
     {
-        // If we are going to have it in the constructor it needs to be a class attribute
+        return rating;
     }
 
-    /**
-     * 
-     */
-    public void setNumBeds(int numberOfBeds)
+    public void setRating (Rating rating)
     {
-        // Needs to take in something
+        this.rating = rating;
     }
 
-    /**
-     * 
-     */
-    public void setBedType(String bedType)
+    public boolean getNone()
     {
-        // Needs to take in something
+        return none;
     }
 
-    /**
-     * 
-     */
-    public void setSmoking(boolean smoking)
+    public void setNone (boolean none)
     {
-        // Needs to take in something
+        this.none = none;
+    }
+
+    public int getNumberOfBeds()
+    {
+        return numberOfBeds;
+    }
+
+    public void setNumberOfBeds (int numberOfBeds)
+    {
+        this.numberOfBeds = numberOfBeds;
+    }
+
+    public String getBedType()
+    {
+        return bedType;
+    }
+
+    public void setBedType (String bedType)
+    {
+        this.bedType = bedType;
+    }
+
+    public boolean getSmoking()
+    {
+        return smoking;
+    }
+
+    public void setSmoking (boolean smoking)
+    {
+        this.smoking = smoking;
+    }
+
+    public boolean getPetFriendly()
+    {
+        return petFriendly;
+    }
+
+    public void setPetFriendly (boolean petFriendly)
+    {
+        this.petFriendly = petFriendly;
+    }
+
+    public ArrayList <HotelPreference> getPreferences()
+    {
+        return preferences;
+    }
+
+    public void setPreferences (ArrayList <HotelPreference> preferences)
+    {
+        this.preferences = preferences;
     }
 }
