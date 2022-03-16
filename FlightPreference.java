@@ -1,114 +1,110 @@
 import java.util.ArrayList;
 
 /**
- * 
+ * The preferences of the user for flights
+ * @author Andrew Paulen
  */
 public class FlightPreference 
 {
-    public Rating rating;
-    public String none;
-    // Class is a reserved word, need to change
-    // Also this is not how enums work, need to fix
-    // We can make reference to the enums that exists in the flight part for these two 
-    public FlightClass ClassType;
+    public Rating minRating;
+    public boolean none;
+    public FlightClass classType;
     public Orientation seatOrientation;
     public String departureTime;
     public String departureLocation;
     public String airline;
-    // What is this for?
-    public int age;
+    public boolean petFriendly;
     public ArrayList <FlightPreference> preferences;
 
-    /**
-     * 
-     * @param classType
-     * @param seatOrientation
-     * @param departureTime
-     * @param departureLocation
-     * @param airline
-     * @param animals
-     * @return
-     */
-    public ArrayList <FlightPreference> newPreferences (FlightClass classType, Orientation seatOrientation, String departureTime, String departureLocation, String airline, boolean animals)
+    // Call the set methods from UI to be added to the ArrayList of preferences, do not think we need any other methods in here
+
+    public Rating getMinRating()
     {
-        // If we are going to have it in the constructor it needs to be a class attribute
-        return null;
+        return minRating;
     }
 
-    /**
-     * 
-     */
-    public void setClassType()
+    public void setMinRating (Rating minRating)
     {
-        // Needs to take in something
+        this.minRating = minRating;
     }
 
-    /**
-     * 
-     */
-    public void setSeatOrientation()
+    public boolean getNone()
     {
-        // Needs to take in something
+        return none;
     }
 
-    /**
-     * 
-     */
-    public void setDepartureTime()
+    public void setNone (boolean none)
     {
-        // Needs to take in something
+        this.none = none;
     }
 
-    /**
-     * 
-     */
-    public void setDepartureLocation()
+    public FlightClass getClassType()
     {
-        // Needs to take in something
+        return classType;
     }
 
-    /**
-     * 
-     */
-    public void setAirline()
+    public void setClassType (FlightClass classType)
     {
-        // Needs to take in something 
+        this.classType = classType;
     }
 
-    /**
-     * 
-     */
-    public void setArrivalLocation()
+    public Orientation getSeatOrientation()
     {
-        // Needs to take in something 
+        return seatOrientation;
     }
 
-    /**
-     * 
-     * @param age
-     * @param numChildren
-     */
-    public void hasChildren (int age, int numChildren)
+    public void setSeatOrientation (Orientation orientation)
     {
-        // Worded like it would be boolean, change method name
+        this.seatOrientation = seatOrientation;
     }
 
-    /**
-     * 
-     * @param numAnimals
-     */
-    public void hasAnimal (int numAnimals)
+    public String getDepartureTime()
     {
-        // Worded like it would be boolean, change method name
+        return departureTime;
     }
 
-    /**
-     * 
-     * @param minRating
-     * @param maxRating
-     */
-    public void setRating (int minRating, int maxRating)
+    public void setDepartureTime (String departureTime)
     {
-        // No one has a max rating, we can drop that honestly
+        this.departureTime = departureTime;
+    }
+
+    public String getDepartureLocation()
+    {
+        return departureLocation;
+    }
+
+    public void setDepartureLocation (String departureLocation)
+    {
+        this.departureLocation = departureLocation;
+    }
+
+    public String getAirline()
+    {
+        return airline;
+    }
+
+    public void setAirline (String airline)
+    {
+        this.airline = airline;
+    }
+
+    public boolean getPetFriendly()
+    {
+        return petFriendly;
+    }
+
+    public void setPetFriendly (boolean petFriendly)
+    {
+        this.petFriendly = petFriendly;
+    }
+
+    public ArrayList <FlightPreference> getPreferences()
+    {
+        return preferences;
+    }
+
+    public void setPreferences (ArrayList <FlightPreference> preferences)
+    {
+        this.preferences = preferences;
     }
 }
