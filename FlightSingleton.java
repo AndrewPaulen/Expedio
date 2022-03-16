@@ -39,12 +39,12 @@ public class FlightSingleton {
         return flightList;
     }
 
-    public boolean addFlight(){ //add params
-        if(hasFlight(flightName)){
+    public boolean addFlight(String flightID, String airline, boolean available, String departureLocation, String departureTime, String arrivalLocation, String arrivalTime, int duration){ //add params
+        if(hasFlight(flightID)){
             return false;
         }
 
-        flightList.add(new Flight(flightName, , ,));
+        flightList.add(new Flight(flightID, airline, available, departureLocation, departureTime, arrivalLocation, arrivalTime));
         return true;
     }
 

@@ -21,6 +21,16 @@ public class Flight
     protected boolean carryOn;
     protected int numOfLuggage;
 
+    public Flight(String flightID, String airline, boolean available, String departureLocation, String departureTime, String arrivalLocation, String arrivalTime) {
+        this.flightID = flightID;
+        this.airline = airline;
+        this.available = available;
+        this.departureLocation = departureLocation;
+        this.departureTime = departureTime;
+        this.arrivalLocation = arrivalLocation;
+        this.arrivalTime = arrivalTime;
+    }
+
     /**
      * 
      * @param departureLocation

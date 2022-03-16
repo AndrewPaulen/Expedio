@@ -2,6 +2,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import javax.management.DynamicMBean;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -34,6 +36,21 @@ public class UserLoader extends UserConstants{
             e.printStackTrace();
         }
             return null;
+    }
+
+    public static User getUser(String firstName, String lastName){
+        ArrayList<User> users = getUsers();
+
+        for (User user : users) {
+            if(user.getLastName().equals(lastName) && user.getFirstName().equals(firstName)){
+                return user;
+            } else {
+                System.out.println("user not found");
+                return null;
+            }
+        }
+        return null;
+
     }
     
 }
