@@ -1,5 +1,6 @@
 /**
- * 
+ * All of the available room types
+ * @author Andrew Paulen
  */
 public enum RoomType
 {
