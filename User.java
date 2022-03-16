@@ -1,4 +1,3 @@
-
 import java.util.UUID;
 
 public class User {
@@ -57,6 +56,21 @@ public class User {
 	
 	public String getPhoneNumber() {
 		return phoneNumber;
+	}
+
+	public void setID (UUID id)
+	{
+		this.id = id;
+	}
+
+	public void setUserName (String userName)
+	{
+		this.userName = userName;
+	}
+
+	public void setAge (int age)
+	{
+		this.age = age;
 	}
 	
 	public void setPhoneNumber(String phoneNumber) {
