@@ -20,7 +20,7 @@ public class HotelSingleton {
 
     public boolean hasHotel(String hotelName){
         for(Hotel hotel: hotelList){
-            if(hotel.getHotelName().equals(hotelName)){
+            if(hotel.getName().equals(hotelName)){
                 return true;
             }
         }
@@ -29,7 +29,7 @@ public class HotelSingleton {
 
     public Hotel getHotel(String hotelName){
         for(Hotel hotel: hotelList){
-            if(hotel.getHotelName().equals(hotelName)){
+            if(hotel.getName().equals(hotelName)){
                 return hotel;
             }
         }
