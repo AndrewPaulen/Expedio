@@ -37,18 +37,10 @@ public class Flight
 
     /**
      * 
-     * @param departureLocation
-     * @param departureTime
-     * @param arrivalLocation
-     * @param arrivalTime
-     * @param flightType
-     * @param preferences
      */
-    public void bookFlight (String departureLocation, String departureTime, String arrivalLocation, String arrivalTime, FlightType flightType, ArrayList <Preferences> preferences)
+    public void bookFlight ()
     {
-        // Why are we passing preferences in a book method?
-        // If we have class attributes why are we passing them in?
-        // Why in Hotel are we returning the HotelRoom bu aren't returning anything here?
+        
     }
 
     /**
