@@ -1,10 +1,11 @@
 /**
- * 
+ * Methods to be implemented for preferences
+ * @author Andrew Paulen
  */
-// I think all of preferences needs an overhaul
 public interface Preferences 
 {
-    // Rating preference needs to be able to change, switched to public
-    public Rating rating;
-    public String none;
+    public Rating getRating();
+    public void setRating (Rating rating);
+    public boolean getNone();
+    public void setNone (boolean none);
 }
