@@ -18,7 +18,7 @@ public class FlightLoader extends FlightCosntants{
 
                 for(int i = 0; i < flightsJSON.size(); i++){
                     JSONObject flightJSON = (JSONObject)flightsJSON.get(i);
-                    String passengerUID = (String)flightJSON.get(PASSENGER_UID);
+                    String passengerUID = (String)flightJSON.get(FLIGHT_ID);
                     String departingLocation = (String)flightJSON.get(DEPARTING);
                     String arrivalLocation = (String)flightJSON.get(ARRIVING);
                     String numPassengers = (String)flightJSON.get(NUM_PASSENGERS);
