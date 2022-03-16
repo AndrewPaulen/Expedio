@@ -1,8 +1,8 @@
 /**
- * 
+ * Methods to be implemented for rating
  */
 public interface Rating
 {
-    // Needs to public in an interface
-    public Double rating;
+    public Rating getRating();
+    public void setRating (Rating rating);
 }
