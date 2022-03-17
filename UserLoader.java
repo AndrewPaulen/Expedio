@@ -10,6 +10,9 @@ import org.json.simple.parser.JSONParser;
 
 public class UserLoader extends UserConstants{
     
+    public UserLoader(){
+        
+    }
     public static ArrayList<User> getUsers() {
         
         ArrayList<User> users = new ArrayList<User>();

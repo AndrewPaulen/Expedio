@@ -2,14 +2,18 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
+
 public class FlightSingleton {
     private static FlightSingleton flights;
     private ArrayList<Flight> flightList;    
-
+    
     private FlightSingleton() {
         flightList = FlightLoader.getFlights();
     }
-
+    /**
+     * @returns an instance of the flight singleton class such that only one instance exists in runtime 
+     * 
+     */
     public static FlightSingleton getInstance() {
         if(flights == null){
             flights = new FlightSingleton();
