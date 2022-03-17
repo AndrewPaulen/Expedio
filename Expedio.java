@@ -14,6 +14,6 @@ public class Expedio
 
     public void run()
     {
-        MainMenuUI.WelcomeUI();
+        MainMenuUI.loginUI();
     }
 }
