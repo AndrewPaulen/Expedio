@@ -38,9 +38,8 @@ public class Guest extends User {
         this.address = address;
     }
 
-    // This is a constructor, this does not get the users name
     /**
-     * Gets the guest's name
+     * 
      * 
      * @param firstName The user's first name
      * @param lastName  The user's last name
@@ -60,103 +59,83 @@ public class Guest extends User {
         return preferences;
     }
 
-    public ArrayList <Preferences> getPreferences()
-    {
+    public ArrayList<Preferences> getPreferences() {
         return preferences;
     }
 
-    public void setPreferences (ArrayList <Preferences> preferences)
-    {
+    public void setPreferences(ArrayList<Preferences> preferences) {
         this.preferences = preferences;
     }
 
-    public String getUserID()
-    {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID (String userID) 
-    {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
-    public String getFirstName()
-    {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName (String firstName)
-    {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName()
-    {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName (String lastName)
-    {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public String getPassportID()
-    {
+    public String getPassportID() {
         return passportID;
     }
 
-    public void setPassportID (String passportID)
-    {
+    public void setPassportID(String passportID) {
         this.passportID = passportID;
     }
 
-    public String getEmail()
-    {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail (String email)
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPhoneNumber()
-    {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber (String phoneNumber)
-    {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAddress()
-    {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress (String address)
-    {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public ArrayList <Flight> getFlightBookings()
-    {
+    public ArrayList<Flight> getFlightBookings() {
         return flightBookings;
     }
 
-    public void setFlightBookings (ArrayList <Flight> flightBookings)
-    {
+    public void setFlightBookings(ArrayList<Flight> flightBookings) {
         this.flightBookings = flightBookings;
     }
 
-    public ArrayList <Hotel> getHotelBookings()
-    {
+    public ArrayList<Hotel> getHotelBookings() {
         return hotelBookings;
     }
 
-    public void setHotelBookings (ArrayList <Hotel> hotelBookings)
-    {
+    public void setHotelBookings(ArrayList<Hotel> hotelBookings) {
         this.hotelBookings = hotelBookings;
     }
 }
