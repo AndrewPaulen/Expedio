@@ -14,7 +14,7 @@ public class Plane
      */
     public boolean checkAvailable (int row, int col)
     {
-
+        
     }
 
     public String getPlaneType()

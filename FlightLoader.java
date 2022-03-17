@@ -6,7 +6,13 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class FlightLoader extends FlightCosntants{
-    
+
+        /**
+         * @author David Wamai
+         * A method that returns a list of flights by looping through JSON elements. 
+         * Each iteration of the loop will copy the contents from each element and add them to an array list
+         * @return an array list of flights yielded from flights.json
+         */
         public static ArrayList<Flight> getFlights(){
             
             ArrayList<Flight> flights = new ArrayList<Flight>();
