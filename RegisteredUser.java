@@ -28,7 +28,11 @@ public class RegisteredUser extends User
      */
     public RegisteredUser (String firstName, String lastName, String passportID, String email, String phoneNumber, String address)
     {
-
+        super(firstName, lastName);
+        this.passportID = passportID;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
  
     /**
@@ -38,24 +42,24 @@ public class RegisteredUser extends User
      */
     public RegisteredUser (String firstName, String lastName)
     {
-
+        super(firstName, lastName);
     }
 
     /**
-     * 
+     * // this should work
      * @param firstName
      * @param lastName
      * @return
      */
-    public ArrayList <Preferences> login(String firstName, String lastName)
+    public boolean login(String firstName, String lastName)
     {
-
+        return (UserLoader.getUser(firstName, lastName) != null);
     }
 
     /**
      * 
      */
-    public void CreateAccount()
+    public void CreateAccount(String firstName, String lastName)
     {
         
     }
@@ -84,7 +88,7 @@ public class RegisteredUser extends User
      */
     public String printBookingHistory()
     {
-
+        
     }
 
     /**
