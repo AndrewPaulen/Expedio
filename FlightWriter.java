@@ -4,7 +4,7 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-public class FlightWriter extends FlightConstants{
+public class FlightWriter extends FlightCosntants{
     
     public static void saveFlights(){
         FlightSingleton flights = FlightSingleton.getInstance();
@@ -26,7 +26,14 @@ public class FlightWriter extends FlightConstants{
     public static JSONObject getFlightJSON(Flight flight){
         JSONObject flightDetails = new JSONObject();
         flightDetails.put(FLIGHT_ID, flight.getFlightID().toString());
-       // flightDetails.put(DEPARTING, flight.getDepartureLoc)
+        flightDetails.put(AIRLINE, flight.getAirline().toString());
+        flightDetails.put(AVAILABILITY, flight.getAvailable().toString());
+        flightDetails.put(DEPARTURE_LOC, flight.getDepartureLocation().toString());
+        flightDetails.put(DEPARTURE_DATE, flight.getDepartureDate().toString());
+        flightDetails.put(DEPARTURE_TIME, flight.getDepartureTime().toString());
+        flightDetails.put(ARRIVAL_LOC, flight.getArrivalLocation().toString());
+        flightDetails.put(ARRIVAL_DATE, flight.getArrivalDate().toString());
+        flightDetails.put(ARRIVAL_TIME, flight.getArrivalTime().toString());
 
        return flightDetails;
     }
