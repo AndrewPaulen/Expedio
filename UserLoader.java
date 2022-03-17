@@ -28,7 +28,7 @@ public class UserLoader extends UserConstants{
                 int age = ((Long)userJSON.get(USER_AGE)).intValue();
                 String phoneNumber = (String)userJSON.get(USER_PHONE_NUMBER);
 
-                //users.add(new User(id, userName, firstName, lastName, age, phoneNumber));
+                users.add(new User(id, userName, firstName, lastName, age, phoneNumber));
             }
             return users;
         }

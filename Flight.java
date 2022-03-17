@@ -10,7 +10,7 @@ public class Flight
     protected String flightID;
     protected String airline;
     protected int capacity;
-    protected boolean available;
+    protected String available;
     protected String departureLocation;
     protected String departureDate;
     protected String departureTime;
@@ -23,7 +23,7 @@ public class Flight
     protected boolean carryOn;
     protected int numOfLuggage;
 
-    public Flight(String flightID, String airline, boolean available, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime) {
+    public Flight(String flightID, String airline, String available, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime) {
         this.flightID = flightID;
         this.airline = airline;
         this.available = available;
@@ -102,12 +102,12 @@ public class Flight
         this.capacity = capacity;
     }
 
-    public boolean getAvailable()
+    public String getAvailable()
     {
         return available;
     }
 
-    public void setAvailable (boolean available)
+    public void setAvailable (String available)
     {
         this.available = available;
     }

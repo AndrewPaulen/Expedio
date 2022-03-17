@@ -25,7 +25,7 @@ public class HotelLoader extends HotelConstants{
                 boolean vacancy = (boolean)hotelJSON.get(HOTEL_VACANCY);
                 int numRooms = (int)hotelJSON.get(NUM_HOTEL_ROOMS);
 
-                //hotels.add(new User(id, userName, firstName, lastName, age, phoneNumber));
+                hotels.add(new Hotel(id, name, location, vacancy));
             }
             return hotels;
         }

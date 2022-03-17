@@ -32,6 +32,8 @@ public class HotelWriter extends HotelConstants{
         JSONObject hotelDetails = new JSONObject();
         hotelDetails.put(HOTEL_ID, hotel.getID().toString());
         hotelDetails.put(HOTEL_NAME, hotel.getName());
+        hotelDetails.put(HOTEL_LOCATION, hotel.getLocation());
+        hotelDetails.put(HOTEL_VACANCY, hotel.getVacancy());
   
 
         return hotelDetails;

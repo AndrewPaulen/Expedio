@@ -5,7 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class FlightLoader extends FlightConstants{
+public class FlightLoader extends FlightCosntants{
     
         public static ArrayList<Flight> getFlights(){
             
@@ -18,12 +18,23 @@ public class FlightLoader extends FlightConstants{
 
                 for(int i = 0; i < flightsJSON.size(); i++){
                     JSONObject flightJSON = (JSONObject)flightsJSON.get(i);
-                    String passengerUID = (String)flightJSON.get(FLIGHT_ID);
-                    String departingLocation = (String)flightJSON.get(DEPARTING);
-                    String arrivalLocation = (String)flightJSON.get(ARRIVING);
+                    String flightID = (String)flightJSON.get(FLIGHT_ID);
+                    String departingLocation = (String)flightJSON.get(DEPARTURE_LOC);
+                    String arrivalLocation = (String)flightJSON.get(ARRIVAL_LOC);
                     String numPassengers = (String)flightJSON.get(NUM_PASSENGERS);
+                    String airline = (String)flightJSON.get(AIRLINE);
+                    String availability = (String)flightJSON.get(AVAILABILITY);
+                    String arrivalTime = (String)flightJSON.get(ARRIVAL_TIME);
+                    String departureTime = (String)flightJSON.get(DEPARTURE_TIME);
+                    String arrivalDate = (String)flightJSON.get(ARRIVAL_DATE);
+                    String departureDate = (String)flightJSON.get(DEPARTURE_DATE);
 
-                    //flights.add(new Flight(passengerUID, departingLocation, arrivalLocation, numPassengers));
+
+                   flights.add(new Flight(flightID, airline, 
+                   availability, departingLocation, 
+                   departureDate, departureTime, 
+                   arrivalLocation, arrivalDate, arrivalTime));
+                   
                 }
                 return flights;
             }

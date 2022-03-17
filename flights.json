@@ -1,8 +1,41 @@
 [
     {
-        "departing": "",
-        "arriving": "",
+        "departureTime": "09:45",
+        "arrivalTime": "12:34",
+        "departureDate": "3/13",
+        "arrivalDate": "3/13",
+        "arrivalLocation": "Atlanta, GA",
+        "departureLocation": "New York, New York",
+        "availability": "true",
+        "airline": "DELTA",
+        "numPassengers": "214",
+        "flight-id": "091918629"
+
+    },
+    {
+        "departureTime": "",
+        "arrivalTime": "",
+        "departureDate": "",
+        "arrivalDate": "",
+        "arrivalLocation": "",
+        "departureLocation": "",
+        "availability": "true",
+        "airline": "",
         "numPassengers": "",
-        "flight-id": ""      
+        "flight-id": ""
+
+    },
+    {
+        "departureTime": "",
+        "arrivalTime": "",
+        "departureDate": "",
+        "arrivalDate": "",
+        "arrivalLocation": "",
+        "departureLocation": "",
+        "availability": "true",
+        "airline": "",
+        "numPassengers": "",
+        "flight-id": ""
+
     }
 ]
