@@ -1,9 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.UUID;
-
 import javax.management.DynamicMBean;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -53,7 +51,6 @@ public class UserLoader extends UserConstants{
             }
         }
         return null;
-
     }
     
 }

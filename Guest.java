@@ -30,8 +30,7 @@ public class Guest extends User {
      */
     public Guest(String firstName, String lastName, String passportID, String email, String phoneNumber,
             String address) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        super(firstName, lastName);
         this.passportID = passportID;
         this.email = email;
         this.phoneNumber = phoneNumber;

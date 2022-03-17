@@ -7,14 +7,14 @@ public class Plane
     private PlaneSeat [] [] planeSeats;
     
     /**
-     * 
+     * this should work
      * @param row
      * @param col
      * @return
      */
     public boolean checkAvailable (int row, int col)
     {
-        
+        return (planeSeats[row][col].getHasPassenger());
     }
 
     public String getPlaneType()
