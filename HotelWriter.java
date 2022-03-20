@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 public class HotelWriter extends HotelConstants{
     
+    public HotelWriter(){
+        
+    }
     public static void saveHotels(){
         HotelSingleton hotels = HotelSingleton.getInstance();
         ArrayList<Hotel> hotelList = hotels.getHotels();

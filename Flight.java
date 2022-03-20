@@ -22,6 +22,7 @@ public class Flight
     protected Plane plane;
     protected boolean carryOn;
     protected int numOfLuggage;
+    protected String seatNumber;
 
     public Flight(String flightID, String airline, String available, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime) {
         this.flightID = flightID;
@@ -220,5 +221,9 @@ public class Flight
     public void setNumOfLuggage (int numOfLuggage)
     {
         this.numOfLuggage = numOfLuggage;
+    }
+
+    public String getSeatNumber(){
+        return this.seatNumber;
     }
 }

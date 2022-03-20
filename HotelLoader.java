@@ -7,6 +7,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class HotelLoader extends HotelConstants{
+
+    public HotelLoader(){
+        
+    }
     
     public static ArrayList<Hotel> getHotels() {
         

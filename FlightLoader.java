@@ -7,6 +7,9 @@ import org.json.simple.parser.JSONParser;
 
 public class FlightLoader extends FlightCosntants{
 
+    public FlightLoader(){
+        
+    }
         /**
          * @author David Wamai
          * A method that returns a list of flights by looping through JSON elements. 

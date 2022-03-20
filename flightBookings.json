@@ -6,6 +6,13 @@
         "arrivalTime": "",
         "arrivalDate": "",
         "arrivalLocation": "",
-        "seatNum": ""
+        "seatNum": "",
+        "passengerFirstName": "",
+        "passengerLastName": "",
+        "airline": "",
+        "availibility": "",
+        "flightID": ""
+        
     }
+    
 ]
