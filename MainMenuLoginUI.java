@@ -83,10 +83,10 @@ public class MainMenuLoginUI {
         while (true) {
             switch (input) {
                 case "1":
-                    flightUI.methodHere();
+                    flightUI.methodHere(); // come back to this
                     break;
                 case "2":
-                    hotelUI.methodHere();
+                    hotelUI.methodHere(); // come back to this
                     break;
                 case "3":
                     System.out.println("Enter \"F\" to view flight bookings." +
@@ -94,7 +94,7 @@ public class MainMenuLoginUI {
                             "Enter \"B\" to go back.");
                     input = scanner.nextLine();
                     if (input.equalsIgnoreCase("F")) {
-                        Flight.methodHere(); // come back to this
+                        Flight.toString(); // come back to this
                     } else if (input.equalsIgnoreCase("H")) {
                         Hotel.methodHere(); // come back to this
                     } else if (input.equalsIgnoreCase("B")) {
@@ -102,7 +102,7 @@ public class MainMenuLoginUI {
                     }
                     break;
                 case "4":
-                    Flight.methodHere(); // come back to this
+                    Flight.toString(); // come back to this
                     break;
                 case "5":
                     Hotel.methodHere(); // come back to this
