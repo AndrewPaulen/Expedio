@@ -16,13 +16,13 @@ public class flightBookingsLoader extends flightBookingsConstants{
          * Each iteration of the loop will copy the contents from each element and add them to an array list
          * @return an array list of flights yielded from flights.json
          */
-        public static ArrayList<Flight> getFlights(){
+        public static ArrayList<Flight> getFlightBookings(){
             
             ArrayList<Flight> flightBookings = new ArrayList<Flight>();
 
             try {
                 FileReader reader = new FileReader(FLIGHTBOOKINGS_FILE_NAME);
-                JSONParser parser = new JSONParser();
+                JSONParser parser = new JSONParser(); //investigate why this is never used but still included
                 JSONArray flightBookingsJSON = (JSONArray)new JSONParser().parse(reader);
 
                 for(int i = 0; i < flightBookingsJSON.size(); i++){

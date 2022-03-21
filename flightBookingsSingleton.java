@@ -7,7 +7,7 @@ public class flightBookingsSingleton {
     private ArrayList<Flight> flightBookingsList;
 
     private flightBookingsSingleton() {
-        flightBookingsList = flightBookingsLoader.getFlights();
+        flightBookingsList = flightBookingsLoader.getFlightBookings();
     }
 
     public static flightBookingsSingleton getInstance() {
