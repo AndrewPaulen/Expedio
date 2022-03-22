@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -30,10 +29,10 @@ public class hotelBookingsLoader extends hotelBookingsConstants{
                 String guestFirstName = (String)hotelBookingJSON.get(GUEST_FIRST);
                 String guestLastName = (String)hotelBookingJSON.get(GUEST_LAST);
                 String roomNumber = (String)hotelBookingJSON.get(ROOM_NUMBER);
-                boolean availabiltiy = (boolean)hotelBookingJSON.get(AVAILABILITY);
+                boolean availabilty = (boolean)hotelBookingJSON.get(AVAILABILITY);
                 String hotelID = (String)hotelBookingJSON.get(HOTEL_ID);
 
-                hotelBookings.add(new Hotel(guestFirstName, hotelLocation, availabiltiy));
+                hotelBookings.add(new Hotel(guestFirstName, hotelLocation, availabilty));
             }
             return hotelBookings;
         } catch (Exception e){

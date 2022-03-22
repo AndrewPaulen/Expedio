@@ -89,22 +89,14 @@ public class RegisteredUser extends User
     public String printBookingHistory()
     {
         String ret = "";
-        ret += "Flight History" + "\n";
+        ret += "Flight History:" + "\n";
         for (Flight x: flightBookings) {
-            ret += "Flight ID: " + x.getFlightID() + "\n";
-            ret += "Departure Location: " + x.getDepartureLocation() + "\n";
-            ret += "Departure Date: " + x.getDepartureDate() + "\n";
-            ret += "Departure Time: " + x.getDepartureTime() + "\n";
-            ret += "Arrival Location: " + x.getArrivalLocation() + "\n";
-            ret += "Arrival Date: " + x.getArrivalDate() + "\n";
-            ret += "Arrival Time: " + x.getArrivalTime() + "\n";
-            ret += "\n";
+            
         }
 
-        ret += "Hotel History" + "\n";
+        ret += "Hotel History:" + "\n";
         for (Hotel x: hotelBookings) {
-            ret += "Name" + x.getName() + "\n";
-            ret += "Location" + x.getLocation() + "\n";
+            
         }
 
         return ret;
