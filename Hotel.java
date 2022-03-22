@@ -5,12 +5,24 @@ public class Hotel {
     private String name;
     private String location;
     private boolean vacancy;
+    private String checkInTime;
+    private String checkOutTime;
+    private String checkInDate;
+    private String checkOutDate;
+    private String roomNumber;
+    
 
-    public Hotel(String name, String location, boolean vacancy){
+
+    public Hotel(String name, String location, boolean vacancy, String checkInTime, String checkOutTime, String checkInDate, String checkOutDate){
         this.id = UUID.randomUUID();
         this.name = name;
         this.location = location;
         this.vacancy = vacancy;
+        this.checkInDate = checkInDate;
+        this.checkInTime = checkInTime;
+        this.checkOutDate = checkOutDate;
+        this.checkOutTime = checkOutTime;
+        this.roomNumber = roomNumber;
     }
 
     public Hotel(UUID id, String name, String location, boolean vacancy){
@@ -18,6 +30,11 @@ public class Hotel {
         this.name = name;
         this.location = location;
         this.vacancy = vacancy;
+        this.checkInDate = checkInDate;
+        this.checkInTime = checkInTime;
+        this.checkOutDate = checkOutDate;
+        this.checkOutTime = checkOutTime;
+        this.roomNumber = roomNumber;
     }
 
     public UUID getID()
@@ -58,5 +75,25 @@ public class Hotel {
     public void setVacancy (boolean vacancy)
     {
         this.vacancy = vacancy;
+    }
+
+    public String getCheckInTime(){
+        return this.checkInTime;
+    }
+    
+    public String getCheckInDate(){
+        return this.checkInDate;
+    }
+
+    public String getCheckOutTime(){
+        return this.checkOutTime;
+    }
+
+    public String getCheckOutDate(){
+        return this.checkOutDate;
+    }
+
+    public String getRoomNumber(){
+        return this.roomNumber;
     }
 }

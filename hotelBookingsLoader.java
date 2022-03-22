@@ -33,7 +33,7 @@ public class hotelBookingsLoader extends hotelBookingsConstants{
                 boolean availabiltiy = (boolean)hotelBookingJSON.get(AVAILABILITY);
                 String hotelID = (String)hotelBookingJSON.get(HOTEL_ID);
 
-                hotelBookings.add(new Hotel(guestFirstName, hotelLocation, availabiltiy));
+                hotelBookings.add(new Hotel(guestFirstName, hotelLocation, availabiltiy,));
             }
             return hotelBookings;
         } catch (Exception e){
