@@ -88,7 +88,18 @@ public class RegisteredUser extends User
      */
     public String printBookingHistory()
     {
-        
+        String ret = "";
+        ret += "Flight History:" + "\n";
+        for (Flight x: flightBookings) {
+            
+        }
+
+        ret += "Hotel History:" + "\n";
+        for (Hotel x: hotelBookings) {
+            
+        }
+
+        return ret;
     }
 
     /**
@@ -102,9 +113,9 @@ public class RegisteredUser extends User
     /**
      * 
      */
-    public void addFriend()
+    public void addFriend(RegisteredUser user)
     {
-
+        friends.add(user);
     }
 
     public String getUserID() {
