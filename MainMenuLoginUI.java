@@ -40,8 +40,6 @@ public class MainMenuLoginUI {
                 case "1":
                     System.out.println("Enter your username: ");
                     String username = scanner.nextLine();
-                    scanner.close();
-                    // registeredUser.login(firstName, lastName); // come back to this later
                     if (registeredUser.login(firstName, lastName)) {
                         // do something here
                     } else {

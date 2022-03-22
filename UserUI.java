@@ -13,5 +13,7 @@ public class UserUI {
         System.out.println("Please enter a phone number: ");
         phoneNum = scanner.nextLine();
         registeredUser.RegisteredUser(username, phoneNum);
+        System.out.println("Account created!\n" +
+                "Returning you to login page...");
     }
 }
