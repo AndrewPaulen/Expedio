@@ -11,45 +11,46 @@ public class MainMenuLoginUI {
     private Guest guestUser;
     private FlightUI flightUI;
     private HotelUI hotelUI;
+    private UserUI createAccount;
+    private String firstName;
+    private String lastName;
 
     public void LoginUI() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("*** Welcome to Expedio! ***\n\n");
         System.out.println("Enter your first name: ");
-        String firstName = scanner.nextLine();
-        scanner.close();
+        firstName = scanner.nextLine();
         System.out.println("Enter your last name: ");
-        String lastName = scanner.nextLine();
-        scanner.close();
+        lastName = scanner.nextLine();
         System.out.println("Enter your first name: \n" +
                 "1. Login \n" +
                 "2. Create account \n" +
                 "3. Continue as guest \n" +
                 "4. Exit program \n");
         loginSelection();
+        scanner.close();
     }
 
     public String loginSelection() {
         System.out.println("Please make a selection (enter a number): ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        scanner.close();
         while (true) {
             switch (input) {
                 case "1":
                     System.out.println("Enter your username: ");
                     String username = scanner.nextLine();
                     scanner.close();
-                    registeredUser.login(firstName, lastName); // come back to this later
-                    if (true) {
-
+                    // registeredUser.login(firstName, lastName); // come back to this later
+                    if (registeredUser.login(firstName, lastName)) {
+                        // do something here
                     } else {
                         System.out.println("Sorry, you don't have an account yet!");
                         // do something after this
                     }
                     break;
                 case "2":
-                    registeredUser.CreateAccount();
+                    createAccount.UserUI();
                     break;
                 case "3":
                     MainMenuUI();
@@ -79,7 +80,6 @@ public class MainMenuLoginUI {
         System.out.println("Please make a selection (enter a number): ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        scanner.close();
         while (true) {
             switch (input) {
                 case "1":
