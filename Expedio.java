@@ -1,4 +1,3 @@
-import 
 /**
  * The driver file
  * @author Andrew Paulen
@@ -15,7 +14,8 @@ public class Expedio
 
     public void run()
     {
-        MainMenuUI.loginUI();
+        MainMenuLoginUI mainMenuUI = new MainMenuLoginUI();
+        mainMenuUI.LoginUI();
     }
 
  
