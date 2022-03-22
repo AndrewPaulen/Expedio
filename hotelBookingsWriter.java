@@ -37,7 +37,7 @@ public class hotelBookingsWriter extends hotelBookingsConstants{
         hotelBookingsDetails.put(HOTEL_LOCATION, hotel.getLocation().toString());
         hotelBookingsDetails.put(CHECK_OUT_TIME, hotel.getCheckOutTime().toString());
         hotelBookingsDetails.put(CHECK_OUT_DATE, hotel.getCheckOutDate().toString());
-        hotelBookingsDetails.put(ROOM_NUMBER, hotel.getRoomNUmber.toString());
+        hotelBookingsDetails.put(ROOM_NUMBER, hotel.getRoomNumber().toString());
         hotelBookingsDetails.put(AVAILABILITY, hotel.getVacancy());
         hotelBookingsDetails.put(HOTEL_ID, hotel.getID());
 

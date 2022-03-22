@@ -50,7 +50,10 @@ public class Flight
      */
     public String toString()
     {
-        return "";
+        return (airline + " - " + seatNumber +
+            "\nDeparture Location: " + departureLocation + "  Departure Date: " + departureDate + "  Departure Time: " + departureTime +
+            "\nArrival Location: " + arrivalLocation + "  Arrival Date: " + arrivalDate + "  Arrival Time: " + arrivalTime +
+            "\nDuration: " + duration);
     }
 
     /**
