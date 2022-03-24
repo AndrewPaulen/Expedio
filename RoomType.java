@@ -9,5 +9,6 @@ public enum RoomType
     KING_COUCH,
     DOUBLE,
     TWIN,
-    QUEEN_QUEEN_COUCH
+    QUEEN_QUEEN_COUCH,
+    DOUBLE_DOUBLE
 }
