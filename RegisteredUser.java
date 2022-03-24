@@ -50,8 +50,8 @@ public class RegisteredUser extends User {
      * @param lastName
      * @return
      */
-    public boolean login(String firstName, String lastName) {
-        return (UserLoader.getUser(firstName, lastName) != null);
+    public boolean login(String username) {
+        return (UserLoader.getUser(username) != null);
     }
 
     /**
@@ -113,7 +113,7 @@ public class RegisteredUser extends User {
     }
 
     /**
-     * 
+     * This method adds a user to this user's friend list.
      */
     public void addFriend(RegisteredUser user) {
         friends.add(user);
@@ -163,7 +163,7 @@ public class RegisteredUser extends User {
         return phoneNumber;
     }
 
-    public void setPhoneNUmber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
