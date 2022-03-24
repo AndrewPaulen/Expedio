@@ -26,7 +26,7 @@ public class UserUI {
        
         UserSingleton uSing = new UserSingleton();
         uSing.addUser(username, firstname, lastname, age, phoneNum);
-        uSing.saveUsers();
+        
 
         System.out.println("Account created!\n" +
                 "Returning you to login page...");

@@ -44,10 +44,11 @@ public class UserSingleton {
 		if(haveUser(userName))return false;
 		
 		userList.add(new User(userName, firstName, lastName, age, phoneNumber));
+		saveUsers(userList);
 		return true;
 	}
 	
-	public void saveUsers() {
-		UserWriter.saveUsers();
+	public void saveUsers(ArrayList<User> users) {
+		UserWriter.saveUsers(users);
 	}
 }

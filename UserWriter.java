@@ -7,14 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 public class UserWriter extends UserConstants{
     
-    public static void saveUsers(){
+    public static void saveUsers(ArrayList<User> newUserList){
         UserSingleton users = UserSingleton.getInstance();
-        ArrayList<User> userList = users.getUsers();
         JSONArray jsonUsers = new JSONArray();
 
         //creating all the json objects
-        for(int i=0; i < userList.size();i++){
-            jsonUsers.add(getUserJSON(userList.get(i)));
+        for(int i=0; i < newUserList.size();i++){
+            jsonUsers.add(getUserJSON(newUserList.get(i)));
         }
 
         //write JSON file
