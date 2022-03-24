@@ -17,6 +17,7 @@ public class FlightUI {
         System.out.println("Please enter your desired arrival airport: ");
         arrivalDest = input.nextLine();
         availableFlights();
+        input.close(); // shash is a la croix boi. he smells bad.
     }
 
     public void availableFlights() {
