@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class HotelUI {
 
-    private Hotel flight;
+    private Hotel hotel;
 
     public void bookHotel() {
         System.out.println("*** Book Hotel ***\n\n");

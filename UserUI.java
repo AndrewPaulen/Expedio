@@ -5,8 +5,9 @@ public class UserUI {
     // private Guest guestUser;
     // private String username;
     private String phoneNum;
+    private MainMenuLoginUI main;
 
-    public void UserUI() {
+    public void CreateAccount() {
         Scanner scanner = new Scanner(System.in);
         // System.out.println("Please enter a username: ");
         // username = scanner.nextLine();
@@ -15,5 +16,7 @@ public class UserUI {
         registeredUser.setPhoneNUmber(phoneNum);
         System.out.println("Account created!\n" +
                 "Returning you to login page...");
+        scanner.close();
+        main.LoginUI();
     }
 }

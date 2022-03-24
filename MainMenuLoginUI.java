@@ -11,7 +11,7 @@ public class MainMenuLoginUI {
     // private Guest guestUser;
     private FlightUI flightUI;
     private HotelUI hotelUI;
-    private UserUI createAccount;
+    private UserUI userUI;
     private String firstName;
     private String lastName;
     private Flight flight;
@@ -50,7 +50,7 @@ public class MainMenuLoginUI {
                     }
                     break;
                 case "2":
-                    createAccount.UserUI();
+                    userUI.CreateAccount();
                     break;
                 case "3":
                     MainMenuUI();
