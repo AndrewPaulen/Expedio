@@ -5,10 +5,10 @@ public class User {
 	private String userName;
 	private String firstName;
 	private String lastName;
-	private int age;
+	private String age;
 	private String phoneNumber;
 	
-	public User(String userName, String firstName, String lastName, int age, String phoneNumber) 
+	public User(String userName, String firstName, String lastName, String age, String phoneNumber) 
 	{
 		this.id = UUID.randomUUID();
 		this.userName = userName;
@@ -18,7 +18,7 @@ public class User {
 		this.phoneNumber = phoneNumber;
 	}
 	
-	public User(UUID id, String userName, String firstName, String lastName, int age, String phoneNumber) 
+	public User(UUID id, String userName, String firstName, String lastName, String age, String phoneNumber) 
 	{
 		this.id = id;
 		this.userName = userName;
@@ -58,7 +58,7 @@ public class User {
 		this.lastName = lastName;
 	}
 	
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
 	
@@ -76,7 +76,7 @@ public class User {
 		this.userName = userName;
 	}
 
-	public void setAge (int age)
+	public void setAge (String age)
 	{
 		this.age = age;
 	}

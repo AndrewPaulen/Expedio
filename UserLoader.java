@@ -38,7 +38,7 @@ public class UserLoader extends UserConstants{
                 String userName = (String)userJSON.get(USER_USER_NAME);
                 String firstName = (String)userJSON.get(USER_FIRST_NAME);
                 String lastName = (String)userJSON.get(USER_LAST_NAME);
-                int age = ((Long)userJSON.get(USER_AGE)).intValue();
+                String age = ((String)userJSON.get(USER_AGE));
                 String phoneNumber = (String)userJSON.get(USER_PHONE_NUMBER);
 
                 users.add(new User(id, userName, firstName, lastName, age, phoneNumber));
@@ -62,11 +62,9 @@ public class UserLoader extends UserConstants{
         for (User user : users) {
             if(user.getUserName().equals(username)){
                 return user;
-            } else {
-                System.out.println("user not found");
-                return null;
-            }
+            } 
         }
+        System.out.println("user not found");
         return null;
 
     }

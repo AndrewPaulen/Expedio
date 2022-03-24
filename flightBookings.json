@@ -11,7 +11,10 @@
         "passengerLastName": "",
         "airline": "",
         "availibility": "",
-        "flightID": ""
+        "flightID": "",
+        "numTransfers": "0",
+        "transferDuration": "1h:30m:00s",
+        "hasTransfer": true
         
     }
     

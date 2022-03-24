@@ -4,7 +4,7 @@ public class UserSingleton {
 	private static UserSingleton users;
 	private ArrayList<User> userList;
 	
-	private UserSingleton() {
+	UserSingleton() {
 		userList = UserLoader.getUsers();
 	}
 	
@@ -40,7 +40,7 @@ public class UserSingleton {
 		return userList;
 	}
 	
-	public boolean addUser(String userName, String firstName, String lastName, int age, String phoneNumber) {
+	public boolean addUser(String userName, String firstName, String lastName, String age, String phoneNumber) {
 		if(haveUser(userName))return false;
 		
 		userList.add(new User(userName, firstName, lastName, age, phoneNumber));

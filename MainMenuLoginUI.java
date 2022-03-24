@@ -11,7 +11,7 @@ public class MainMenuLoginUI {
     // private Guest guestUser;
     private FlightUI flightUI;
     private HotelUI hotelUI;
-    private UserUI createAccount;
+    private UserUI userUI;
     private String firstName;
     private String lastName;
     private Flight flight;
@@ -37,6 +37,7 @@ public class MainMenuLoginUI {
                 "3. Continue as guest \n" +
                 "4. Exit program \n" + 
                 "Please make a selection (enter a number): ");
+        userUI = new UserUI();
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         while (true) {
@@ -56,7 +57,7 @@ public class MainMenuLoginUI {
                 }
                     break;
                 case "2":
-                    createAccount.UserUI();
+                    userUI.CreateAccount();
                     break;
                 case "3":
                     MainMenuUI();
@@ -65,8 +66,10 @@ public class MainMenuLoginUI {
                     System.out.println("Thank you for using Expedio! Goodbye 👋😃");
                     System.exit(0);
                     break;
+                default:
+                    System.out.println("Sorry! Please enter a valid input");
+                    break;
             }
-            System.out.println("Sorry! Please enter a valid input");
         }
     }
 

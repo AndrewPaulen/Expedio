@@ -14,8 +14,10 @@ public class FlightUI {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter your desired departure airport: ");
         departureDest = input.nextLine();
+        // Chicago();
         System.out.println("Please enter your desired arrival airport: ");
         arrivalDest = input.nextLine();
+        // Chicago();
         availableFlights();
         input.close(); // shash is a la croix boi. he smells bad.
     }
@@ -25,4 +27,12 @@ public class FlightUI {
                 "Available flights:\n");
         flight.toString();
     }
+
+    // public void Chicago() {
+    // if (departureDest.equalsIgnoreCase("Chicago") ||
+    // arrivalDest.equalsIgnoreCase("Chicago")) {
+    // System.out.println("Sorry, we hate Chicago! Please enter another
+    // destination.");
+    // }
+    // }
 }
