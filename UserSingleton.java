@@ -4,7 +4,7 @@ public class UserSingleton {
 	private static UserSingleton users;
 	private ArrayList<User> userList;
 	
-	private UserSingleton() {
+	UserSingleton() {
 		userList = UserLoader.getUsers();
 	}
 	

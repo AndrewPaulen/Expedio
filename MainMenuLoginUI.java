@@ -37,6 +37,7 @@ public class MainMenuLoginUI {
                 "3. Continue as guest \n" +
                 "4. Exit program \n" + 
                 "Please make a selection (enter a number): ");
+        userUI = new UserUI();
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         while (true) {
