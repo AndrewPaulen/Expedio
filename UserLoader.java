@@ -56,11 +56,11 @@ public class UserLoader extends UserConstants{
      * @param lastName
      * @return
      */
-    public static User getUser(String firstName, String lastName){
+    public static User getUser(String username){
         ArrayList<User> users = getUsers();
 
         for (User user : users) {
-            if(user.getLastName().equals(lastName) && user.getFirstName().equals(firstName)){
+            if(user.getUserName().equals(username)){
                 return user;
             } else {
                 System.out.println("user not found");
