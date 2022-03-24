@@ -14,37 +14,38 @@ public class MainMenuLoginUI {
     private UserUI createAccount;
     private String firstName;
     private String lastName;
+    private String username;
 
     public void LoginUI() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("*** Welcome to Expedio! ***\n\n");
-        System.out.println("Enter your first name: ");
+        System.out.println("*** Welcome to Expedio! ***");
+        System.out.print("Enter your first name: ");
         firstName = scanner.nextLine();
-        System.out.println("Enter your last name: ");
+        System.out.print("Enter your last name: ");
         lastName = scanner.nextLine();
-        System.out.println("Enter your first name: \n" +
-                "1. Login \n" +
-                "2. Create account \n" +
-                "3. Continue as guest \n" +
-                "4. Exit program \n");
+        registeredUser = new RegisteredUser (firstName, lastName);
         loginSelection();
         scanner.close();
     }
 
     public String loginSelection() {
-        System.out.println("Please make a selection (enter a number): ");
+        System.out.print("Main Menu Options\n" +
+                "1. Login \n" +
+                "2. Create account \n" +
+                "3. Continue as guest \n" +
+                "4. Exit program \n" + 
+                "Please make a selection (enter a number): ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         while (true) {
             switch (input) {
                 case "1":
-                    System.out.println("Enter your username: ");
-                    String username = scanner.nextLine();
-                    if (registeredUser.login(firstName, lastName)) {
-                        // do something here
+                    System.out.print ("Enter your username: ");
+                    username = scanner.nextLine();
+                    if (registeredUser.login(username)) {
+                        System.out.println ("This Works");
                     } else {
                         System.out.println("Sorry, you don't have an account yet!");
-                        // do something after this
                     }
                     break;
                 case "2":
