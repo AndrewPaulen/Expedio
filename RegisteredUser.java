@@ -15,6 +15,7 @@ public class RegisteredUser extends User {
     public String email;
     public String phoneNumber;
     public String address;
+    public String username;
     public ArrayList<Flight> flightBookings;
     public ArrayList<Hotel> hotelBookings;
 
@@ -46,18 +47,21 @@ public class RegisteredUser extends User {
     }
 
     /**
+     * 
+     * @param firstName
+     * @param lastName
+     */
+    public RegisteredUser(String firstName, String lastName, String username) {
+        super(firstName, lastName);
+        this.username = username;
+    }
+
+    /**
      * // this should work
      * 
      * @param firstName
      * @param lastName
      * @return
-     */
-    public boolean login(String username) {
-        return (UserLoader.getUser(username) != null);
-    }
-
-    /**
-     * 
      */
     public void CreateAccount() {
         main = new MainMenuLoginUI();
@@ -82,6 +86,9 @@ public class RegisteredUser extends User {
         main.LoginUI();
     }
     
+    public boolean login(String username) {
+        return (UserLoader.getUser(username) != null);
+    }
 
     /**
      * 
