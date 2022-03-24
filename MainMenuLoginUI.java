@@ -14,12 +14,9 @@ public class MainMenuLoginUI {
     private UserUI createAccount;
     private String firstName;
     private String lastName;
-<<<<<<< HEAD
     private Flight flight;
     private Hotel hotel;
-=======
     private String username;
->>>>>>> branch-andrew
 
     public void LoginUI() {
         Scanner scanner = new Scanner(System.in);
@@ -45,20 +42,18 @@ public class MainMenuLoginUI {
         while (true) {
             switch (input) {
                 case "1":
-<<<<<<< HEAD
                     System.out.print ("Enter your username: ");
                     username = scanner.nextLine();
                     if (registeredUser.login(username)) {
                         System.out.println ("This Works");
-=======
                     System.out.println("Enter your username: ");
                     String username = scanner.nextLine();
                     if (registeredUser.login(username)) {
                         // do something here
->>>>>>> a734cf2e5c9753872bb34d9055573a1108a8d8d8
                     } else {
                         System.out.println("Sorry, you don't have an account yet!");
                     }
+                }
                     break;
                 case "2":
                     createAccount.UserUI();
