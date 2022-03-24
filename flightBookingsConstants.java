@@ -16,4 +16,7 @@ public class flightBookingsConstants {
     protected static final String AIRLINE = "airline";
     protected static final String AVAIL = "availibility";
     protected static final String FLIGHT_ID = "flightID";
+    protected static final String NUM_TRANSFERS = "numTransfers";
+    protected static final String TRANSFER_DURATION = "transferDuration";
+    protected static final String HAS_TRANSFER = "hasTransfer";
 }

@@ -71,12 +71,12 @@ public class FlightSingleton {
      * @param arrivalTime the time at which the flight arrives 
      * @return a true boolean expression if the function executes successfully. 
      */
-    public boolean addFlight(String flightID, String airline, String availability, String departingLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime){ 
+    public boolean addFlight(String flightID, String airline, String availability, String departingLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration){ 
         if(hasFlight(flightID)){
             return false;
         }
 
-        flightList.add(new Flight(flightID, airline, availability, departingLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime));
+        flightList.add(new Flight(flightID, airline, availability, departingLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, hasTransfer, numTransfers, transferDuration));
         return true;
     }
     /**
