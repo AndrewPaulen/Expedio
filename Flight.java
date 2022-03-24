@@ -23,8 +23,11 @@ public class Flight
     protected boolean carryOn;
     protected int numOfLuggage;
     protected String seatNumber;
+    protected boolean hasTransfer;
+    protected int numTransfers;
+    protected String transferDuration;
 
-    public Flight(String flightID, String airline, String available, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime) {
+    public Flight(String flightID, String airline, String available, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration) {
         this.flightID = flightID;
         this.airline = airline;
         this.available = available;

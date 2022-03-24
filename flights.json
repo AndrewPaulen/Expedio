@@ -9,33 +9,9 @@
         "availability": "true",
         "airline": "DELTA",
         "numPassengers": "214",
-        "flight-id": "091918629"
-
-    },
-    {
-        "departureTime": "",
-        "arrivalTime": "",
-        "departureDate": "",
-        "arrivalDate": "",
-        "arrivalLocation": "",
-        "departureLocation": "",
-        "availability": "true",
-        "airline": "",
-        "numPassengers": "",
-        "flight-id": ""
-
-    },
-    {
-        "departureTime": "",
-        "arrivalTime": "",
-        "departureDate": "",
-        "arrivalDate": "",
-        "arrivalLocation": "",
-        "departureLocation": "",
-        "availability": "true",
-        "airline": "",
-        "numPassengers": "",
-        "flight-id": ""
-
+        "flight-id": "091918629",
+        "numTransfers": "0",
+        "transferDuration": "1h:30m:00s",
+        "hasTransfer": true
     }
 ]

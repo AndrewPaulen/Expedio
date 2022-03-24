@@ -73,12 +73,12 @@ public class flightBookingsSingleton {
      * @param arrivalTime the time at which the flight arrives. 
      * @return a true boolean expression of the flight was successfully added to the list. 
      */
-    public boolean addFlightBooking(String flightID, String airline, String availability, String departingLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime){
+    public boolean addFlightBooking(String flightID, String airline, String availability, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime, int numTransfers, String transferDuration, boolean hasTransfer){
         if(hasFlightBookings(flightID)){
             return false;
         }
 
-        flightBookingsList.add(new Flight(flightID, airline, availability, departingLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime));
+        flightBookingsList.add(new Flight(flightID, airline, availability, departureLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, hasTransfer, numTransfers, transferDuration));
         return true;
     }
     /**

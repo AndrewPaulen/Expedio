@@ -14,4 +14,7 @@ public class FlightCosntants {
     protected static final String DEPARTURE_TIME = ""; 
     protected static final String ARRIVAL_DATE = "";
     protected static final String DEPARTURE_DATE = "";
+    protected static final String NUM_TRANSFERS = "numTransfers";
+    protected static final String TRANSFER_DURATION = "transferDuration";
+    protected static final String HAS_TRANSFER = "hasTransfer";
 }
