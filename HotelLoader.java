@@ -5,13 +5,19 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
+/**
+ * a class that provides json-out functionality for the Type Hotel
+ * @author David Wamai 
+ */
 public class HotelLoader extends HotelConstants{
 
     public HotelLoader(){
         
     }
-    
+    /**
+     * a method that reutrns an Array List of hotels based on hotels.json
+     * @return an array list of hotels. 
+     */
     public static ArrayList<Hotel> getHotels() {
         
         ArrayList<Hotel> hotels = new ArrayList<Hotel>();

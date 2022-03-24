@@ -4,13 +4,18 @@ import java.util.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
+/**
+ * a class that provides json-out functionality for hotelBookings. 
+ */
 public class hotelBookingsLoader extends hotelBookingsConstants{
     
     public hotelBookingsLoader() {
 
     }
-
+    /**
+     * a method that loops through a json file and transcribes each element to a java parameter. 
+     * @return an array list of hotels. 
+     */
     public static ArrayList<Hotel> getHotelBookings(){
 
         ArrayList<Hotel> hotelBookings = new ArrayList<Hotel>();
