@@ -5,11 +5,21 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+/**a class that provides json-in functionality for flight bookings
+ * @author David Wamai 
+ */
 public class flightBookingsWriter extends flightBookingsConstants{
-    
+    /**
+     *  a constructor for the flight bookings writer. 
+     */
     public flightBookingsWriter(){
         
     }
+    /**
+     * a method that saves all existing fligth bookings found in an array list to a json file. 
+     * the method WILL NOT add anything to the specified json file name if the found arraylist is
+     * not populated
+     */
     public static void saveFlightBookings(){
         FlightSingleton flightBookings = FlightSingleton.getInstance();
         ArrayList<Flight> flightBookingsList = flightBookings.getFlights();
@@ -29,7 +39,12 @@ public class flightBookingsWriter extends flightBookingsConstants{
             e.printStackTrace();
         }
     }
-
+    /**
+     * a method the returns a JSONObject of a flight booking. This can be used elsewhere but is
+     * mainly for the sake of saveFlightBookings() cleanliness. 
+     * @param flight the particular flight in question 
+     * @return a JSONObject of the flight specified. 
+     */
     public static JSONObject getFlightJSON(Flight flight){
         JSONObject flightBookingsDetails = new JSONObject();
         flightBookingsDetails.put(DEPARTURE_TIME, flight.getDepartureTime().toString());
