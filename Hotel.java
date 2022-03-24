@@ -96,4 +96,8 @@ public class Hotel {
     public String getRoomNumber(){
         return this.roomNumber;
     }
+
+    public UUID getHotelID(){
+        return this.id;
+    }
 }

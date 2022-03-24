@@ -8,12 +8,14 @@ import java.util.Scanner;
 public class MainMenuLoginUI {
 
     private RegisteredUser registeredUser;
-    private Guest guestUser;
+    // private Guest guestUser;
     private FlightUI flightUI;
     private HotelUI hotelUI;
     private UserUI createAccount;
     private String firstName;
     private String lastName;
+    private Flight flight;
+    private Hotel hotel;
 
     public void LoginUI() {
         Scanner scanner = new Scanner(System.in);
@@ -81,10 +83,10 @@ public class MainMenuLoginUI {
         while (true) {
             switch (input) {
                 case "1":
-                    flightUI.methodHere(); // come back to this
+                    flightUI.bookFlight(); // come back to this
                     break;
                 case "2":
-                    hotelUI.methodHere(); // come back to this
+                    hotelUI.bookHotel(); // come back to this
                     break;
                 case "3":
                     System.out.println("Enter \"F\" to view flight bookings." +
@@ -92,18 +94,18 @@ public class MainMenuLoginUI {
                             "Enter \"B\" to go back.");
                     input = scanner.nextLine();
                     if (input.equalsIgnoreCase("F")) {
-                        Flight.toString(); // come back to this
+                        flight.toString(); // come back to this
                     } else if (input.equalsIgnoreCase("H")) {
-                        Hotel.methodHere(); // come back to this
+                        hotel.toString(); // come back to this
                     } else if (input.equalsIgnoreCase("B")) {
                         MainMenuUI();
                     }
                     break;
                 case "4":
-                    Flight.toString(); // come back to this
+                    flight.toString(); // come back to this
                     break;
                 case "5":
-                    Hotel.methodHere(); // come back to this
+                    hotel.toString(); // come back to this
                     break;
                 case "6":
                     System.out.println("Thank you for using Expedio! Goodbye 👋😃");

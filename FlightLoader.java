@@ -4,7 +4,10 @@ import java.util.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
+/**
+ * a class that adds json-out functionality for flights.json 
+ * @author David Wamai 
+ */
 public class FlightLoader extends FlightCosntants{
 
     public FlightLoader(){

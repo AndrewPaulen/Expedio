@@ -1,6 +1,8 @@
 
 import java.util.UUID;
-
+/**
+ * an Enumeration of all json elements that comprise Hotel
+ */
 public class HotelConstants {
     protected static final String HOTEL_FILE_NAME = "Expedio/hotels.json";
     protected static final String HOTEL_NAME = "name";

@@ -1,5 +1,18 @@
 [
     {
+        "checkInTime": "9:00",
+        "checkInDate": "9/19/89",
+        "hotelLocation": "Columbia, SC",
+        "checkOutTime": "11:00",
+        "checkOutDate": "9/21/89",
+        "guestFirstName": "David",
+        "guestLastName": "Wamai",
+        "roomNumber": "190",
+        "availibility": "false",
+        "hotelID": "7355608"
+    },
+    
+    {
         "checkInTime": "",
         "checkInDate": "",
         "hotelLocation": "",
@@ -10,6 +23,6 @@
         "roomNumber": "",
         "availibility": "",
         "hotelID": ""
-    },
+    }
     
 ]

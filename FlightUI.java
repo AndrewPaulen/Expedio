@@ -5,13 +5,21 @@ public class FlightUI {
     private String arrivalDest;
     private Flight flight;
 
-    public void DepatureArrival() {
+    public void bookFlight() {
+        System.out.println("*** Book Flight ***\n\n");
+        depatureArrival();
+    }
+
+    public void depatureArrival() {
         Scanner input = new Scanner(System.in);
-        System.out.println("*** Book Flight***\n\n" +
-                "Please enter your desired departure airport: ");
+        System.out.println("Please enter your desired departure airport: ");
         departureDest = input.nextLine();
         System.out.println("Please enter your desired arrival airport: ");
         arrivalDest = input.nextLine();
+        availableFlights();
+    }
+
+    public void availableFlights() {
         System.out.println("Fetching available flights...\n\n" +
                 "Available flights:\n");
         flight.toString();

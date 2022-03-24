@@ -6,6 +6,9 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+/**
+ * piss<3
+ */
 public class HotelWriter extends HotelConstants{
     
     public HotelWriter(){
