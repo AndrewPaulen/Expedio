@@ -78,21 +78,30 @@ public class RegisteredUser extends User {
     }
 
     /**
-     * 
-     * @return
+     * Method to print booking history of a user.
+     * @return  the string containing what will be printed to the console
      */
     public String printBookingHistory() {
         String ret = "";
-        ret += "Flight History:" + "\n";
-        for (Flight x : flightBookings) {
-
+        ret += "Flight History:" + "\n" + "\n";
+        for (Flight x: flightBookings) {
+            ret += x.getAirline() + "\n";
+            ret += x.getArrivalDate() + "\n";
+            ret += x.getArrivalLocation() + "\n";
+            ret += x.getArrivalTime() + "\n";
+            ret += x.getDepartureDate() + "\n";
+            ret += x.getDepartureLocation() + "\n";
+            ret += x.getDepartureTime() + "\n";
         }
 
         ret += "Hotel History:" + "\n";
-        for (Hotel x : hotelBookings) {
-
+        for (Hotel x: hotelBookings) {
+            ret += x.getLocation();
+            ret += x.getCheckInTime();
+            ret += x.getCheckInDate();
+            ret += x.getCheckOutTime();
+            ret += x.getCheckOutDate();
         }
-
         return ret;
     }
 
