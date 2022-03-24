@@ -42,7 +42,7 @@ public class MainMenuLoginUI {
                 case "1":
                     System.out.println("Enter your username: ");
                     String username = scanner.nextLine();
-                    if (registeredUser.login(firstName, lastName)) {
+                    if (registeredUser.login(username)) {
                         // do something here
                     } else {
                         System.out.println("Sorry, you don't have an account yet!");
