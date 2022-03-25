@@ -28,6 +28,7 @@ public class UserUI {
         uSing.addUser(username, firstname, lastname, age, phoneNum);
         
 
+        registeredUser.setPhoneNumber(phoneNum);
         System.out.println("Account created!\n" +
                 "Returning you to login page...");
         scanner.close();
