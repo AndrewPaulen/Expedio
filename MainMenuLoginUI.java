@@ -50,20 +50,6 @@ public class MainMenuLoginUI {
         scanner.close();
     }
 
-<<<<<<< HEAD
-    public String loginSelection() {
-        System.out.print("Main Menu Options\n" +
-                "1. Login \n" +
-                "2. Create account \n" +
-                "3. Continue as guest \n" +
-                "4. Exit program \n" +
-                "Please make a selection (enter a number): ");
-        userUI = new UserUI();
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        while (true) {
-            switch (input) {
-=======
     public void loginSelection() {
         boolean exit = false;
         while (!exit)
@@ -80,21 +66,9 @@ public class MainMenuLoginUI {
 
             switch (input) 
             {
->>>>>>> branch-andrew
                 case "1":
                     System.out.print("Enter your username: ");
                     username = scanner.nextLine();
-<<<<<<< HEAD
-                    if (registeredUser.login(username)) {
-                        System.out.println("This Works");
-                        System.out.println("Enter your username: ");
-                        String username = scanner.nextLine();
-                        if (registeredUser.login(username)) {
-                            // do something here
-                        } else {
-                            System.out.println("Sorry, you don't have an account yet!");
-                        }
-=======
                     if (registeredUser.login(username)) 
                     {
                         System.out.println ("This Works");
@@ -102,17 +76,11 @@ public class MainMenuLoginUI {
                     else 
                     {
                         System.out.println("Sorry, you don't have an account yet!");
->>>>>>> branch-andrew
                     }
                     exit = true;
                 case "2":
-<<<<<<< HEAD
-                    userUI.CreateAccount();
-                    break;
-=======
                     createAccount.UserUI();
                     exit = true;
->>>>>>> branch-andrew
                 case "3":
                     MainMenuUI();
                     exit = true;
