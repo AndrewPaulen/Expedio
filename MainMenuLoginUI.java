@@ -23,21 +23,19 @@ public class MainMenuLoginUI {
         System.out.println("*** Welcome to Expedio! ***");
 
         boolean exit = false;
-        while (!exit)
-        {
+        while (!exit) {
             System.out.print("Enter your first name: ");
             firstName = scanner.nextLine();
-            
+
             if (firstName.length() > 0)
                 exit = true;
 
             else
-                System.out.println ("It looks like you didn't type anything in, try again!");
+                System.out.println("It looks like you didn't type anything in, try again!");
         }
 
         exit = false;
-        while (!exit)
-        {
+        while (!exit) {
             System.out.print("Enter your last name: ");
             lastName = scanner.nextLine();
 
@@ -45,9 +43,9 @@ public class MainMenuLoginUI {
                 exit = true;
 
             else
-                System.out.println ("It looks like you didn't type anything in, try again!");
+                System.out.println("It looks like you didn't type anything in, try again!");
         }
-        registeredUser = new RegisteredUser (firstName, lastName);
+        registeredUser = new RegisteredUser(firstName, lastName);
         loginSelection();
         scanner.close();
     }
@@ -57,7 +55,7 @@ public class MainMenuLoginUI {
                 "1. Login \n" +
                 "2. Create account \n" +
                 "3. Continue as guest \n" +
-                "4. Exit program \n" + 
+                "4. Exit program \n" +
                 "Please make a selection (enter a number): ");
         userUI = new UserUI();
         Scanner scanner = new Scanner(System.in);
@@ -65,18 +63,18 @@ public class MainMenuLoginUI {
         while (true) {
             switch (input) {
                 case "1":
-                    System.out.print ("Enter your username: ");
+                    System.out.print("Enter your username: ");
                     username = scanner.nextLine();
                     if (registeredUser.login(username)) {
-                        System.out.println ("This Works");
-                    System.out.println("Enter your username: ");
-                    String username = scanner.nextLine();
-                    if (registeredUser.login(username)) {
-                        // do something here
-                    } else {
-                        System.out.println("Sorry, you don't have an account yet!");
+                        System.out.println("This Works");
+                        System.out.println("Enter your username: ");
+                        String username = scanner.nextLine();
+                        if (registeredUser.login(username)) {
+                            // do something here
+                        } else {
+                            System.out.println("Sorry, you don't have an account yet!");
+                        }
                     }
-                }
                     break;
                 case "2":
                     userUI.CreateAccount();
@@ -99,7 +97,7 @@ public class MainMenuLoginUI {
         System.out.println("*** Main Menu ***\n\n");
         System.out.print("Please make a selection: \n" +
                 "1. Book flight\n" +
-                "2. Book hotel\n" +
+                "2. Book hotel room\n" +
                 "3. View hotel and flight bookings\n" +
                 "4. Print flight ticket\n" +
                 "5. Print hotel itinerary\n" +
