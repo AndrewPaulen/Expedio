@@ -79,7 +79,7 @@ public class MainMenuLoginUI {
                     }
                     exit = true;
                 case "2":
-                    createAccount.UserUI();
+                    userUI.CreateAccount();;
                     exit = true;
                 case "3":
                     MainMenuUI();
