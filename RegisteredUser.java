@@ -55,33 +55,7 @@ public class RegisteredUser extends User {
     public boolean login(String username) {
         return (UserLoader.getUser(username) != null);
     }
-
-    /**
-     * 
-     */
-    public void CreateAccount() {
-        main = new MainMenuLoginUI();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter your first name: ");
-        String firstname = scanner.nextLine();
-        System.out.println("Please enter your last name: ");
-        String lastname = scanner.nextLine();
-        System.out.println("Please enter a username: ");
-        String username = scanner.nextLine();
-        System.out.println("Please enter you age: ");
-        String age = scanner.nextLine();
-        System.out.println("Please enter a phone number: ");
-        String phoneNum = scanner.nextLine();
-       
-        UserSingleton uSing = new UserSingleton();
-        uSing.addUser(username, firstname, lastname, age, phoneNum);
-
-        System.out.println("Account created!\n" +
-                "Returning you to login page...");
-        scanner.close();
-        main.LoginUI();
-    }
-    
+   
 
     /**
      * 
