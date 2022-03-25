@@ -21,10 +21,32 @@ public class MainMenuLoginUI {
     public void LoginUI() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("*** Welcome to Expedio! ***");
-        System.out.print("Enter your first name: ");
-        firstName = scanner.nextLine();
-        System.out.print("Enter your last name: ");
-        lastName = scanner.nextLine();
+
+        boolean exit = false;
+        while (!exit)
+        {
+            System.out.print("Enter your first name: ");
+            firstName = scanner.nextLine();
+            
+            if (firstName.length() > 0)
+                exit = true;
+
+            else
+                System.out.println ("It looks like you didn't type anything in, try again!");
+        }
+
+        exit = false;
+        while (!exit)
+        {
+            System.out.print("Enter your last name: ");
+            lastName = scanner.nextLine();
+
+            if (lastName.length() > 0)
+                exit = true;
+
+            else
+                System.out.println ("It looks like you didn't type anything in, try again!");
+        }
         registeredUser = new RegisteredUser (firstName, lastName);
         loginSelection();
         scanner.close();
