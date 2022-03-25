@@ -69,7 +69,7 @@ public class MainMenuLoginUI {
                     System.out.print("Enter your username: ");
                     username = scanner.nextLine();
                     if (registeredUser.login(username)) {
-                        System.out.println("This Works");
+                        MainMenuUI();
                     } else {
                         System.out.println("Sorry, you don't have an account yet!");
                     }
