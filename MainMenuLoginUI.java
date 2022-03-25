@@ -52,6 +52,7 @@ public class MainMenuLoginUI {
 
     public void loginSelection() {
         boolean exit = false;
+        userUI = new UserUI();
         while (!exit) {
             System.out.print("Main Menu Options\n" +
                     "1. Login \n" +
