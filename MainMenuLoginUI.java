@@ -52,34 +52,29 @@ public class MainMenuLoginUI {
 
     public void loginSelection() {
         boolean exit = false;
-        while (!exit)
-        {
+        while (!exit) {
             System.out.print("Main Menu Options\n" +
                     "1. Login \n" +
                     "2. Create account \n" +
                     "3. Continue as guest \n" +
-                    "4. Exit program \n" + 
+                    "4. Exit program \n" +
                     "Please make a selection (enter a number): ");
 
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
 
-            switch (input) 
-            {
+            switch (input) {
                 case "1":
                     System.out.print("Enter your username: ");
                     username = scanner.nextLine();
-                    if (registeredUser.login(username)) 
-                    {
-                        System.out.println ("This Works");
-                    } 
-                    else 
-                    {
+                    if (registeredUser.login(username)) {
+                        System.out.println("This Works");
+                    } else {
                         System.out.println("Sorry, you don't have an account yet!");
                     }
                     exit = true;
                 case "2":
-                    userUI.CreateAccount();;
+                    userUI.CreateAccount();
                     exit = true;
                 case "3":
                     MainMenuUI();
@@ -90,6 +85,7 @@ public class MainMenuLoginUI {
                 default:
                     System.out.println("Sorry! Please enter a valid input");
             }
+            scanner.close();
         }
     }
 
