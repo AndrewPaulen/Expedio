@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * @author Sophia Riley
+ */
 public class UserUI {
     private RegisteredUser registeredUser;
     private Guest guestUser;
@@ -23,10 +26,9 @@ public class UserUI {
         age = scanner.nextLine();
         System.out.println("Please enter a phone number: ");
         phoneNum = scanner.nextLine();
-       
+
         UserSingleton uSing = new UserSingleton();
         uSing.addUser(username, firstname, lastname, age, phoneNum);
-        
 
         System.out.println("Account created!\n" +
                 "Returning you to login page...");

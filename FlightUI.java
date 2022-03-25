@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * @author Sophia Riley
+ */
 public class FlightUI {
     private String departureDest;
     private String arrivalDest;
@@ -27,7 +30,7 @@ public class FlightUI {
     public void availableFlights(Location aDeparting, Location aDestination) {
         System.out.println("Fetching available flights...\n\n" +
                 "Available flights:\n");
-        System.out.println(aDeparting.toString()+" to "+aDestination.toString());
+        System.out.println(aDeparting.toString() + " to " + aDestination.toString());
     }
 
     // public void Chicago() {
