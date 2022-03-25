@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class FlightUI {
     private String departureDest;
     private String arrivalDest;
-    private Flight flight;
+    // private Flight flight;
 
     public void bookFlight() {
-        System.out.println("*** Book Flight ***\n\n");
+        System.out.println("*** Book Flight ***\n");
         depatureArrival();
     }
 
@@ -27,9 +27,17 @@ public class FlightUI {
         input.close(); // shash is a la croix boi. he smells bad.
     }
 
+    // public void searchByAirport() {
+    // Scanner scanner = new Scanner(System.in);
+    // System.out.println("Please enter the code of your desired departure airport:
+    // ");
+    // departureDest = scanner.nextLine();
+    // // Location airport = LocationsLoader.
+    // }
+
     public void availableFlights(Location aDeparting, Location aDestination) {
-        System.out.println("Fetching available flights...\n\n" +
-                "Available flights:\n");
+        System.out.println("Fetching available flights...\n" +
+                "Available flights:");
         System.out.println(aDeparting.toString() + " to " + aDestination.toString());
     }
 
