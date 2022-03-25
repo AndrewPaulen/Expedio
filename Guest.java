@@ -44,7 +44,7 @@ public class Guest extends User {
      * @param lastName  The user's last name
      */
     public Guest(String firstName, String lastName) {
-
+        super(firstName, lastName);
     }
 
     // This should ask for preferences, not get the preferences
