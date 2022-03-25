@@ -74,12 +74,15 @@ public class MainMenuLoginUI {
                         System.out.println("Sorry, you don't have an account yet!");
                     }
                     exit = true;
+                    break;
                 case "2":
                     userUI.CreateAccount();
                     exit = true;
+                    break;
                 case "3":
                     MainMenuUI();
                     exit = true;
+                    break;
                 case "4":
                     System.out.println("Thank you for using Expedio! Goodbye 👋😃");
                     System.exit(0);
