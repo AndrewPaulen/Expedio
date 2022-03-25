@@ -108,4 +108,8 @@ public class Hotel {
     public UUID getHotelID(){
         return this.id;
     }
+
+    public void printRoomOption(Location location, int num, String bedType){
+        System.out.println("Room: \n A "+bedType+" style room for "+num+" located at "+location);
+    }
 }
