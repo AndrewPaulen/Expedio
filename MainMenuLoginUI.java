@@ -52,39 +52,45 @@ public class MainMenuLoginUI {
         scanner.close();
     }
 
-    public String loginSelection() {
-        System.out.print("Main Menu Options\n" +
-                "1. Login \n" +
-                "2. Create account \n" +
-                "3. Continue as guest \n" +
-                "4. Exit program \n" + 
-                "Please make a selection (enter a number): ");
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        while (true) {
-            switch (input) {
+    public void loginSelection() {
+        boolean exit = false;
+        while (!exit)
+        {
+            System.out.print("Main Menu Options\n" +
+                    "1. Login \n" +
+                    "2. Create account \n" +
+                    "3. Continue as guest \n" +
+                    "4. Exit program \n" + 
+                    "Please make a selection (enter a number): ");
+
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+
+            switch (input) 
+            {
                 case "1":
                     System.out.print ("Enter your username: ");
                     username = scanner.nextLine();
-                    if (registeredUser.login(username)) {
+                    if (registeredUser.login(username)) 
+                    {
                         System.out.println ("This Works");
-                    } else {
+                    } 
+                    else 
+                    {
                         System.out.println("Sorry, you don't have an account yet!");
                     }
-                    break;
+                    exit = true;
                 case "2":
                     createAccount.UserUI();
-                    break;
+                    exit = true;
                 case "3":
                     MainMenuUI();
-                    break;
+                    exit = true;
                 case "4":
                     System.out.println("Thank you for using Expedio! Goodbye 👋😃");
                     System.exit(0);
-                    break;
                 default:
                     System.out.println("Sorry! Please enter a valid input");
-                    break;
             }
         }
     }
