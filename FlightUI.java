@@ -17,11 +17,11 @@ public class FlightUI {
         System.out.println("Please enter your desired departure airport: ");
         departureDest = input.nextLine();
         Location departing = LocationsLoader.getLocation(departureDest);
-        // Chicago();
+        ChicagoDest(departureDest);
         System.out.println("Please enter your desired arrival airport: ");
         arrivalDest = input.nextLine();
         Location destination = LocationsLoader.getLocation(arrivalDest);
-        // Chicago();
+        ChicagoArr(departureDest);
         availableFlights(departing, destination);
         input.close();
     }
@@ -33,11 +33,19 @@ public class FlightUI {
         System.exit(0);
     }
 
-    // public void Chicago() {
-    // if (departureDest.equalsIgnoreCase("Chicago") ||
-    // arrivalDest.equalsIgnoreCase("Chicago")) {
-    // System.out.println("Sorry, we hate Chicago! Please enter another
-    // destination.");
-    // }
-    // }
+    public void ChicagoDest(String departureDest) {
+        Scanner scanner = new Scanner(System.in);
+        if (departureDest.equalsIgnoreCase("Chicago")) {
+            System.out.println("Sorry, we hate Chicago! Please enter another destination.");
+            departureDest = scanner.nextLine();
+        }
+    }
+
+    public void ChicagoArr(String departureDest) {
+        Scanner scanner = new Scanner(System.in);
+        if (arrivalDest.equalsIgnoreCase("Chicago")) {
+            System.out.println("Sorry, we hate Chicago! Please enter another destination.");
+            departureDest = scanner.nextLine();
+        }
+    }
 }
