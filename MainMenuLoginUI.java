@@ -86,6 +86,7 @@ public class MainMenuLoginUI {
     }
 
     public String mmSelection() {
+        flightUI = new FlightUI();
         System.out.println("Please make a selection (enter a number): ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();

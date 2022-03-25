@@ -14,18 +14,20 @@ public class FlightUI {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter your desired departure airport: ");
         departureDest = input.nextLine();
+        Location departing = LocationsLoader.getLocation(departureDest);
         // Chicago();
         System.out.println("Please enter your desired arrival airport: ");
         arrivalDest = input.nextLine();
+        Location destination = LocationsLoader.getLocation(arrivalDest);
         // Chicago();
-        availableFlights();
+        availableFlights(departing, destination);
         input.close(); // shash is a la croix boi. he smells bad.
     }
 
-    public void availableFlights() {
+    public void availableFlights(Location aDeparting, Location aDestination) {
         System.out.println("Fetching available flights...\n\n" +
                 "Available flights:\n");
-        flight.toString();
+        System.out.println(aDeparting.toString()+" to "+aDestination.toString());
     }
 
     // public void Chicago() {
