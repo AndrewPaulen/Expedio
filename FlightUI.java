@@ -8,7 +8,7 @@ public class FlightUI {
     private String arrivalDest;
 
     public void bookFlight() {
-        System.out.println("*** Book Flight ***\n");
+        System.out.println("\n*** Book Flight ***");
         depatureArrival();
     }
 
@@ -27,10 +27,10 @@ public class FlightUI {
     }
 
     public void availableFlights(Location aDeparting, Location aDestination) {
-        System.out.println("\nFetching available flights...\n\n" +
-                "Available flights:");
+        System.out.println("Fetching available flights...\n" +
+                "\n*** Available flights ***");
         System.out.println(aDeparting.toString() + " to " + aDestination.toString());
-        // System.exit(0);
+        System.exit(0);
     }
 
     // public void Chicago() {
