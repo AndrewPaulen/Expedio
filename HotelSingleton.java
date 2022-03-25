@@ -57,7 +57,7 @@ public class HotelSingleton {
         return hotelList;
     }
 
-    public boolean addHotel(String hotelName, String location, boolean vacancy, String checkInTime, String checkOutTime, String checkInDate, String checkOutDate){
+    public boolean addHotel(String hotelName, Location location, boolean vacancy, String checkInTime, String checkOutTime, String checkInDate, String checkOutDate){
         if(hasHotel(hotelName)){
             return false;
         }

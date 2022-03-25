@@ -31,7 +31,7 @@ public class HotelLoader extends HotelConstants{
                 JSONObject hotelJSON = (JSONObject)hotelsJSON.get(i);
                 UUID id = UUID.fromString((String)hotelJSON.get(HOTEL_ID));
                 String name = (String)hotelJSON.get(HOTEL_NAME);
-                String location = (String)hotelJSON.get(HOTEL_LOCATION);
+                Location location = (Location)hotelJSON.get(HOTEL_LOCATION);
                 boolean vacancy = (boolean)hotelJSON.get(HOTEL_VACANCY);
                 int numRooms = (int)hotelJSON.get(NUM_HOTEL_ROOMS);
 

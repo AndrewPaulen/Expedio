@@ -28,7 +28,7 @@ public class hotelBookingsLoader extends hotelBookingsConstants{
                 JSONObject hotelBookingJSON = (JSONObject)hotelBookingsJSON.get(i);
                 String checkInTime = (String)hotelBookingJSON.get(CHECK_IN_TIME);
                 String checkInDate = (String)hotelBookingJSON.get(CHECK_OUT_DATE);
-                String hotelLocation = (String)hotelBookingJSON.get(HOTEL_LOCATION);
+                Location hotelLocation = (Location)hotelBookingJSON.get(HOTEL_LOCATION);
                 String checkOutTime = (String)hotelBookingJSON.get(CHECK_OUT_TIME);
                 String checkOutDate = (String)hotelBookingJSON.get(CHECK_OUT_DATE);
                 String guestFirstName = (String)hotelBookingJSON.get(GUEST_FIRST);
