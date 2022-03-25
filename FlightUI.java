@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class FlightUI {
     private String departureDest;
     private String arrivalDest;
-    // private Flight flight;
 
     public void bookFlight() {
         System.out.println("*** Book Flight ***\n");
@@ -24,21 +23,14 @@ public class FlightUI {
         Location destination = LocationsLoader.getLocation(arrivalDest);
         // Chicago();
         availableFlights(departing, destination);
-        input.close(); // shash is a la croix boi. he smells bad.
+        input.close();
     }
 
-    // public void searchByAirport() {
-    // Scanner scanner = new Scanner(System.in);
-    // System.out.println("Please enter the code of your desired departure airport:
-    // ");
-    // departureDest = scanner.nextLine();
-    // // Location airport = LocationsLoader.
-    // }
-
     public void availableFlights(Location aDeparting, Location aDestination) {
-        System.out.println("Fetching available flights...\n" +
+        System.out.println("\nFetching available flights...\n\n" +
                 "Available flights:");
         System.out.println(aDeparting.toString() + " to " + aDestination.toString());
+        // System.exit(0);
     }
 
     // public void Chicago() {
