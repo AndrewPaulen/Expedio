@@ -2,7 +2,7 @@ public class hotelBookingsConstants {
     /**
      * an Enumeration of all elements that comprise a hotelBooking
      */
-    protected static final String HOTEL_BOOKINGS_FILENAME = "hotelBookings.json"; //watch for pathing errors, this might not be right
+    protected static final String HOTEL_BOOKINGS_FILENAME = "Expedio\\hotelBookings.json"; //watch for pathing errors, this might not be right
     protected static final String CHECK_IN_TIME = "checkInTime";
     protected static final String CHECK_IN_DATE = "checkInDate";
     protected static final String HOTEL_LOCATION = "hotelLocation";
