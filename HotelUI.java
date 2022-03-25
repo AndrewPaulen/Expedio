@@ -55,6 +55,7 @@ public class HotelUI {
         System.out.println("Fetching available hotel rooms...\n\n" +
                 "Available hotels:\n");
                 Hotel hotel = new Hotel(desiredCity, guests, bedType);
-        LocationsLoader.getLocation(hotel.getLocation().toString());
+        Location availableoptions = LocationsLoader.getCity(desiredCity);
+        availableoptions.toString();
     }
 }

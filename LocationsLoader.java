@@ -71,6 +71,16 @@ public class LocationsLoader extends LocationsConstants{
 
     }
     
+    public static String getCity(String aCity){
+        ArrayList<Location> locations = getLocations();
+        String input = aCity.toLowerCase();
+        for(Location location: locations){
+            if(location.getCity().toLowerCase().contains(input))
+                return location.getCity();
+        }
+        System.out.println("city not found");
+        return null;
+    }
     
 }
 
