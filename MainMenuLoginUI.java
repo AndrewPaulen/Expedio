@@ -50,6 +50,7 @@ public class MainMenuLoginUI {
         scanner.close();
     }
 
+<<<<<<< HEAD
     public String loginSelection() {
         System.out.print("Main Menu Options\n" +
                 "1. Login \n" +
@@ -62,9 +63,28 @@ public class MainMenuLoginUI {
         String input = scanner.nextLine();
         while (true) {
             switch (input) {
+=======
+    public void loginSelection() {
+        boolean exit = false;
+        while (!exit)
+        {
+            System.out.print("Main Menu Options\n" +
+                    "1. Login \n" +
+                    "2. Create account \n" +
+                    "3. Continue as guest \n" +
+                    "4. Exit program \n" + 
+                    "Please make a selection (enter a number): ");
+
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+
+            switch (input) 
+            {
+>>>>>>> branch-andrew
                 case "1":
                     System.out.print("Enter your username: ");
                     username = scanner.nextLine();
+<<<<<<< HEAD
                     if (registeredUser.login(username)) {
                         System.out.println("This Works");
                         System.out.println("Enter your username: ");
@@ -74,21 +94,33 @@ public class MainMenuLoginUI {
                         } else {
                             System.out.println("Sorry, you don't have an account yet!");
                         }
+=======
+                    if (registeredUser.login(username)) 
+                    {
+                        System.out.println ("This Works");
+                    } 
+                    else 
+                    {
+                        System.out.println("Sorry, you don't have an account yet!");
+>>>>>>> branch-andrew
                     }
-                    break;
+                    exit = true;
                 case "2":
+<<<<<<< HEAD
                     userUI.CreateAccount();
                     break;
+=======
+                    createAccount.UserUI();
+                    exit = true;
+>>>>>>> branch-andrew
                 case "3":
                     MainMenuUI();
-                    break;
+                    exit = true;
                 case "4":
                     System.out.println("Thank you for using Expedio! Goodbye 👋😃");
                     System.exit(0);
-                    break;
                 default:
                     System.out.println("Sorry! Please enter a valid input");
-                    break;
             }
         }
     }
