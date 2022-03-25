@@ -85,6 +85,7 @@ public class MainMenuLoginUI {
                 default:
                     System.out.println("Sorry! Please enter a valid input");
             }
+            scanner.close();
         }
     }
 

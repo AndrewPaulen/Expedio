@@ -3,7 +3,7 @@ public class flightBookingsConstants {
      * @author David Wamai
      * an Enumeration of all json elements of a flightBooking
      */
-    protected static final String FLIGHTBOOKINGS_FILE_NAME = "Expedio/flightBookings.json";
+    protected static final String FLIGHTBOOKINGS_FILE_NAME = "Expedio\\flightBookings.json";
     protected static final String DEPARTURE_TIME = "departureTime";
     protected static final String DEPARTURE_DATE = "departureDate";
     protected static final String DEPARTURE_LOCATION = "departureLocation";
