@@ -54,7 +54,7 @@ public class MainMenuLoginUI {
         boolean exit = false;
         userUI = new UserUI();
         while (!exit) {
-            System.out.print("Main Menu Options\n" +
+            System.out.print("\n*** Options ***\n" +
                     "1. Login \n" +
                     "2. Create account \n" +
                     "3. Continue as guest \n" +
@@ -94,8 +94,8 @@ public class MainMenuLoginUI {
     }
 
     public void MainMenuUI() {
-        System.out.println("*** Main Menu ***\n\n");
-        System.out.print("Please make a selection: \n" +
+        System.out.println("\n*** Main Menu ***");
+        System.out.print("Please make a selection (enter a number): \n" +
                 "1. Book flight\n" +
                 "2. Book hotel room\n" +
                 "3. View hotel and flight bookings\n" +
@@ -107,7 +107,6 @@ public class MainMenuLoginUI {
 
     public String mmSelection() {
         flightUI = new FlightUI();
-        System.out.println("Please make a selection (enter a number): ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         while (true) {
