@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class MainMenuLoginUI {
 
     private RegisteredUser registeredUser;
-    // private Guest guestUser;
     private FlightUI flightUI;
     private HotelUI hotelUI;
     private UserUI userUI;
@@ -33,7 +32,6 @@ public class MainMenuLoginUI {
             else
                 System.out.println("It looks like you didn't type anything in, try again!");
         }
-
         exit = false;
         while (!exit) {
             System.out.print("Enter your last name: ");

@@ -35,8 +35,9 @@ public class HotelUI {
                 "6. Double\n" +
                 "7. Twin\n" +
                 "Please enter a number to make a selection: ");
-        bedType = scanner.nextLine();
+        bedType = scanner.next();
         validBedType(bedType);
+        // no line found error- come back later
         availableHotels(desiredCity, guests, bedType);
     }
 
@@ -54,31 +55,31 @@ public class HotelUI {
         Scanner scanner = new Scanner(System.in);
         switch (bedType) {
             case "1":
-                System.out.println("Your room will include one King bed and one Couch");
+                System.out.println("Your room will include one king bed and one couch.");
                 break;
             case "2":
-                System.out.println("Your room will include one King bed and one Couch");
+                System.out.println("Your room will include one king bed.");
                 break;
             case "3":
-                System.out.println("Your room will include one King bed and one Couch");
+                System.out.println("Your room will include two queen beds and one couch.");
                 break;
             case "4":
-                System.out.println("Your room will include one King bed and one Couch");
+                System.out.println("Your room will include two queen beds.");
                 break;
             case "5":
-                System.out.println("Your room will include one King bed and one Couch");
+                System.out.println("Your room will include two double beds.");
                 break;
             case "6":
-                System.out.println("Your room will include one King bed and one Couch");
+                System.out.println("Your room will include one double bed.");
                 break;
             case "7":
-                System.out.println("Your room will include one King bed and one Couch");
+                System.out.println("Your room will include one twin bed.");
                 break;
         }
-        // System.out.println("Sorry! Invalid input. Please chose a number between 1-7:
-        // ");
-        // bedType = scanner.nextLine();
-        // validBedType(bedType);
+        System.out.println("Sorry! Invalid input. Please chose a number between 1-7: ");
+        bedType = scanner.next();
+        validBedType(bedType);
+        scanner.close();
     }
 
     public void availableHotels(Location desiredCity, int guests, String bedType) {
