@@ -43,7 +43,7 @@ public class airlinesLoader extends airlinesConstants{
 
         public String getAirline(){
             Random rand = new Random();
-            int randomNumber = rand.nextInt(11 - 0 + 1)+0;
+            int randomNumber = rand.nextInt(10 - 0 + 1)+0;
 
             ArrayList<Airline> airline = getAirlines();
 

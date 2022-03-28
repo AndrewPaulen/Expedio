@@ -40,7 +40,7 @@ public class Plane
         this.planeSeats = planeSeats;
     }
 
-    public static void seating(){
+    public void seating(){
         char[][] seats = new char[7][4];
         for(int i=0 ; i<7 ; i++){
             seats[i][0] = 'A';   
@@ -52,9 +52,11 @@ public class Plane
         String seatNumber = " ";
         String b = " ";
         System.out.println("Please enter the seat (e.g. - 1A) you would like to book");
-        System.out.println("Enter b to go back");
+        System.out.println("Enter b to go back\n");
         Scanner keyboard = new Scanner(System.in);
-        seatNumber = keyboard.nextLine();
+        if(keyboard.hasNextLine()){
+            seatNumber = keyboard.nextLine();
+        }
         if(seatNumber.equals("b")){
             System.out.println("going back...");
             MainMenuLoginUI ui = new MainMenuLoginUI();
@@ -75,8 +77,23 @@ public class Plane
                 if(seats[row][col] != 'X'){
                     seats[row][col] = 'X';
                     filled++;
+                    System.out.println(" ");
+                    printSeats(seats);
+                }
+                if (filled < 28){
+                    System.out.println("Enter a seat to assign (e.g., '1A'");
+                    seatNumber = keyboard.nextLine();
                 }
             }
         }
+    }
+
+    private static void printSeats(char[][] seats){
+        System.out.println("Row");
+        for (int i = 0; i < seats.length ; i++){
+            System.out.println((i+1)+"  "+seats[i][0]+" "+seats[i][1]+"   "+seats[i][2]+" "+seats[i][3]);
+        }
+        int numberOfSeatsAvailable = (28 - filled);
+        System.out.println("There are "+numberOfSeatsAvailable+" seats available");
     }
 }

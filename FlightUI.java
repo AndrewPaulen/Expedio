@@ -20,14 +20,15 @@ public class FlightUI {
         System.out.println("Please enter your desired departure airport: \n");
         departureDest = input.nextLine();
         Location departing = LocationsLoader.getLocation(departureDest);
-        ChicagoDest(departureDest);
         System.out.println("Please enter your desired arrival airport: \n");
         arrivalDest = input.nextLine();
         Location destination = LocationsLoader.getLocation(arrivalDest);
-        ChicagoArr(departureDest);
         friendCheck();
         availableFlights(departing, destination);
+        Plane plane = new Plane();
+        plane.seating();
         input.close();
+
     }
 
     public void availableFlights(Location aDeparting, Location aDestination) {
@@ -54,6 +55,7 @@ public class FlightUI {
             System.out.println("Sorry, we hate Chicago! Please enter another destination.");
             departureDest = scanner.nextLine();
         }
+        
     }
 
     public void ChicagoArr(String departureDest) {
@@ -62,6 +64,7 @@ public class FlightUI {
             System.out.println("Sorry, we hate Chicago! Please enter another destination.");
             departureDest = scanner.nextLine();
         }
+        
     }
 
     public void friendCheck(){
@@ -106,11 +109,4 @@ public class FlightUI {
         }
     }
 
-    public void getPlaneView(){
-    String[][] rightSide = new String[10][10];
-    String[][] leftSide = new String[10][10];
-        for(int i = 0; i<10 ; i++){
-            System.out.println(rightSide[i+1][i+1]);
-        }
-    }
 }
