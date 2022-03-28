@@ -12,11 +12,15 @@ public class Hotel {
     private String checkOutDate;
     private String roomNumber;
     private int rating;
+    private boolean pool;
+    private boolean gym;
+    private boolean rs;
     private int guests;
     private String bedType;
 
     public Hotel(String name, Location location, boolean vacancy, String checkInTime, String checkOutTime,
-            String checkInDate, String checkOutDate) {
+            String checkInDate, String checkOutDate, String roomNumber, int rating, boolean pool, boolean gym,
+            boolean rs) {
         this.id = UUID.randomUUID();
         this.name = name;
         this.location = location;
@@ -27,6 +31,9 @@ public class Hotel {
         this.checkOutTime = checkOutTime;
         this.roomNumber = roomNumber;
         this.rating = rating;
+        this.pool = pool;
+        this.gym = gym;
+        this.rs = rs;
     }
 
     public Hotel(UUID id, String name, Location location, boolean vacancy) {
@@ -91,6 +98,41 @@ public class Hotel {
         return this.rating;
     }
 
+    // pool, gym, room service- come back to this
+    public void setPool(boolean pool) {
+        if (HotelUI.pool.equalsIgnoreCase("y")) {
+            pool = true;
+        }
+        this.pool = pool;
+    }
+
+    public Boolean getPool() {
+        return this.pool;
+    }
+
+    public void setGym(boolean gym) {
+        if (HotelUI.gym.equalsIgnoreCase("y")) {
+            gym = true;
+        }
+        this.gym = gym;
+    }
+
+    public Boolean getGym() {
+        return this.gym;
+    }
+
+    public void setRS(boolean rs) {
+        if (HotelUI.rs.equalsIgnoreCase("y")) {
+            rs = true;
+        }
+        this.rs = rs;
+    }
+
+    public Boolean getRS() {
+        return this.rs;
+    }
+    // -----------------------------------------
+
     public String getCheckInTime() {
         return this.checkInTime;
     }
@@ -117,6 +159,7 @@ public class Hotel {
 
     public void printRoomOption(Location location, int num, String bedType) {
         System.out.println(
-                "Room: \n A " + bedType + " style room for " + num + " located at " + location + ". Rating: " + rating);
+                "Room: \n A " + bedType + " style room for " + num + " located at " + location + ". Rating: " + rating +
+                        "Amentities: Pool: " + " Smoking rooms: " + " Gym: " + " Laundry room: " + " Room service: ");
     }
 }

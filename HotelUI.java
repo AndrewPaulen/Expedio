@@ -9,6 +9,9 @@ public class HotelUI {
     private String city;
     private int guests;
     private String bedType;
+    private String pool;
+    private String gym;
+    private String roomService;
     // private int numOfBeds;
 
     public void bookHotel() {
@@ -38,6 +41,13 @@ public class HotelUI {
         bedType = scanner.next();
         validBedType(bedType);
         // no line found error- come back later
+        System.out.println("Amentities:\n" +
+                "Would you like your hotel to have a pool? (y/n): ");
+        pool = scanner.nextLine();
+        System.out.println("Would you like your hotel to have a gym? (y/n): ");
+        gym = scanner.nextLine();
+        System.out.println("Would you like your hotel to have room service? (y/n): ");
+        roomService = scanner.nextLine();
         availableHotels(desiredCity, guests, bedType);
     }
 
