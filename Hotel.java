@@ -100,9 +100,6 @@ public class Hotel {
 
     // pool, gym, room service- come back to this
     public void setPool(boolean pool) {
-        if (HotelUI.pool.equalsIgnoreCase("y")) {
-            pool = true;
-        }
         this.pool = pool;
     }
 
@@ -111,9 +108,6 @@ public class Hotel {
     }
 
     public void setGym(boolean gym) {
-        if (HotelUI.gym.equalsIgnoreCase("y")) {
-            gym = true;
-        }
         this.gym = gym;
     }
 
@@ -122,9 +116,6 @@ public class Hotel {
     }
 
     public void setRS(boolean rs) {
-        if (HotelUI.rs.equalsIgnoreCase("y")) {
-            rs = true;
-        }
         this.rs = rs;
     }
 
