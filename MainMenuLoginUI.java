@@ -107,6 +107,7 @@ public class MainMenuLoginUI {
 
     public String mmSelection() {
         flightUI = new FlightUI();
+        hotelUI = new HotelUI();
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         while (true) {
