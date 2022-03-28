@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -101,6 +103,24 @@ public class FlightUI {
         int randumNumber = rand.nextInt(2 - 1 + 1)+1;
         if(num > 540){
             System.out.print("with "+randumNumber+" connecting flight(s) from "+loader.locationByIndex(randumNumber)+"\n");
+        }
+    }
+
+    public void getPlaneView(){
+    String plane [][] = {
+    {"1A/1B","1A/1B","1A/1B"},
+    {"1A/1B","1A/1B","1A/1B"},
+    {"1A/1B","1A/1B","1A/1B"}};
+
+    for(int i = 0; i < plane.length ; i ++){
+
+    System.out.println();
+
+    for(int j = 0 ; j < plane[i].length ; j++) {
+        System.out.print(" | " + plane[i][j]  );
+    }
+            System.out.print(" |");
+            System.out.println();
         }
     }
 }
