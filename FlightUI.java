@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -30,8 +31,19 @@ public class FlightUI {
     public void availableFlights(Location aDeparting, Location aDestination) {
         System.out.println("Fetching available flights...\n" +
                 "\n*** Available flights ***\n");
-        System.out.println(aDeparting.toString() + " to " + aDestination.toString());
-        System.exit(0);
+        
+        
+        for(int i = 0; i < 4; i++){
+            airlinesLoader loader = new airlinesLoader();
+            Random rand = new Random();
+            int randomNumber = rand.nextInt(1080 - 1 + 1) + 1;
+            System.out.println(aDeparting.toString() + " to " + aDestination.toString());
+            hasConnecting(randomNumber);
+            System.out.println("Flight Duration: "+randomNumber+" minutes.");
+            System.out.println("Airline: "+loader.getAirline()+"\n\n");
+        }
+        
+        
     }
 
     public void ChicagoDest(String departureDest) {
@@ -59,7 +71,7 @@ public class FlightUI {
             String[] friends = new String[input];
             for(int i = 0; i < input; i++){
                 String friend;
-                System.out.println("Please enter the first name of passenger "+(i+1));
+                System.out.println("Please enter the first and last name of passenger "+(i+1));
                 if(i == 0){
                     scanner.nextLine();
                     friend = scanner.nextLine();
@@ -81,5 +93,14 @@ public class FlightUI {
             System.out.println("Please enter a number other than zero");
         }
         scanner.close();
+    }
+
+    public void hasConnecting(int num){
+        Random rand = new Random();
+        LocationsLoader loader = new LocationsLoader();
+        int randumNumber = rand.nextInt(2 - 1 + 1)+1;
+        if(num > 540){
+            System.out.print("with "+randumNumber+" connecting flight(s) from "+loader.locationByIndex(randumNumber)+"\n");
+        }
     }
 }

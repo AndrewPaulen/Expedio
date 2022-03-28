@@ -55,7 +55,7 @@ public class LocationsLoader extends LocationsConstants{
      * @param lastName
      * @return
      */
-    public static Location getLocation(String aLocation){ //-------BROKEN--------
+    public static Location getLocation(String aLocation){ 
         ArrayList<Location> locations = getLocations();
         String input = aLocation.toLowerCase();
         for (Location location : locations) {
@@ -80,6 +80,13 @@ public class LocationsLoader extends LocationsConstants{
         }
         System.out.println("city not found");
         return null;
+    }
+
+    public String locationByIndex(int index){
+        ArrayList<Location> locations = getLocations();
+
+        String got = locations.get(index).toString();
+       return got;
     }
     
 }
