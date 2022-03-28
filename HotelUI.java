@@ -52,7 +52,7 @@ public class HotelUI {
 }
 
     public void availableHotels(Location desiredCity, int guests, String bedType) {
-        System.out.println("Fetching available hotel rooms...\n" +
+        System.out.println("\nFetching available hotel rooms...\n" +
                 "Available hotels: \n");
                 Hotel hotel = new Hotel(desiredCity, guests, bedType);
                 
