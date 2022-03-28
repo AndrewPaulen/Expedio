@@ -27,10 +27,10 @@ public class HotelUI {
         System.out.println("What room type would you like? " +
                 "Options include: king-couch, king, queen-queen-couch, queen-queen, double-double, double, and twin.");
         bedType = scanner.nextLine();
-        validBedType();
-        System.out.println("How many beds would you like? Enter a value between 1-2:");
-        int numOfBeds = scanner.nextInt();
-        validNumOfBeds(numOfBeds);
+        validBedType(bedType);
+         System.out.println("How many beds would you like? Enter a value between 1-2:");
+         int numOfBeds = scanner.nextInt();
+         validNumOfBeds(numOfBeds);
         availableHotels(desiredCity, guests, bedType);
     }
 
@@ -41,22 +41,45 @@ public class HotelUI {
         }
     }
 
-    public void validBedType() {
-        // come back to this
+    public void validBedType(String input) {
+       bedType = input.toLowerCase();
+       switch (bedType) {
+        case "1":
+            System.out.println("your room will include one King bed and one Couch");
+            break;
+        case "2":
+            System.out.println("your room will include one King bed and one Couch");
+            break;
+        case "3":
+             System.out.println("your room will include one King bed and one Couch");
+            break;
+        case "4":
+            System.out.println("your room will include one King bed and one Couch");
+            break;
+        case "5":
+            System.out.println("your room will include one King bed and one Couch");
+            break;
+        case "6":
+            System.out.println("your room will include one King bed and one Couch");
+            break;
+        case "7":
+            System.out.println("your room will include one King bed and one Couch");
+            break;
+       }
     }
 
     public void validNumOfBeds(int numOfBeds) {
-        if (numOfBeds <= 0 || numOfBeds >= 3) {
-            System.out.println("Sorry! That's an invalid input. Please try again...");
-        }
-    }
+    if (numOfBeds <= 0 || numOfBeds >= 3) {
+    System.out.println("Sorry! That's an invalid input. Please try again...");
+     }
+}
 
     public void availableHotels(Location desiredCity, int guests, String bedType) {
         System.out.println("\nFetching available hotel rooms...\n" +
                 "Available hotels: \n");
-        Hotel hotel = new Hotel(desiredCity, guests, bedType);
-
-        hotel.printRoomOption(desiredCity, guests, bedType);
-
+                Hotel hotel = new Hotel(desiredCity, guests, bedType);
+                
+                hotel.printRoomOption(desiredCity, guests, bedType);
+       
     }
 }
