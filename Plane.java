@@ -30,7 +30,7 @@ public class Plane
         this.planeType = planeType;
     }
 
-    public PlaneSeat [] [] getPlaneSeats()
+    public PlaneSeat[][] getPlaneSeats()
     {
         return planeSeats;
     }
@@ -40,7 +40,7 @@ public class Plane
         this.planeSeats = planeSeats;
     }
 
-    public void seating(){
+    public void seating(int passengers){
         char[][] seats = new char[7][4];
         for(int i=0 ; i<7 ; i++){
             seats[i][0] = 'A';   
@@ -52,11 +52,9 @@ public class Plane
         String seatNumber = " ";
         String b = " ";
         System.out.println("Please enter the seat (e.g. - 1A) you would like to book");
-        System.out.println("Enter b to go back\n");
+        System.out.println("Enter b to go back\n\n\n");
         Scanner keyboard = new Scanner(System.in);
-        if(keyboard.hasNextLine()){
-            seatNumber = keyboard.nextLine();
-        }
+        seatNumber = keyboard.nextLine();
         if(seatNumber.equals("b")){
             System.out.println("going back...");
             MainMenuLoginUI ui = new MainMenuLoginUI();
@@ -64,9 +62,9 @@ public class Plane
         }
         while(filled < 28 && seatNumber.length() > 0){
             int row = seatNumber.charAt(0) - '1';
-            int col = seatNumber.charAt(1) - '2';
+            int col = seatNumber.charAt(1) - 'A';
             if(row < 0 || row > 7 || col < 0 || col > 4){
-                System.out.println("Input error, Enter seat to assign (e.g., '1A'");
+                System.out.println("Input error, Enter seat to assign (e.g., '1A')");
                 seatNumber = keyboard.nextLine();
                 if(seatNumber.equals('b')){
                     System.out.println("going back...");
@@ -80,10 +78,13 @@ public class Plane
                     System.out.println(" ");
                     printSeats(seats);
                 }
-                if (filled < 28){
-                    System.out.println("Enter a seat to assign (e.g., '1A'");
+                if(passengers == filled){
+                    break;
+                } else if (filled < 28){
+                    System.out.println("Enter a seat to assign (e.g., '1A')");
                     seatNumber = keyboard.nextLine();
                 }
+                
             }
         }
     }

@@ -1,5 +1,8 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -23,15 +26,22 @@ public class FlightUI {
         System.out.println("Please enter your desired arrival airport: \n");
         arrivalDest = input.nextLine();
         Location destination = LocationsLoader.getLocation(arrivalDest);
-        friendCheck();
+        System.out.println("Please enter departure date (e.g., MM/DD/YY): \n");
+        String date = input.nextLine();
+        int numFriends = friendCheck();
         availableFlights(departing, destination);
+        //chooseFlight(departing, destination, numFriends, availableFlights);
         Plane plane = new Plane();
-        plane.seating();
+        plane.seating(numFriends);
+        System.out.println("Sucessfully booked tickets! Returning to Main Menu...");
+        MainMenuLoginUI ui = new MainMenuLoginUI();
         input.close();
-
+        ui.MainMenuUI();
     }
 
     public void availableFlights(Location aDeparting, Location aDestination) {
+        ArrayList<Flight> availableFlights = new ArrayList<Flight>();
+
         System.out.println("Fetching available flights...\n" +
                 "\n*** Available flights ***\n");
 
@@ -43,8 +53,8 @@ public class FlightUI {
             hasConnecting(randomNumber);
             System.out.println("Flight Duration: " + randomNumber + " minutes.");
             System.out.println("Airline: " + loader.getAirline() + "\n\n");
+            System.out.println("Date: ")
         }
-
     }
 
     public void ChicagoDest(String departureDest) {
@@ -65,7 +75,7 @@ public class FlightUI {
         
     }
 
-    public void friendCheck() {
+    public int friendCheck() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many tickets would you like to purchase?");
         int input = scanner.nextInt();
@@ -95,7 +105,7 @@ public class FlightUI {
         } else if (input == 0) {
             System.out.println("Please enter a number other than zero");
         }
-        scanner.close();
+        return input;
     }
 
     public void hasConnecting(int num) {
@@ -105,14 +115,6 @@ public class FlightUI {
         if (num > 540) {
             System.out
                     .print("with " + randumNumber + " connecting flight(s) from " + loader.locationByIndex(num) + "\n");
-        }
-    }
-
-    public void getPlaneView() {
-        String[][] rightSide = new String[10][10];
-        String[][] leftSide = new String[10][10];
-        for (int i = 0; i < 10; i++) {
-            System.out.println(rightSide[i + 1][i + 1]);
         }
     }
 }
