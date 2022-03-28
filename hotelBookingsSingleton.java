@@ -63,12 +63,12 @@ public class hotelBookingsSingleton {
      * @param checkOutDate the booking check-out-date
      * @return a true boolean value if the add() function executes successfully. 
      */
-    public boolean addHotelBooking(String hotelID, Location location, boolean vacancy, String checkInTime, String checkInDate, String checkOutTime, String checkOutDate){
+    public boolean addHotelBooking(String hotelID, Location location, boolean vacancy, String checkInTime, String checkInDate, String checkOutTime, String checkOutDate, String roomNumber){
         if(hasHotelBooking(hotelID)){
             return false;
         }
 
-        hotelBookingsList.add(new Hotel(hotelID, location, vacancy, checkInTime, checkOutTime, checkInDate, checkOutDate));
+        hotelBookingsList.add(new Hotel(hotelID, location, vacancy, checkInTime, checkOutTime, checkInDate, checkOutDate, roomNumber));
         return true;
     }
     /**

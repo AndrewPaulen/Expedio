@@ -19,8 +19,7 @@ public class Hotel {
     private String bedType;
 
     public Hotel(String name, Location location, boolean vacancy, String checkInTime, String checkOutTime,
-            String checkInDate, String checkOutDate, String roomNumber, int rating, boolean pool, boolean gym,
-            boolean rs) {
+            String checkInDate, String checkOutDate, String roomNumber) {
         this.id = UUID.randomUUID();
         this.name = name;
         this.location = location;
@@ -30,10 +29,7 @@ public class Hotel {
         this.checkOutDate = checkOutDate;
         this.checkOutTime = checkOutTime;
         this.roomNumber = roomNumber;
-        this.rating = rating;
-        this.pool = pool;
-        this.gym = gym;
-        this.rs = rs;
+   
     }
 
     public Hotel(UUID id, String name, Location location, boolean vacancy) {
