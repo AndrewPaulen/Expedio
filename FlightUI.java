@@ -29,10 +29,11 @@ public class FlightUI {
         System.out.println("Please enter departure date (e.g., MM/DD/YY): \n");
         String date = input.nextLine();
         int numFriends = friendCheck();
-        availableFlights(departing, destination, date);
-        // chooseFlight(departing, destination, numFriends, availableFlights);
+        ArrayList<Flight> availableFlights = availableFlights(departing, destination, date);
+        chooseFlight(availableFlights);
         Plane plane = new Plane();
         String [] seatNumbers = plane.seating(numFriends);
+        finalize(seatNumbers);
         System.out.println("Sucessfully booked tickets! Returning to Main Menu...");
         MainMenuLoginUI ui = new MainMenuLoginUI();
         input.close();
@@ -49,12 +50,14 @@ public class FlightUI {
             airlinesLoader loader = new airlinesLoader();
             Random rand = new Random();
             int randomNumber = rand.nextInt(1080 - 1 + 1) + 1;
-            System.out.println("Flight "+i);
+            System.out.println("Flight "+(i+1));
             System.out.println(aDeparting.toString() + " to " + aDestination.toString());
             hasConnecting(randomNumber);
             System.out.println("Flight Duration: " + randomNumber + " minutes.");
-            System.out.println("Airline: " + loader.getAirline() + "\n\n");
-            System.out.println("Date: ");
+            String airline = loader.getAirline();
+            System.out.println("Airline: " + airline);
+            System.out.println("Date: "+date+"\n");
+            availableFlights.add(new Flight(aDeparting, aDestination, date, airline, randomNumber, null));
         }
         return availableFlights;
     }
@@ -127,7 +130,7 @@ public class FlightUI {
         System.out.println("You've chosen: "+selectedFlight);
     }   
 
-    public void finalize(){
+    public void finalize(String [] seatNumbers){
         System.out.println("");
     }
 }
