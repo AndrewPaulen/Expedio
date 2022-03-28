@@ -95,13 +95,13 @@ public class MainMenuLoginUI {
 
     public void MainMenuUI() {
         System.out.println("\n*** Main Menu ***");
-        System.out.print("Please make a selection (enter a number): \n" +
-                "1. Book flight\n" +
+        System.out.print("1. Book flight\n" +
                 "2. Book hotel room\n" +
                 "3. View hotel and flight bookings\n" +
                 "4. Print flight ticket\n" +
                 "5. Print hotel itinerary\n" +
-                "6. Exit program\n");
+                "6. Exit program\n" +
+                "Please make a selection (enter a number): ");
         mmSelection();
     }
 
