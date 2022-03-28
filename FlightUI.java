@@ -29,17 +29,17 @@ public class FlightUI {
         System.out.println("Please enter departure date (e.g., MM/DD/YY): \n");
         String date = input.nextLine();
         int numFriends = friendCheck();
-        availableFlights(departing, destination);
-        //chooseFlight(departing, destination, numFriends, availableFlights);
+        ArrayList<Flight> flightOptions = availableFlights(departing, destination, date);
+        chooseFlight(flightOptions);
         Plane plane = new Plane();
-        plane.seating(numFriends);
+        String [] seatNumbers = plane.seating(numFriends);
         System.out.println("Sucessfully booked tickets! Returning to Main Menu...");
         MainMenuLoginUI ui = new MainMenuLoginUI();
         input.close();
         ui.MainMenuUI();
     }
 
-    public void availableFlights(Location aDeparting, Location aDestination) {
+    public ArrayList<Flight> availableFlights(Location aDeparting, Location aDestination, String date) {
         ArrayList<Flight> availableFlights = new ArrayList<Flight>();
 
         System.out.println("Fetching available flights...\n" +
@@ -49,12 +49,17 @@ public class FlightUI {
             airlinesLoader loader = new airlinesLoader();
             Random rand = new Random();
             int randomNumber = rand.nextInt(1080 - 1 + 1) + 1;
+            System.out.println("Flight "+i);
             System.out.println(aDeparting.toString() + " to " + aDestination.toString());
             hasConnecting(randomNumber);
             System.out.println("Flight Duration: " + randomNumber + " minutes.");
-            System.out.println("Airline: " + loader.getAirline() + "\n\n");
-            System.out.println("Date: ")
+            String airline = loader.getAirline();
+            System.out.println("Airline: " + airline + "\n\n");
+            System.out.println("Date: "+date);
+
+            availableFlights.add(new Flight(aDeparting, aDestination, date, airline, randomNumber, null));
         }
+        return availableFlights;
     }
 
     public void ChicagoDest(String departureDest) {
@@ -72,7 +77,6 @@ public class FlightUI {
             System.out.println("Sorry, we hate Chicago! Please enter another destination.");
             departureDest = scanner.nextLine();
         }
-        
     }
 
     public int friendCheck() {
@@ -116,5 +120,17 @@ public class FlightUI {
             System.out
                     .print("with " + randumNumber + " connecting flight(s) from " + loader.locationByIndex(num) + "\n");
         }
+    }
+
+    public void chooseFlight(ArrayList<Flight> availableFlights){
+        System.out.println("Please select your perferred flight (Enter a number): \n");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        String selectedFlight = availableFlights.get(input).toString();
+        System.out.println("You've chosen: "+selectedFlight);
+    }   
+
+    public void finalize(){
+        System.out.println("");
     }
 }

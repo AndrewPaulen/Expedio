@@ -22,10 +22,15 @@ public class Flight
     protected Plane plane;
     protected boolean carryOn;
     protected int numOfLuggage;
-    protected String seatNumber;
+    protected String[] seatNumber;
     protected boolean hasTransfer;
     protected int numTransfers;
     protected String transferDuration;
+    protected Location depLocation;
+    protected Location arrLocation;
+    protected String date;
+
+
 
     public Flight(String flightID, String airline, String available, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration) {
         this.flightID = flightID;
@@ -37,6 +42,15 @@ public class Flight
         this.arrivalLocation = arrivalLocation;
         this.arrivalDate = arrivalDate;
         this.arrivalTime = arrivalTime;
+    }
+
+    public Flight(Location aDeparting, Location aDestination, String date, String airline, int duration, String[] seatNumber){
+        this.depLocation = aDeparting;
+        this.arrLocation = aDestination;
+        this.duration = duration;
+        this.date = date;
+        this.airline = airline;
+        this.seatNumber = seatNumber;
     }
 
     /**
@@ -53,10 +67,7 @@ public class Flight
      */
     public String toString()
     {
-        return (airline + " - " + seatNumber +
-            "\nDeparture Location: " + departureLocation + "  Departure Date: " + departureDate + "  Departure Time: " + departureTime +
-            "\nArrival Location: " + arrivalLocation + "  Arrival Date: " + arrivalDate + "  Arrival Time: " + arrivalTime +
-            "\nDuration: " + duration);
+        return depLocation+" to "+arrLocation+" on "+date+" with "+airline+". Your flight will last "+duration+" minutes.";
     }
 
     /**
@@ -229,7 +240,7 @@ public class Flight
         this.numOfLuggage = numOfLuggage;
     }
 
-    public String getSeatNumber(){
+    public String[] getSeatNumber(){
         return this.seatNumber;
     }
 }

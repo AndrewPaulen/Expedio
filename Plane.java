@@ -40,7 +40,9 @@ public class Plane
         this.planeSeats = planeSeats;
     }
 
-    public void seating(int passengers){
+    public String[] seating(int passengers){
+        String[] seatNums = new String[passengers];
+        int count = 0;
         char[][] seats = new char[7][4];
         for(int i=0 ; i<7 ; i++){
             seats[i][0] = 'A';   
@@ -74,6 +76,8 @@ public class Plane
             } else {
                 if(seats[row][col] != 'X'){
                     seats[row][col] = 'X';
+                    seatNumber = seatNums[count];
+                    count++;
                     filled++;
                     System.out.println(" ");
                     printSeats(seats);
@@ -87,6 +91,7 @@ public class Plane
                 
             }
         }
+        return seatNums;
     }
 
     private static void printSeats(char[][] seats){
