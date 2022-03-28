@@ -29,8 +29,8 @@ public class FlightUI {
         System.out.println("Please enter departure date (e.g., MM/DD/YY): \n");
         String date = input.nextLine();
         int numFriends = friendCheck();
-        ArrayList<Flight> flightOptions = availableFlights(departing, destination, date);
-        chooseFlight(flightOptions);
+        availableFlights(departing, destination, date);
+        // chooseFlight(departing, destination, numFriends, availableFlights);
         Plane plane = new Plane();
         String [] seatNumbers = plane.seating(numFriends);
         System.out.println("Sucessfully booked tickets! Returning to Main Menu...");
@@ -53,11 +53,8 @@ public class FlightUI {
             System.out.println(aDeparting.toString() + " to " + aDestination.toString());
             hasConnecting(randomNumber);
             System.out.println("Flight Duration: " + randomNumber + " minutes.");
-            String airline = loader.getAirline();
-            System.out.println("Airline: " + airline + "\n\n");
-            System.out.println("Date: "+date);
-
-            availableFlights.add(new Flight(aDeparting, aDestination, date, airline, randomNumber, null));
+            System.out.println("Airline: " + loader.getAirline() + "\n\n");
+            System.out.println("Date: ");
         }
         return availableFlights;
     }
@@ -68,7 +65,7 @@ public class FlightUI {
             System.out.println("Sorry, we hate Chicago! Please enter another destination.");
             departureDest = scanner.nextLine();
         }
-        
+
     }
 
     public void ChicagoArr(String departureDest) {

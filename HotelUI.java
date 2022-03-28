@@ -5,10 +5,13 @@ import java.util.Scanner;
  */
 public class HotelUI {
 
-    // private Hotel hotel;
+    private Hotel hotel;
     private String city;
     private int guests;
     private String bedType;
+    private String pool;
+    private String gym;
+    private String rs;
     // private int numOfBeds;
 
     public void bookHotel() {
@@ -37,7 +40,17 @@ public class HotelUI {
                 "Please enter a number to make a selection: ");
         bedType = scanner.next();
         validBedType(bedType);
-        // no line found error- come back later
+        // no line found error- come back later ********************************
+        System.out.println("Amentities:\n" +
+                "Would you like your hotel to have a pool? (y/n): ");
+        pool = scanner.nextLine();
+        poolSelection();
+        System.out.println("Would you like your hotel to have a gym? (y/n): ");
+        gym = scanner.nextLine();
+        gymSelection();
+        System.out.println("Would you like your hotel to have room service? (y/n): ");
+        rs = scanner.nextLine();
+        rsSelection();
         availableHotels(desiredCity, guests, bedType);
     }
 
@@ -80,6 +93,24 @@ public class HotelUI {
         bedType = scanner.next();
         validBedType(bedType);
         scanner.close();
+    }
+
+    public void poolSelection() {
+        if (pool.equalsIgnoreCase("y")) {
+            hotel.setPool(true);
+        }
+    }
+
+    public void gymSelection() {
+        if (gym.equalsIgnoreCase("y")) {
+            hotel.setGym(true);
+        }
+    }
+
+    public void rsSelection() {
+        if (rs.equalsIgnoreCase("y")) {
+            hotel.setRS(true);
+        }
     }
 
     public void availableHotels(Location desiredCity, int guests, String bedType) {
