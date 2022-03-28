@@ -30,7 +30,7 @@ public class FlightUI {
         String date = input.nextLine();
         int numFriends = friendCheck();
         availableFlights(departing, destination);
-        //chooseFlight(departing, destination, numFriends, availableFlights);
+        // chooseFlight(departing, destination, numFriends, availableFlights);
         Plane plane = new Plane();
         plane.seating(numFriends);
         System.out.println("Sucessfully booked tickets! Returning to Main Menu...");
@@ -53,7 +53,7 @@ public class FlightUI {
             hasConnecting(randomNumber);
             System.out.println("Flight Duration: " + randomNumber + " minutes.");
             System.out.println("Airline: " + loader.getAirline() + "\n\n");
-            System.out.println("Date: ")
+            System.out.println("Date: ");
         }
     }
 
@@ -63,7 +63,7 @@ public class FlightUI {
             System.out.println("Sorry, we hate Chicago! Please enter another destination.");
             departureDest = scanner.nextLine();
         }
-        
+
     }
 
     public void ChicagoArr(String departureDest) {
@@ -72,7 +72,7 @@ public class FlightUI {
             System.out.println("Sorry, we hate Chicago! Please enter another destination.");
             departureDest = scanner.nextLine();
         }
-        
+
     }
 
     public int friendCheck() {
