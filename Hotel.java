@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Random;
 
 public class Hotel {
     private UUID id;
@@ -10,12 +11,12 @@ public class Hotel {
     private String checkInDate;
     private String checkOutDate;
     private String roomNumber;
+    private int rating;
     private int guests;
     private String bedType;
-    
 
-
-    public Hotel(String name, Location location, boolean vacancy, String checkInTime, String checkOutTime, String checkInDate, String checkOutDate){
+    public Hotel(String name, Location location, boolean vacancy, String checkInTime, String checkOutTime,
+            String checkInDate, String checkOutDate) {
         this.id = UUID.randomUUID();
         this.name = name;
         this.location = location;
@@ -25,9 +26,10 @@ public class Hotel {
         this.checkOutDate = checkOutDate;
         this.checkOutTime = checkOutTime;
         this.roomNumber = roomNumber;
+        this.rating = rating;
     }
 
-    public Hotel(UUID id, String name, Location location, boolean vacancy){
+    public Hotel(UUID id, String name, Location location, boolean vacancy) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -39,77 +41,82 @@ public class Hotel {
         this.roomNumber = roomNumber;
     }
 
-    public Hotel(Location desiredCity, int numGuests, String bedType){
+    public Hotel(Location desiredCity, int numGuests, String bedType) {
         this.location = desiredCity;
         this.guests = numGuests;
         this.bedType = bedType;
     }
 
-    public UUID getID()
-    {
+    public UUID getID() {
         return id;
     }
 
-    public void setID (UUID id) 
-    {
+    public void setID(UUID id) {
         this.id = id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName (String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Location getLocation()
-    {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation (Location location)
-    {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
-    public boolean getVacancy()
-    {
+    public boolean getVacancy() {
         return vacancy;
     }
 
-    public void setVacancy (boolean vacancy)
-    {
+    public void setVacancy(boolean vacancy) {
         this.vacancy = vacancy;
     }
 
-    public String getCheckInTime(){
+    public void setRating(int rating) {
+        // only outputs 0- come back to this
+        Random r = new Random();
+        int upper = 4;
+        rating = r.nextInt(upper + 1);
+        this.rating = rating;
+    }
+
+    public int getRating() {
+        return this.rating;
+    }
+
+    public String getCheckInTime() {
         return this.checkInTime;
     }
-    
-    public String getCheckInDate(){
+
+    public String getCheckInDate() {
         return this.checkInDate;
     }
 
-    public String getCheckOutTime(){
+    public String getCheckOutTime() {
         return this.checkOutTime;
     }
 
-    public String getCheckOutDate(){
+    public String getCheckOutDate() {
         return this.checkOutDate;
     }
 
-    public String getRoomNumber(){
+    public String getRoomNumber() {
         return this.roomNumber;
     }
 
-    public UUID getHotelID(){
+    public UUID getHotelID() {
         return this.id;
     }
 
-    public void printRoomOption(Location location, int num, String bedType){
-        System.out.println("Room: \n A "+bedType+" style room for "+num+" located at "+location);
+    public void printRoomOption(Location location, int num, String bedType) {
+        System.out.println(
+                "Room: \n A " + bedType + " style room for " + num + " located at " + location + ". Rating: " + rating);
     }
 }

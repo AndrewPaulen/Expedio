@@ -4,8 +4,8 @@ import java.util.Scanner;
  * @author Sophia Riley
  */
 public class UserUI {
-    private RegisteredUser registeredUser;
-    private Guest guestUser;
+    // private RegisteredUser registeredUser;
+    // private Guest guestUser;
     private String username;
     private String phoneNum;
     private String firstname;
@@ -14,6 +14,7 @@ public class UserUI {
     private MainMenuLoginUI main;
 
     public void CreateAccount() {
+        System.out.println("\n*** Create Account ***");
         main = new MainMenuLoginUI();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your first name: ");

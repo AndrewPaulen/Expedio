@@ -33,19 +33,17 @@ public class FlightUI {
     public void availableFlights(Location aDeparting, Location aDestination) {
         System.out.println("Fetching available flights...\n" +
                 "\n*** Available flights ***\n");
-        
-        
-        for(int i = 0; i < 4; i++){
+
+        for (int i = 0; i < 4; i++) {
             airlinesLoader loader = new airlinesLoader();
             Random rand = new Random();
             int randomNumber = rand.nextInt(1080 - 1 + 1) + 1;
             System.out.println(aDeparting.toString() + " to " + aDestination.toString());
             hasConnecting(randomNumber);
-            System.out.println("Flight Duration: "+randomNumber+" minutes.");
-            System.out.println("Airline: "+loader.getAirline()+"\n\n");
+            System.out.println("Flight Duration: " + randomNumber + " minutes.");
+            System.out.println("Airline: " + loader.getAirline() + "\n\n");
         }
-        
-        
+
     }
 
     public void ChicagoDest(String departureDest) {
@@ -64,53 +62,54 @@ public class FlightUI {
         }
     }
 
-    public void friendCheck(){
+    public void friendCheck() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many tickets would you like to purchase?");
         int input = scanner.nextInt();
-        
-        if(input != 1){
+
+        if (input != 1) {
             String[] friends = new String[input];
-            for(int i = 0; i < input; i++){
+            for (int i = 0; i < input; i++) {
                 String friend;
-                System.out.println("Please enter the first and last name of passenger "+(i+1));
-                if(i == 0){
+                System.out.println("Please enter the first and last name of passenger " + (i + 1));
+                if (i == 0) {
                     scanner.nextLine();
                     friend = scanner.nextLine();
                     friends[i] = friend;
-                    continue;  
+                    continue;
                 } else {
                     friend = scanner.nextLine();
-                
+
                     friends[i] = friend;
                 }
-                
+
             }
-            System.out.println(input+" tickets for "+"\n");
-            for(String name: friends){
+            System.out.println(input + " tickets for " + "\n");
+            for (String name : friends) {
                 System.out.println(name);
             }
             System.out.println();
-        } else if(input == 0){
+        } else if (input == 0) {
             System.out.println("Please enter a number other than zero");
         }
         scanner.close();
     }
 
-    public void hasConnecting(int num){
+    public void hasConnecting(int num) {
         Random rand = new Random();
         LocationsLoader loader = new LocationsLoader();
-        int randumNumber = rand.nextInt(2 - 1 + 1)+1;
-        if(num > 540){
-            System.out.print("with "+randumNumber+" connecting flight(s) from "+loader.locationByIndex(num)+"\n");
+        int randumNumber = rand.nextInt(2 - 1 + 1) + 1;
+        if (num > 540) {
+            System.out
+                    .print("with " + randumNumber + " connecting flight(s) from " + loader.locationByIndex(num) + "\n");
         }
     }
 
-    public void getPlaneView(){
-    String[][] rightSide = new String[10][10];
-    String[][] leftSide = new String[10][10];
-        for(int i = 0; i<10 ; i++){
-            System.out.println(rightSide[i+1][i+1]);
+    public void getPlaneView() {
+        String[][] rightSide = new String[10][10];
+        String[][] leftSide = new String[10][10];
+        for (int i = 0; i < 10; i++) {
+            System.out.println(rightSide[i + 1][i + 1]);
         }
     }
 }
