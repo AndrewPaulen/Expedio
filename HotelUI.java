@@ -216,7 +216,7 @@ public class HotelUI {
     public void availableHotels(Location desiredCity, int guests, String bedType,
     String startDate, String endDate, boolean pool, boolean gym, boolean rs) {
         System.out.println("\nFetching available hotel rooms...\n" +
-                "Available hotels: \n");
+                "\n*** Available Hotels: ***");
         Hotel hotel = new Hotel(desiredCity, guests, bedType, startDate, endDate, pool, gym, rs);
         hotel.printRoomOption(desiredCity, guests, bedType);
     }
