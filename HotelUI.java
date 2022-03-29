@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * @author Sophia Riley
+ * @author Shash Comandur
  */
 public class HotelUI {
 
@@ -26,9 +27,11 @@ public class HotelUI {
         city = scanner.nextLine();
         Location desiredCity = LocationsLoader.getLocation(city);
         // check if location exists
+
         System.out.println("How many guests are staying in the room? Enter a value between 1-4: ");
         guests = scanner.nextInt();
         validGuests();
+
         System.out.println("What type of room would you like? Options include:\n" +
                 "1. King-couch\n" +
                 "2. King\n" +
@@ -40,17 +43,20 @@ public class HotelUI {
                 "Please enter a number to make a selection: ");
         bedType = scanner.next();
         validBedType(bedType);
-        // no line found error- come back later ********************************
-        System.out.println("Amentities:\n" +
+
+        System.out.println("Amenities:\n" +
                 "Would you like your hotel to have a pool? (y/n): ");
-        pool = scanner.nextLine();
-        poolSelection();
+        pool = scanner.next();
+        poolSelection(pool);
+
         System.out.println("Would you like your hotel to have a gym? (y/n): ");
         gym = scanner.nextLine();
-        gymSelection();
+        gymSelection(gym);
+
         System.out.println("Would you like your hotel to have room service? (y/n): ");
         rs = scanner.nextLine();
-        rsSelection();
+        rsSelection(rs);
+
         availableHotels(desiredCity, guests, bedType);
     }
 
@@ -70,6 +76,7 @@ public class HotelUI {
             case "1":
                 System.out.println("Your room will include one king bed and one couch.");
                 break;
+                // set bed type --------------------------------------- enum for bed types dne yet?
             case "2":
                 System.out.println("Your room will include one king bed.");
                 break;
@@ -88,28 +95,59 @@ public class HotelUI {
             case "7":
                 System.out.println("Your room will include one twin bed.");
                 break;
+            default:
+                System.out.println("Sorry! Invalid input. Please choose a number between 1-7:");
+                bedType = scanner.next();
+                validBedType(bedType);
+                break;
         }
-        System.out.println("Sorry! Invalid input. Please chose a number between 1-7: ");
-        bedType = scanner.next();
-        validBedType(bedType);
-        scanner.close();
     }
 
-    public void poolSelection() {
-        if (pool.equalsIgnoreCase("y")) {
+    public void poolSelection(String pool) {
+        Scanner scanner = new Scanner(System.in);
+        pool.toLowerCase();
+        if (pool.equals("y")) {
             hotel.setPool(true);
         }
-    }
-
-    public void gymSelection() {
-        if (gym.equalsIgnoreCase("y")) {
-            hotel.setGym(true);
+        else if (pool.equals("n")) {
+            hotel.setPool(false);
+        }
+        else {
+            System.out.println("Sorry! Invalid input. Please choose again (y/n):");
+            pool = scanner.next();
+            poolSelection(pool);
         }
     }
 
-    public void rsSelection() {
-        if (rs.equalsIgnoreCase("y")) {
+    public void gymSelection(String gym) {
+        Scanner scanner = new Scanner(System.in);
+        gym.toLowerCase();
+        if (gym.equals("y")) {
+            hotel.setGym(true);
+        }
+        else if (pool.equals("n")) {
+            hotel.setGym(false);
+        }
+        else {
+            System.out.println("Sorry! Invalid input. Please choose again (y/n):");
+            gym = scanner.next();
+            gymSelection(gym);
+        }
+    }
+
+    public void rsSelection(String rs) {
+        Scanner scanner = new Scanner(System.in);
+        rs.toLowerCase();
+        if (rs.equals("y")) {
             hotel.setRS(true);
+        }
+        else if (pool.equals("n")) {
+            hotel.setRS(false);
+        }
+        else {
+            System.out.println("Sorry! Invalid input. Please choose again (y/n):");
+            rs = scanner.next();
+            rsSelection(rs);
         }
     }
 
