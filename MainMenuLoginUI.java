@@ -47,7 +47,7 @@ public class MainMenuLoginUI {
         // else
         // System.out.println("It looks like you didn't type anything in, try again!");
         // }
-        registeredUser = new RegisteredUser(firstName, lastName);
+        // registeredUser = new RegisteredUser(firstName, lastName);
         loginSelection();
         scanner.close();
     }
