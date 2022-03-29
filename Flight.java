@@ -60,7 +60,7 @@ public class Flight {
         this.arrivalDate = arrivalDate;
         this.arrivalTime = arrivalTime;
     }
-    public Flight(String flightID, String airline, String available, Location departureLocation, String departureDate, String departureTime, Location arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration) {
+    public Flight(String flightID, String airline, String available, Location departureLocation, String departureDate, String departureTime, Location arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration, String [] seatNumber) {
         this.flightID = flightID;
         this.airline = airline;
         this.available = available;
@@ -70,6 +70,7 @@ public class Flight {
         this.arrLocation = arrivalLocation;
         this.arrivalDate = arrivalDate;
         this.arrivalTime = arrivalTime;
+        this.seatNumber = seatNumber;
     }
 
     /**
