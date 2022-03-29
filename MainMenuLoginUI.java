@@ -24,28 +24,29 @@ public class MainMenuLoginUI {
         Scanner scanner = new Scanner(System.in);
         System.out.println("*** Welcome to Expedio! ***");
 
-        boolean exit = false;
-        while (!exit) {
-            System.out.print("Enter your first name: ");
-            firstName = scanner.nextLine();
+        // not really using this code- uncomment later if needed
+        // boolean exit = false;
+        // while (!exit) {
+        // System.out.print("Enter your first name: ");
+        // firstName = scanner.nextLine();
 
-            if (firstName.length() > 0)
-                exit = true;
+        // if (firstName.length() > 0)
+        // exit = true;
 
-            else
-                System.out.println("It looks like you didn't type anything in, try again!");
-        }
-        exit = false;
-        while (!exit) {
-            System.out.print("Enter your last name: ");
-            lastName = scanner.nextLine();
+        // else
+        // System.out.println("It looks like you didn't type anything in, try again!");
+        // }
+        // exit = false;
+        // while (!exit) {
+        // System.out.print("Enter your last name: ");
+        // lastName = scanner.nextLine();
 
-            if (lastName.length() > 0)
-                exit = true;
+        // if (lastName.length() > 0)
+        // exit = true;
 
-            else
-                System.out.println("It looks like you didn't type anything in, try again!");
-        }
+        // else
+        // System.out.println("It looks like you didn't type anything in, try again!");
+        // }
         registeredUser = new RegisteredUser(firstName, lastName);
         loginSelection();
         scanner.close();
