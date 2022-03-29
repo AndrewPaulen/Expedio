@@ -3,7 +3,8 @@ import java.util.Scanner;
 /**
  * The UI for booking a hotel
  * 
- * @authors Sophia Riley, Shash Comandur
+ * @author Sophia Riley
+ * @author Shash Comandur
  */
 public class HotelUI {
 
