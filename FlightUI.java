@@ -75,14 +75,8 @@ public class FlightUI {
             System.out.println("Flight Duration: " + randomNumber + " minutes.");
             String airline = loader.getAirline();
             System.out.println("Airline: " + airline);
-<<<<<<< HEAD
-            System.out.println("Date: "+date+"\n");
-            String id = UUID.randomUUID().toString();
-            availableFlights.add(new Flight(id, airline, "true", aDeparting, " ", " ", aDestination, " ", " ", true, 0, " "));
-=======
             System.out.println("Date: " + date + "\n");
             availableFlights.add(new Flight(aDeparting, aDestination, date, airline, randomNumber, null));
->>>>>>> ba62333ac6c8e74b510ec7b710242c6250320653
         }
         return availableFlights;
     }
@@ -212,6 +206,6 @@ public class FlightUI {
         String transferDuration = "60 minutes";
 
         flightBookingsSingleton.getInstance().addBooking(flightID, airline, available, departure, date, departureTime,
-                arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration);
+                arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration, seatNumbers);
     }
 }
