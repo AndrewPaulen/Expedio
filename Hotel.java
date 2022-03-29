@@ -68,6 +68,7 @@ public class Hotel {
         this.roomNumber = roomNumber;
     }
 
+<<<<<<< HEAD
     /**
      * 
      * 
@@ -75,6 +76,20 @@ public class Hotel {
      * @param numGuests   The number of guests staying in the hotel room
      * @param bedType     What type of bed(s) the hotel room has
      */
+=======
+    public Hotel(Location desiredCity, int guests, String bedType, String startDate,
+    String endDate, boolean pool, boolean gym, boolean rs) {
+        this.location = desiredCity;
+        this.guests = guests;
+        this.bedType = bedType;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.pool = pool;
+        this.gym = gym;
+        this.rs = rs;
+    }
+
+>>>>>>> 6fd23744160aa43237530ce1211ec9bcf747681f
     public Hotel(Location desiredCity, int numGuests, String bedType) {
         this.location = desiredCity;
         this.guests = numGuests;
@@ -185,6 +200,6 @@ public class Hotel {
     public void printRoomOption(Location location, int num, String bedType) {
         System.out.println("\nRoom: \n A " + bedType + " style room for " + num + " located at " + location
                 + ". \nRating: " + rating +
-                "\nAmenities: \nPool: " + pool + " \nGym: " + gym + " \nRoom service: " + rs);
+                "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " + rs);
     }
 }
