@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 /**
  * The preferences of the user for flights
+ * 
  * @author Andrew Paulen
  */
-public class FlightPreference 
-{
+public class FlightPreference {
     public Rating minRating;
     public boolean none;
     public FlightClass classType;
@@ -14,97 +14,89 @@ public class FlightPreference
     public String departureLocation;
     public String airline;
     public boolean petFriendly;
-    public ArrayList <FlightPreference> preferences;
+    public ArrayList<FlightPreference> preferences;
 
-    // Call the set methods from UI to be added to the ArrayList of preferences, do not think we need any other methods in here
-
-    public Rating getMinRating()
-    {
+    // Call the set methods from UI to be added to the ArrayList of preferences, do
+    // not think we need any other methods in here
+    /**
+     * Gets the minimum rating
+     * 
+     * @return minRating The minimum rating the user wants a flight to have
+     */
+    public Rating getMinRating() {
         return minRating;
     }
 
-    public void setMinRating (Rating minRating)
-    {
+    /**
+     * Sets the minimum rating
+     * 
+     * @return minRating The minimum rating the user wants a flight to have
+     */
+    public void setMinRating(Rating minRating) {
         this.minRating = minRating;
     }
 
-    public boolean getNone()
-    {
+    public boolean getNone() {
         return none;
     }
 
-    public void setNone (boolean none)
-    {
+    public void setNone(boolean none) {
         this.none = none;
     }
 
-    public FlightClass getClassType()
-    {
+    public FlightClass getClassType() {
         return classType;
     }
 
-    public void setClassType (FlightClass classType)
-    {
+    public void setClassType(FlightClass classType) {
         this.classType = classType;
     }
 
-    public Orientation getSeatOrientation()
-    {
+    public Orientation getSeatOrientation() {
         return seatOrientation;
     }
 
-    public void setSeatOrientation (Orientation orientation)
-    {
+    public void setSeatOrientation(Orientation orientation) {
         this.seatOrientation = seatOrientation;
     }
 
-    public String getDepartureTime()
-    {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime (String departureTime)
-    {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
 
-    public String getDepartureLocation()
-    {
+    public String getDepartureLocation() {
         return departureLocation;
     }
 
-    public void setDepartureLocation (String departureLocation)
-    {
+    public void setDepartureLocation(String departureLocation) {
         this.departureLocation = departureLocation;
     }
 
-    public String getAirline()
-    {
+    public String getAirline() {
         return airline;
     }
 
-    public void setAirline (String airline)
-    {
+    public void setAirline(String airline) {
         this.airline = airline;
     }
 
-    public boolean getPetFriendly()
-    {
+    public boolean getPetFriendly() {
         return petFriendly;
     }
 
-    public void setPetFriendly (boolean petFriendly)
-    {
+    public void setPetFriendly(boolean petFriendly) {
         this.petFriendly = petFriendly;
     }
 
-    public ArrayList <FlightPreference> getPreferences()
-    {
+    public ArrayList<FlightPreference> getPreferences() {
         return preferences;
     }
 
-    public void setPreferences (ArrayList <FlightPreference> preferences)
-    {
+    public void setPreferences(ArrayList<FlightPreference> preferences) {
         this.preferences = preferences;
     }
 }
