@@ -145,8 +145,7 @@ public class Hotel {
     }
 
     public void printRoomOption(Location location, int num, String bedType) {
-        System.out.println(
-                "Room: \n A " + bedType + " style room for " + num + " located at " + location + ". Rating: " + rating +
-                        "\nAmentities: Pool: " + pool + " Gym: " + gym + " Room service: " + rs);
+        System.out.println("\nRoom: \n A " + bedType + " style room for " + num + " located at " + location + ". \nRating: " + rating +
+                        "\nAmentities: \nPool: " + pool + " \nGym: " + gym + " \nRoom service: " + rs);
     }
 }

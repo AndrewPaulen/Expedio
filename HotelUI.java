@@ -25,13 +25,16 @@ public class HotelUI {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What city would you like to stay in?: ");
         city = scanner.nextLine();
-        Location desiredCity = LocationsLoader.getLocation(city);
-        // check if location exists
 
+        // check if location exists
+        Location desiredCity = LocationsLoader.getLocation(city);
+        
+        // check num of guests
         System.out.println("How many guests are staying in the room? Enter a value between 1-4: ");
         guests = scanner.nextInt();
         validGuests();
 
+        // check room type
         System.out.println("What type of room would you like? Options include:\n" +
                 "1. King-couch\n" +
                 "2. King\n" +
@@ -44,17 +47,20 @@ public class HotelUI {
         bedType = scanner.next();
         validBedType(bedType);
 
-        System.out.println("Amenities:\n" +
+        // check pool pref
+        System.out.println("\nAmenities:\n" +
                 "Would you like your hotel to have a pool? (y/n): ");
         pool = scanner.next();
         poolSelection(pool);
 
+        // check gym pref
         System.out.println("Would you like your hotel to have a gym? (y/n): ");
-        gym = scanner.nextLine();
+        gym = scanner.next();
         gymSelection(gym);
 
+        // check room service pref
         System.out.println("Would you like your hotel to have room service? (y/n): ");
-        rs = scanner.nextLine();
+        rs = scanner.next();
         rsSelection(rs);
 
         availableHotels(desiredCity, guests, bedType);
@@ -76,7 +82,8 @@ public class HotelUI {
             case "1":
                 System.out.println("Your room will include one king bed and one couch.");
                 break;
-                // set bed type --------------------------------------- enum for bed types dne yet?
+                // set bed type --------------------------------------- enum for bed types does not exist yet?
+                // also setting types does not work yet bc hotel has not been initialized
             case "2":
                 System.out.println("Your room will include one king bed.");
                 break;
@@ -107,10 +114,12 @@ public class HotelUI {
         Scanner scanner = new Scanner(System.in);
         pool.toLowerCase();
         if (pool.equals("y")) {
-            hotel.setPool(true);
+            // hotel.setPool(true);
+            System.out.println("Your hotel will have a pool.");
         }
         else if (pool.equals("n")) {
-            hotel.setPool(false);
+            // hotel.setPool(false);
+            System.out.println("Your hotel will not have a pool.");
         }
         else {
             System.out.println("Sorry! Invalid input. Please choose again (y/n):");
@@ -123,10 +132,12 @@ public class HotelUI {
         Scanner scanner = new Scanner(System.in);
         gym.toLowerCase();
         if (gym.equals("y")) {
-            hotel.setGym(true);
+            // hotel.setGym(true);
+            System.out.println("Your hotel will have a gym.");
         }
-        else if (pool.equals("n")) {
-            hotel.setGym(false);
+        else if (gym.equals("n")) {
+            // hotel.setGym(false);
+            System.out.println("Your hotel will not have a gym.");
         }
         else {
             System.out.println("Sorry! Invalid input. Please choose again (y/n):");
@@ -139,10 +150,12 @@ public class HotelUI {
         Scanner scanner = new Scanner(System.in);
         rs.toLowerCase();
         if (rs.equals("y")) {
-            hotel.setRS(true);
+            // hotel.setRS(true);
+            System.out.println("Your hotel will have room service.");
         }
-        else if (pool.equals("n")) {
-            hotel.setRS(false);
+        else if (rs.equals("n")) {
+            // hotel.setRS(false);
+            System.out.println("Your hotel will not have room service.");
         }
         else {
             System.out.println("Sorry! Invalid input. Please choose again (y/n):");
@@ -156,6 +169,5 @@ public class HotelUI {
                 "Available hotels: \n");
         Hotel hotel = new Hotel(desiredCity, guests, bedType);
         hotel.printRoomOption(desiredCity, guests, bedType);
-
     }
 }
