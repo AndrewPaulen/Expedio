@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.UUID;
 
 /**
  * @author Sophia Riley
@@ -30,10 +31,11 @@ public class FlightUI {
         String date = input.nextLine();
         int numFriends = friendCheck();
         ArrayList<Flight> availableFlights = availableFlights(departing, destination, date);
-        chooseFlight(availableFlights);
+        Flight chosenFlight = chooseFlight(availableFlights);
         Plane plane = new Plane();
-        String [] seatNumbers = plane.seating(numFriends);
-        finalize(seatNumbers);
+        String[] seatNumbers = plane.seating(numFriends);
+        finalize(seatNumbers, chosenFlight);
+       
         System.out.println("Sucessfully booked tickets! Returning to Main Menu...");
         MainMenuLoginUI ui = new MainMenuLoginUI();
         input.close();
@@ -122,15 +124,45 @@ public class FlightUI {
         }
     }
 
-    public void chooseFlight(ArrayList<Flight> availableFlights){
+    public Flight chooseFlight(ArrayList<Flight> availableFlights){
         System.out.println("Please select your perferred flight (Enter a number): \n");
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
-        String selectedFlight = availableFlights.get(input).toString();
-        System.out.println("You've chosen: "+selectedFlight);
+        Flight selectedFlight = availableFlights.get(input-1);
+        System.out.println("You've chosen: "+selectedFlight.toString());
+
+        return selectedFlight;
     }   
 
-    public void finalize(String [] seatNumbers){
-        System.out.println("");
+    public void finalize(String[] seatNumbers, Flight selectedFlight){
+        flightBookingsWriter writer = new flightBookingsWriter();
+        flightBookingsLoader loader = new flightBookingsLoader();
+
+        System.out.println("\n***VERIFICATION***\n");
+        System.out.println("Flight Summary: \n"+selectedFlight+" Your seats are: ");
+        for (String seat : seatNumbers) {
+            System.out.println(seat);
+        }
+        String airline = selectedFlight.getAirline();
+        String date = selectedFlight.getDepartureDate();
+        int duration = selectedFlight.getDuration();
+        String departure = selectedFlight.getDepartureLocation().toString();
+        String arrival = selectedFlight.getArrivalLocation().toString();
+        UUID ID;
+        String flightID = UUID.randomUUID().toString();
+        String available = "true";
+        Calendar time;
+        String departureTime = "9:00";
+        String arrivalTime = "21:00";
+        boolean hasTransfer = true;
+        int numTransfers = selectedFlight.numTransfers;
+        String transferDuration = "60 minutes";
+        
+
+        ArrayList<Flight> bookings = loader.getFlightBookings();
+        bookings.add(new Flight(flightID, airline, available, departure, date, departureTime, arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration));
+        writer.saveFlightBookings();
+        
     }
+
 }

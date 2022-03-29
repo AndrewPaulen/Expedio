@@ -41,11 +41,10 @@ public class FlightLoader extends FlightCosntants{
                     String arrivalDate = (String)flightJSON.get(ARRIVAL_DATE);
                     String departureDate = (String)flightJSON.get(DEPARTURE_DATE);
                     boolean hasTransfer = (boolean)flightJSON.get(HAS_TRANSFER);
-                    int numTransfers = (int)flightJSON.get(NUM_TRANSFERS);
                     String transferDuration = (String)flightJSON.get(TRANSFER_DURATION);
 
 
-                   flights.add(new Flight(flightID, airline, availability, departingLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, hasTransfer, numTransfers, transferDuration));
+                   flights.add(new Flight(flightID, airline, availability, departingLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, hasTransfer, 1, transferDuration));
                    
                 }
                 return flights;

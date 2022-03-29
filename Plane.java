@@ -76,7 +76,7 @@ public class Plane
             } else {
                 if(seats[row][col] != 'X'){
                     seats[row][col] = 'X';
-                    seatNumber = seatNums[count];
+                    seatNums[count] = seatNumber;
                     count++;
                     filled++;
                     System.out.println(" ");

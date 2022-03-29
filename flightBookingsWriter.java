@@ -57,6 +57,8 @@ public class flightBookingsWriter extends flightBookingsConstants{
         flightBookingsDetails.put(AIRLINE, flight.getAirline().toString());
         flightBookingsDetails.put(AVAIL, flight.getAvailable().toString());
         flightBookingsDetails.put(FLIGHT_ID, flight.getFlightID().toString());
+        flightBookingsDetails.put(DURATION, flight.getDuration());
+
         
   
 

@@ -130,9 +130,9 @@ public class Flight
         this.available = available;
     }
 
-    public String getDepartureLocation()
+    public Location getDepartureLocation()
     {
-        return departureLocation;
+        return depLocation;
     }
 
     public void setDepartureLocation (String departureLocation)
@@ -160,9 +160,9 @@ public class Flight
         this.departureTime = departureTime;
     }
 
-    public String getArrivalLocation()
+    public Location getArrivalLocation()
     {
-        return arrivalLocation;
+        return arrLocation;
     }
 
     public void setArrivalLocation (String arrivalLocation)
