@@ -17,6 +17,9 @@ public class MainMenuLoginUI {
     private Hotel hotel;
     private String username;
 
+    /**
+     * Prompts the user to enter their first and last names
+     */
     public void LoginUI() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("*** Welcome to Expedio! ***");
@@ -48,6 +51,10 @@ public class MainMenuLoginUI {
         scanner.close();
     }
 
+    /**
+     * Prompts the user to either login, create an account, continue as a guest, or
+     * exit the program
+     */
     public void loginSelection() {
         boolean exit = false;
         userUI = new UserUI();
@@ -91,6 +98,9 @@ public class MainMenuLoginUI {
         }
     }
 
+    /**
+     * Prints the main menu and prompts the user to make a selection
+     */
     public void MainMenuUI() {
         System.out.println("\n*** Main Menu ***");
         System.out.print("1. Book flight\n" +
@@ -103,6 +113,9 @@ public class MainMenuLoginUI {
         mmSelection();
     }
 
+    /**
+     * Determines if the user's main menu selection is valid
+     */
     public String mmSelection() {
         flightUI = new FlightUI();
         hotelUI = new HotelUI();

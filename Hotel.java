@@ -23,6 +23,18 @@ public class Hotel {
     private int guests;
     private String bedType;
 
+    /**
+     * An instance of a hotel
+     * 
+     * @param name         The name of the hotel
+     * @param location     The location of the hotel
+     * @param vacancy      If the hotel has vacancy or not
+     * @param checkInTime  The check in time
+     * @param checkOutTime The check out time
+     * @param checkInDate  The check in date
+     * @param checkOutDate The check out date
+     * @param roomNumber   The room number
+     */
     public Hotel(String name, Location location, boolean vacancy, String checkInTime, String checkOutTime,
             String checkInDate, String checkOutDate, String roomNumber) {
         this.id = UUID.randomUUID();
@@ -36,6 +48,14 @@ public class Hotel {
         this.roomNumber = roomNumber;
     }
 
+    /**
+     * 
+     * 
+     * @param id       The hotels's ID
+     * @param name     The name of the hotel
+     * @param location The location of the hotel
+     * @param vacancy  If the hotel has vacancy or not
+     */
     public Hotel(UUID id, String name, Location location, boolean vacancy) {
         this.id = id;
         this.name = name;
@@ -48,6 +68,13 @@ public class Hotel {
         this.roomNumber = roomNumber;
     }
 
+    /**
+     * 
+     * 
+     * @param desiredCity Where the user wants to book a hotel
+     * @param numGuests   The number of guests staying in the hotel room
+     * @param bedType     What type of bed(s) the hotel room has
+     */
     public Hotel(Location desiredCity, int numGuests, String bedType) {
         this.location = desiredCity;
         this.guests = numGuests;
