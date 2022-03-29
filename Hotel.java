@@ -29,7 +29,6 @@ public class Hotel {
         this.checkOutDate = checkOutDate;
         this.checkOutTime = checkOutTime;
         this.roomNumber = roomNumber;
-   
     }
 
     public Hotel(UUID id, String name, Location location, boolean vacancy) {
@@ -99,26 +98,30 @@ public class Hotel {
         this.pool = pool;
     }
 
-    public Boolean getPool() {
-        return this.pool;
-    }
-
     public void setGym(boolean gym) {
         this.gym = gym;
     }
 
-    public Boolean getGym() {
-        return this.gym;
-    }
 
     public void setRS(boolean rs) {
         this.rs = rs;
     }
 
-    public Boolean getRS() {
+    public void setBedType(String bedType) {
+        this.bedType = bedType;
+    }
+
+    public boolean getGym() {
+        return this.gym;
+    }
+
+    public boolean getRS() {
         return this.rs;
     }
-    // -----------------------------------------
+
+    public boolean getPool() {
+        return this.pool;
+    }
 
     public String getCheckInTime() {
         return this.checkInTime;
@@ -144,8 +147,12 @@ public class Hotel {
         return this.id;
     }
 
+    public String getBedType() {
+        return this.bedType;
+    }
+
     public void printRoomOption(Location location, int num, String bedType) {
         System.out.println("\nRoom: \n A " + bedType + " style room for " + num + " located at " + location + ". \nRating: " + rating +
-                        "\nAmentities: \nPool: " + pool + " \nGym: " + gym + " \nRoom service: " + rs);
+                        "\nAmenities: \nPool: " + pool + " \nGym: " + gym + " \nRoom service: " + rs);
     }
 }

@@ -63,6 +63,7 @@ public class HotelUI {
         rs = scanner.next();
         rsSelection(rs);
 
+        
         availableHotels(desiredCity, guests, bedType);
     }
 
@@ -81,26 +82,31 @@ public class HotelUI {
         switch (bedType) {
             case "1":
                 System.out.println("Your room will include one king bed and one couch.");
+                // hotel.setBedType("1k, 1c, 0q, 0d, 0t");
                 break;
-                // set bed type --------------------------------------- enum for bed types does not exist yet?
-                // also setting types does not work yet bc hotel has not been initialized
             case "2":
                 System.out.println("Your room will include one king bed.");
+                // hotel.setBedType("1k, 0c, 0q, 0d, 0t");
                 break;
             case "3":
                 System.out.println("Your room will include two queen beds and one couch.");
+                // hotel.setBedType("0k, 1c, 2q, 0d, 0t");
                 break;
             case "4":
                 System.out.println("Your room will include two queen beds.");
+                // hotel.setBedType("0k, 0c, 2q, 0d, 0t");
                 break;
             case "5":
                 System.out.println("Your room will include two double beds.");
+                // hotel.setBedType("0k, 0c, 0q, 2d, 0t");
                 break;
             case "6":
                 System.out.println("Your room will include one double bed.");
+                // hotel.setBedType("0k, 0c, 0q, 1d, 0t");
                 break;
             case "7":
                 System.out.println("Your room will include one twin bed.");
+                // hotel.setBedType("0k, 0c, 0q, 0d, 1t");
                 break;
             default:
                 System.out.println("Sorry! Invalid input. Please choose a number between 1-7:");
