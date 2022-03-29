@@ -90,7 +90,7 @@ public class MainMenuLoginUI {
                     exit = true;
                     break;
                 case "4":
-                    System.out.println("Thank you for using Expedio! Goodbye 👋😃");
+                    System.out.println("Thank you for using Expedio! Goodbye!");
                     System.exit(0);
                 default:
                     System.out.println("Sorry! Please enter a valid input");

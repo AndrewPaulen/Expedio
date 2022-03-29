@@ -36,6 +36,11 @@ public class FlightPreference {
         this.minRating = minRating;
     }
 
+    /**
+     * 
+     * 
+     * @return
+     */
     public boolean getNone() {
         return none;
     }
