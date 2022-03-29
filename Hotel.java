@@ -48,6 +48,18 @@ public class Hotel {
         this.roomNumber = roomNumber;
     }
 
+    public Hotel(Location desiredCity, int guests, String bedType, String startDate,
+    String endDate, boolean pool, boolean gym, boolean rs) {
+        this.location = desiredCity;
+        this.guests = guests;
+        this.bedType = bedType;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.pool = pool;
+        this.gym = gym;
+        this.rs = rs;
+    }
+
     public Hotel(Location desiredCity, int numGuests, String bedType) {
         this.location = desiredCity;
         this.guests = numGuests;
