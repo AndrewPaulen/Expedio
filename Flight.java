@@ -421,7 +421,7 @@ public class Flight {
         StringBuffer sb = new StringBuffer();
 
         for (String seat : seatNums) {
-            sb.append(seat);
+            sb.append(seat+", ");
         }
         String str = sb.toString();
 

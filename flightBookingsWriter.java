@@ -48,10 +48,10 @@ public class flightBookingsWriter extends flightBookingsConstants{
         JSONObject flightBookingsDetails = new JSONObject();
         flightBookingsDetails.put(DEPARTURE_TIME, flight.getDepartureTime().toString());
         flightBookingsDetails.put(DEPARTURE_DATE, flight.getDepartureDate());
-        flightBookingsDetails.put(DEPARTURE_LOCATION, flight.getDepLocation());
+        flightBookingsDetails.put(DEPARTURE_LOCATION, flight.getDepartureLocation().toString());
         flightBookingsDetails.put(ARRIVAL_TIME, flight.getArrivalTime().toString());
         flightBookingsDetails.put(ARRIVAL_DATE, flight.getArrivalDate());
-        flightBookingsDetails.put(ARRIVAL_LOCATION, flight.getArrLocation());
+        flightBookingsDetails.put(ARRIVAL_LOCATION, flight.getArrivalLocation().toString());
         String[] seats = flight.getSeatNumber();
         flightBookingsDetails.put(SEAT_NUMBER, flight.seatNumtoString(seats));
         flightBookingsDetails.put(AIRLINE, flight.getAirline().toString());

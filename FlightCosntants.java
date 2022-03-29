@@ -17,4 +17,5 @@ public class FlightCosntants {
     protected static final String NUM_TRANSFERS = "numTransfers";
     protected static final String TRANSFER_DURATION = "transferDuration";
     protected static final String HAS_TRANSFER = "hasTransfer";
+    protected static final String SEAT_NUMBER = "seatNumber";
 }
