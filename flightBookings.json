@@ -1,21 +1,4 @@
 [
-    {
-        "departureTime": "",
-        "departureDate": "",
-        "departureLocation": "",
-        "arrivalTime": "",
-        "arrivalDate": "",
-        "arrivalLocation": "",
-        "seatNum": "",
-        "passengerFirstName": "",
-        "passengerLastName": "",
-        "airline": "",
-        "availibility": "",
-        "flightID": "",
-        "numTransfers": "0",
-        "transferDuration": "1h:30m:00s",
-        "hasTransfer": true
-        
-    }
+   
     
 ]

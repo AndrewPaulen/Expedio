@@ -59,7 +59,8 @@ public class FlightUI {
             String airline = loader.getAirline();
             System.out.println("Airline: " + airline);
             System.out.println("Date: "+date+"\n");
-            availableFlights.add(new Flight(aDeparting, aDestination, date, airline, randomNumber, null));
+            String id = UUID.randomUUID().toString();
+            availableFlights.add(new Flight(id, airline, "true", aDeparting, " ", " ", aDestination, " ", " ", true, 0, " "));
         }
         return availableFlights;
     }
@@ -145,8 +146,8 @@ public class FlightUI {
         String airline = selectedFlight.getAirline();
         String date = selectedFlight.getDepartureDate();
         int duration = selectedFlight.getDuration();
-        String departure = selectedFlight.getDepartureLocation().toString();
-        String arrival = selectedFlight.getArrivalLocation().toString();
+        Location departure = selectedFlight.getDepartureLocation();
+        Location arrival = selectedFlight.getArrivalLocation();
         UUID ID;
         String flightID = UUID.randomUUID().toString();
         String available = "true";

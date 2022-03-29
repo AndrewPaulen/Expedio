@@ -43,6 +43,17 @@ public class Flight
         this.arrivalDate = arrivalDate;
         this.arrivalTime = arrivalTime;
     }
+    public Flight(String flightID, String airline, String available, Location departureLocation, String departureDate, String departureTime, Location arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration) {
+        this.flightID = flightID;
+        this.airline = airline;
+        this.available = available;
+        this.depLocation = departureLocation;
+        this.departureDate = departureDate;
+        this.departureTime = departureTime;
+        this.arrLocation = arrivalLocation;
+        this.arrivalDate = arrivalDate;
+        this.arrivalTime = arrivalTime;
+    }
 
     public Flight(Location aDeparting, Location aDestination, String date, String airline, int duration, String[] seatNumber){
         this.depLocation = aDeparting;
@@ -242,5 +253,24 @@ public class Flight
 
     public String[] getSeatNumber(){
         return this.seatNumber;
+    }
+
+    public String getDepLocation(){
+        return departureLocation;
+    }
+
+    public String getArrLocation(){
+        return arrivalLocation;
+    }
+
+    public String seatNumtoString(String [] seatNums){
+        StringBuffer sb = new StringBuffer();
+
+        for (String seat : seatNums) {
+            sb.append(seat);
+        }
+        String str = sb.toString();
+
+        return str;
     }
 }
