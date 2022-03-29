@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 /**
+ * The UI for creating an account
+ * 
  * @author Sophia Riley
  */
 public class UserUI {
-    // private RegisteredUser registeredUser;
-    // private Guest guestUser;
     private String username;
     private String phoneNum;
     private String firstname;
@@ -13,6 +13,9 @@ public class UserUI {
     private String age;
     private MainMenuLoginUI main;
 
+    /**
+     * Prompts the user for information needed to create an account
+     */
     public void CreateAccount() {
         System.out.println("\n*** Create Account ***");
         main = new MainMenuLoginUI();

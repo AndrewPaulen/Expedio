@@ -8,26 +8,35 @@ import java.util.Scanner;
 import java.util.UUID;
 
 /**
+ * The UI for booking a flight
+ * 
  * @author Sophia Riley
  */
 public class FlightUI {
     private String departureDest;
     private String arrivalDest;
 
+    /**
+     * The first string to be printed to the terminal.
+     */
     public void bookFlight() {
         System.out.println("\n*** Book Flight ***");
         depatureArrival();
     }
 
+    /**
+     * Prompts the user to enter a departure airport, an arrival airport, and the
+     * date they want to fly
+     */
     public void depatureArrival() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Please enter your desired departure airport: \n");
+        System.out.println("Please enter your desired departure airport:");
         departureDest = input.nextLine();
         Location departing = LocationsLoader.getLocation(departureDest);
-        System.out.println("Please enter your desired arrival airport: \n");
+        System.out.println("Please enter your desired arrival airport:");
         arrivalDest = input.nextLine();
         Location destination = LocationsLoader.getLocation(arrivalDest);
-        System.out.println("Please enter departure date (e.g., MM/DD/YY): \n");
+        System.out.println("Please enter departure date (e.g., MM/DD/YY):");
         String date = input.nextLine();
         int numFriends = friendCheck();
         ArrayList<Flight> availableFlights = availableFlights(departing, destination, date);
@@ -35,13 +44,21 @@ public class FlightUI {
         Plane plane = new Plane();
         String[] seatNumbers = plane.seating(numFriends);
         finalize(seatNumbers, chosenFlight);
-       
-        System.out.println("Sucessfully booked tickets! Returning to Main Menu...");
+
+        System.out.println("Sucessfully booked tickets! Returning to Main Menu..."); // getting rid of this soon
         MainMenuLoginUI ui = new MainMenuLoginUI();
         input.close();
         ui.MainMenuUI();
     }
 
+    /**
+     * Displays available flights to the user
+     * 
+     * @param aDeparting   The location of the departure airport
+     * @param aDestination The location of the arrival airport
+     * @param date         The date of the flight
+     * @return availableFlights The flights that are available to book
+     */
     public ArrayList<Flight> availableFlights(Location aDeparting, Location aDestination, String date) {
         ArrayList<Flight> availableFlights = new ArrayList<Flight>();
 
@@ -52,19 +69,29 @@ public class FlightUI {
             airlinesLoader loader = new airlinesLoader();
             Random rand = new Random();
             int randomNumber = rand.nextInt(1080 - 1 + 1) + 1;
-            System.out.println("Flight "+(i+1));
+            System.out.println("Flight " + (i + 1));
             System.out.println(aDeparting.toString() + " to " + aDestination.toString());
             hasConnecting(randomNumber);
             System.out.println("Flight Duration: " + randomNumber + " minutes.");
             String airline = loader.getAirline();
             System.out.println("Airline: " + airline);
+<<<<<<< HEAD
             System.out.println("Date: "+date+"\n");
             String id = UUID.randomUUID().toString();
             availableFlights.add(new Flight(id, airline, "true", aDeparting, " ", " ", aDestination, " ", " ", true, 0, " "));
+=======
+            System.out.println("Date: " + date + "\n");
+            availableFlights.add(new Flight(aDeparting, aDestination, date, airline, randomNumber, null));
+>>>>>>> ba62333ac6c8e74b510ec7b710242c6250320653
         }
         return availableFlights;
     }
 
+    /**
+     * We hate Chicago
+     * 
+     * @param departureDest The destination of the departure airport
+     */
     public void ChicagoDest(String departureDest) {
         Scanner scanner = new Scanner(System.in);
         if (departureDest.equalsIgnoreCase("Chicago")) {
@@ -74,7 +101,12 @@ public class FlightUI {
 
     }
 
-    public void ChicagoArr(String departureDest) {
+    /**
+     * We hate Chicago
+     * 
+     * @param arrivalDest The destination of the arrival airport
+     */
+    public void ChicagoArr(String arrivalDest) {
         Scanner scanner = new Scanner(System.in);
         if (arrivalDest.equalsIgnoreCase("Chicago")) {
             System.out.println("Sorry, we hate Chicago! Please enter another destination.");
@@ -82,6 +114,11 @@ public class FlightUI {
         }
     }
 
+    /**
+     * Checks to see if there's more than one person trying to book a flight
+     * 
+     * @return input How many tickets being booked
+     */
     public int friendCheck() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many tickets would you like to purchase?");
@@ -115,6 +152,11 @@ public class FlightUI {
         return input;
     }
 
+    /**
+     * Displays how many connecting flights a flight has
+     * 
+     * @param num The number of connecting flights
+     */
     public void hasConnecting(int num) {
         Random rand = new Random();
         LocationsLoader loader = new LocationsLoader();
@@ -125,21 +167,32 @@ public class FlightUI {
         }
     }
 
-    public Flight chooseFlight(ArrayList<Flight> availableFlights){
+    /**
+     * Promts the user to chose a flight
+     * 
+     * @param availableFlights The flights available to be booked
+     * @return selectedFlight The flight the user is booking
+     */
+    public Flight chooseFlight(ArrayList<Flight> availableFlights) {
         System.out.println("Please select your perferred flight (Enter a number): \n");
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
-        Flight selectedFlight = availableFlights.get(input-1);
-        System.out.println("You've chosen: "+selectedFlight.toString());
+        Flight selectedFlight = availableFlights.get(input - 1);
+        System.out.println("You've chosen: " + selectedFlight.toString());
 
         return selectedFlight;
-    }   
+    }
 
-    public void finalize(String[] seatNumbers, Flight selectedFlight){
-   
+    /**
+     * Verifys the user's booking
+     * 
+     * @param seatNumbers    Stores the individual seat numbers booked by the user
+     * @param selectedFlight The flight the user is booking
+     */
+    public void finalize(String[] seatNumbers, Flight selectedFlight) {
 
         System.out.println("\n***VERIFICATION***\n");
-        System.out.println("Flight Summary: \n"+selectedFlight+" Your seats are: ");
+        System.out.println("Flight Summary: \n" + selectedFlight + " Your seats are: ");
         for (String seat : seatNumbers) {
             System.out.println(seat);
         }
@@ -157,12 +210,8 @@ public class FlightUI {
         boolean hasTransfer = true;
         int numTransfers = selectedFlight.numTransfers;
         String transferDuration = "60 minutes";
-        
 
-        flightBookingsSingleton.getInstance().addBooking(flightID, airline, available, departure, date, departureTime, arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration);
-
-       
-        
+        flightBookingsSingleton.getInstance().addBooking(flightID, airline, available, departure, date, departureTime,
+                arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration);
     }
-
 }

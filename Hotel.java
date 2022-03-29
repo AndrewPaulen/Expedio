@@ -1,6 +1,11 @@
 import java.util.*;
 import java.util.Random;
 
+/**
+ * A hotel
+ * 
+ * @authors Andrew Paulen, Shash Comandur, Sophia Riley, David Wamai
+ */
 public class Hotel {
     private UUID id;
     private String name;
@@ -18,6 +23,18 @@ public class Hotel {
     private int guests;
     private String bedType;
 
+    /**
+     * An instance of a hotel
+     * 
+     * @param name         The name of the hotel
+     * @param location     The location of the hotel
+     * @param vacancy      If the hotel has vacancy or not
+     * @param checkInTime  The check in time
+     * @param checkOutTime The check out time
+     * @param checkInDate  The check in date
+     * @param checkOutDate The check out date
+     * @param roomNumber   The room number
+     */
     public Hotel(String name, Location location, boolean vacancy, String checkInTime, String checkOutTime,
             String checkInDate, String checkOutDate, String roomNumber) {
         this.id = UUID.randomUUID();
@@ -31,6 +48,14 @@ public class Hotel {
         this.roomNumber = roomNumber;
     }
 
+    /**
+     * 
+     * 
+     * @param id       The hotels's ID
+     * @param name     The name of the hotel
+     * @param location The location of the hotel
+     * @param vacancy  If the hotel has vacancy or not
+     */
     public Hotel(UUID id, String name, Location location, boolean vacancy) {
         this.id = id;
         this.name = name;
@@ -41,6 +66,18 @@ public class Hotel {
         this.checkOutDate = checkOutDate;
         this.checkOutTime = checkOutTime;
         this.roomNumber = roomNumber;
+    }
+
+    public Hotel(Location desiredCity, int guests, String bedType, String startDate,
+    String endDate, boolean pool, boolean gym, boolean rs) {
+        this.location = desiredCity;
+        this.guests = guests;
+        this.bedType = bedType;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.pool = pool;
+        this.gym = gym;
+        this.rs = rs;
     }
 
     public Hotel(Location desiredCity, int numGuests, String bedType) {
@@ -102,7 +139,6 @@ public class Hotel {
         this.gym = gym;
     }
 
-
     public void setRS(boolean rs) {
         this.rs = rs;
     }
@@ -152,7 +188,8 @@ public class Hotel {
     }
 
     public void printRoomOption(Location location, int num, String bedType) {
-        System.out.println("\nRoom: \n A " + bedType + " style room for " + num + " located at " + location + ". \nRating: " + rating +
-                        "\nAmenities: \nPool: " + pool + " \nGym: " + gym + " \nRoom service: " + rs);
+        System.out.println("\nRoom: \n A " + bedType + " style room for " + num + " located at " + location
+                + ". \nRating: " + rating +
+                "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " + rs);
     }
 }
