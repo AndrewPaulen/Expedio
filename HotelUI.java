@@ -1,26 +1,31 @@
 import java.util.Scanner;
 
 /**
- * @author Sophia Riley
- * @author Shash Comandur
+ * The UI for booking a hotel
+ * 
+ * @authors Sophia Riley, Shash Comandur
  */
 public class HotelUI {
 
-    private Hotel hotel;
+    // private Hotel hotel;
     private String city;
     private int guests;
     private String bedType;
     private String pool;
     private String gym;
     private String rs;
-    // private int numOfBeds;
 
+    /**
+     * The first string printed to the terminal.
+     */
     public void bookHotel() {
         System.out.println("\n*** Book Hotel Room ***");
         hotels();
     }
 
-    // hotel details include location, rating, prices, amentities, and room type
+    /**
+     * How the user books a hotel.
+     */
     public void hotels() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What city would you like to stay in?: ");
@@ -28,7 +33,7 @@ public class HotelUI {
 
         // check if location exists
         Location desiredCity = LocationsLoader.getLocation(city);
-        
+
         // check num of guests
         System.out.println("How many guests are staying in the room? Enter a value between 1-4: ");
         guests = scanner.nextInt();
@@ -63,10 +68,12 @@ public class HotelUI {
         rs = scanner.next();
         rsSelection(rs);
 
-        
         availableHotels(desiredCity, guests, bedType);
     }
 
+    /**
+     * Checks to see if the number of guests entered by the user is valid
+     */
     public void validGuests() {
         Scanner scanner = new Scanner(System.in);
         if (guests <= 0 || guests >= 5) {
@@ -77,6 +84,9 @@ public class HotelUI {
         }
     }
 
+    /**
+     * Checks to see if the bed type entered by the user is valid
+     */
     public void validBedType(String bedType) {
         Scanner scanner = new Scanner(System.in);
         switch (bedType) {
@@ -116,60 +126,79 @@ public class HotelUI {
         }
     }
 
+    /**
+     * Determines if a hotel has a pool and checks to see if the user's input is
+     * valid.
+     * 
+     * @param pool If a hotel has a pool
+     */
     public void poolSelection(String pool) {
         Scanner scanner = new Scanner(System.in);
         pool.toLowerCase();
         if (pool.equals("y")) {
             // hotel.setPool(true);
             System.out.println("Your hotel will have a pool.");
-        }
-        else if (pool.equals("n")) {
+        } else if (pool.equals("n")) {
             // hotel.setPool(false);
             System.out.println("Your hotel will not have a pool.");
-        }
-        else {
+        } else {
             System.out.println("Sorry! Invalid input. Please choose again (y/n):");
             pool = scanner.next();
             poolSelection(pool);
         }
     }
 
+    /**
+     * Determines if a hotel has a gym and checks to see if the user's input is
+     * valid.
+     * 
+     * @param gym If a hotel has a gym
+     */
     public void gymSelection(String gym) {
         Scanner scanner = new Scanner(System.in);
         gym.toLowerCase();
         if (gym.equals("y")) {
             // hotel.setGym(true);
             System.out.println("Your hotel will have a gym.");
-        }
-        else if (gym.equals("n")) {
+        } else if (gym.equals("n")) {
             // hotel.setGym(false);
             System.out.println("Your hotel will not have a gym.");
-        }
-        else {
+        } else {
             System.out.println("Sorry! Invalid input. Please choose again (y/n):");
             gym = scanner.next();
             gymSelection(gym);
         }
     }
 
+    /**
+     * Determines if a hotel has room service and checks to see if the user's input
+     * is valid.
+     * 
+     * @param rs If a hotel has room service
+     */
     public void rsSelection(String rs) {
         Scanner scanner = new Scanner(System.in);
         rs.toLowerCase();
         if (rs.equals("y")) {
             // hotel.setRS(true);
             System.out.println("Your hotel will have room service.");
-        }
-        else if (rs.equals("n")) {
+        } else if (rs.equals("n")) {
             // hotel.setRS(false);
             System.out.println("Your hotel will not have room service.");
-        }
-        else {
+        } else {
             System.out.println("Sorry! Invalid input. Please choose again (y/n):");
             rs = scanner.next();
             rsSelection(rs);
         }
     }
 
+    /**
+     * Prints the available hotels
+     * 
+     * @param desiredCity The city the user wants to stay in
+     * @param guests      How many guests are staying in the hotel room
+     * @param bedType     The type of bed(s) in the hotel room
+     */
     public void availableHotels(Location desiredCity, int guests, String bedType) {
         System.out.println("\nFetching available hotel rooms...\n" +
                 "Available hotels: \n");

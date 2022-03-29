@@ -1,6 +1,11 @@
 import java.util.*;
 import java.util.Random;
 
+/**
+ * A hotel
+ * 
+ * @authors Andrew Paulen, Shash Comandur, Sophia Riley, David Wamai
+ */
 public class Hotel {
     private UUID id;
     private String name;
@@ -102,7 +107,6 @@ public class Hotel {
         this.gym = gym;
     }
 
-
     public void setRS(boolean rs) {
         this.rs = rs;
     }
@@ -152,7 +156,8 @@ public class Hotel {
     }
 
     public void printRoomOption(Location location, int num, String bedType) {
-        System.out.println("\nRoom: \n A " + bedType + " style room for " + num + " located at " + location + ". \nRating: " + rating +
-                        "\nAmenities: \nPool: " + pool + " \nGym: " + gym + " \nRoom service: " + rs);
+        System.out.println("\nRoom: \n A " + bedType + " style room for " + num + " located at " + location
+                + ". \nRating: " + rating +
+                "\nAmenities: \nPool: " + pool + " \nGym: " + gym + " \nRoom service: " + rs);
     }
 }
