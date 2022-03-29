@@ -30,13 +30,13 @@ public class FlightUI {
      */
     public void depatureArrival() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Please enter your desired departure airport: \n");
+        System.out.println("Please enter your desired departure airport:");
         departureDest = input.nextLine();
         Location departing = LocationsLoader.getLocation(departureDest);
-        System.out.println("Please enter your desired arrival airport: \n");
+        System.out.println("Please enter your desired arrival airport:");
         arrivalDest = input.nextLine();
         Location destination = LocationsLoader.getLocation(arrivalDest);
-        System.out.println("Please enter departure date (e.g., MM/DD/YY): \n");
+        System.out.println("Please enter departure date (e.g., MM/DD/YY):");
         String date = input.nextLine();
         int numFriends = friendCheck();
         ArrayList<Flight> availableFlights = availableFlights(departing, destination, date);
@@ -207,7 +207,5 @@ public class FlightUI {
 
         flightBookingsSingleton.getInstance().addBooking(flightID, airline, available, departure, date, departureTime,
                 arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration);
-
     }
-
 }
