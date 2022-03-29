@@ -73,18 +73,29 @@ public class flightBookingsSingleton {
      * @param arrivalTime the time at which the flight arrives. 
      * @return a true boolean expression of the flight was successfully added to the list. 
      */
-    public boolean addFlightBooking(String flightID, String airline, String availability, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime, int numTransfers, String transferDuration, boolean hasTransfer){
-        if(hasFlightBookings(flightID)){
-            return false;
-        }
-
-        flightBookingsList.add(new Flight(flightID, airline, availability, departureLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, hasTransfer, numTransfers, transferDuration));
-        return true;
-    }
+   
     /**
      * will save the list of flight bookings 
      */
-    public void saveFlightBookings(){
-        flightBookingsWriter.saveFlightBookings();
+    public void saveFlightBookings(ArrayList<Flight> bookings){
+        flightBookingsWriter.saveFlightBookings(bookings);
+    }
+
+    public boolean haveBooking(String flightID) {
+		for(Flight flight : flightBookingsList) {
+			if(flight.getFlightID().equals(flightID)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
+    public boolean addBooking(String flightID, String airline, String available, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration){
+        if(haveBooking(flightID)) return true;
+
+        flightBookingsList.add(new Flight(flightID, airline, available, departureLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, hasTransfer, numTransfers, transferDuration));
+        saveFlightBookings(flightBookingsList);
+        return true;
     }
 }

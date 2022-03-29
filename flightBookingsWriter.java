@@ -20,14 +20,13 @@ public class flightBookingsWriter extends flightBookingsConstants{
      * the method WILL NOT add anything to the specified json file name if the found arraylist is
      * not populated
      */
-    public static void saveFlightBookings(){
+    public static void saveFlightBookings(ArrayList<Flight> newFlightList){
         FlightSingleton flightBookings = FlightSingleton.getInstance();
-        ArrayList<Flight> flightBookingsList = flightBookings.getFlights();
         JSONArray jsonFlights = new JSONArray();
 
         //creating all the json objects
-        for(int i=0; i < flightBookingsList.size();i++){
-            jsonFlights.add(getFlightJSON(flightBookingsList.get(i)));
+        for(int i=0; i < newFlightList.size();i++){
+            jsonFlights.add(getFlightJSON(newFlightList.get(i)));
         }
 
         //write JSON file

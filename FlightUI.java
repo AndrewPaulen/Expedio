@@ -135,8 +135,7 @@ public class FlightUI {
     }   
 
     public void finalize(String[] seatNumbers, Flight selectedFlight){
-        flightBookingsWriter writer = new flightBookingsWriter();
-        flightBookingsLoader loader = new flightBookingsLoader();
+   
 
         System.out.println("\n***VERIFICATION***\n");
         System.out.println("Flight Summary: \n"+selectedFlight+" Your seats are: ");
@@ -159,9 +158,9 @@ public class FlightUI {
         String transferDuration = "60 minutes";
         
 
-        ArrayList<Flight> bookings = loader.getFlightBookings();
-        bookings.add(new Flight(flightID, airline, available, departure, date, departureTime, arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration));
-        writer.saveFlightBookings();
+        flightBookingsSingleton.getInstance().addBooking(flightID, airline, available, departure, date, departureTime, arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration);
+
+       
         
     }
 
