@@ -62,8 +62,8 @@ public class Plane {
     public String[] seating(int passengers) {
         String[] seatNums = new String[passengers];
         int count = 0;
-        char[][] seats = new char[7][4];
-        for (int i = 0; i < 7; i++) {
+        char[][] seats = new char[9][4];
+        for (int i = 0; i < 9; i++) {
             seats[i][0] = 'A';
             seats[i][1] = 'B';
             seats[i][2] = 'C';
@@ -81,10 +81,10 @@ public class Plane {
             MainMenuLoginUI ui = new MainMenuLoginUI();
             ui.MainMenuUI();
         }
-        while (filled < 28 && seatNumber.length() > 0) {
+        while (filled < 36 && seatNumber.length() > 0) {
             int row = seatNumber.charAt(0) - '1';
             int col = seatNumber.charAt(1) - 'A';
-            if (row < 0 || row > 7 || col < 0 || col > 4) {
+            if (row < 0 || row > 9 || col < 0 || col > 4) {
                 System.out.println("Input error, Enter seat to assign (e.g., '1A')");
                 seatNumber = keyboard.nextLine();
                 if (seatNumber.equals('b')) {
@@ -103,7 +103,7 @@ public class Plane {
                 }
                 if (passengers == filled) {
                     break;
-                } else if (filled < 28) {
+                } else if (filled < 36) {
                     System.out.println("Enter a seat to assign (e.g., '1A')");
                     seatNumber = keyboard.nextLine();
                 }

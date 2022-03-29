@@ -47,7 +47,7 @@ public class FlightUI {
 
         System.out.println("Sucessfully booked tickets! Returning to Main Menu..."); // getting rid of this soon
         MainMenuLoginUI ui = new MainMenuLoginUI();
-        input.close();
+    
         ui.MainMenuUI();
     }
 
@@ -172,7 +172,7 @@ public class FlightUI {
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
         Flight selectedFlight = availableFlights.get(input - 1);
-        System.out.println("You've chosen: " + selectedFlight.toString());
+        System.out.println("\nYou've chosen: " + selectedFlight.toString()+"\n");
 
         return selectedFlight;
     }
@@ -193,8 +193,8 @@ public class FlightUI {
         String airline = selectedFlight.getAirline();
         String date = selectedFlight.getDepartureDate();
         int duration = selectedFlight.getDuration();
-        Location departure = selectedFlight.getDepartureLocation();
-        Location arrival = selectedFlight.getArrivalLocation();
+        String departure = selectedFlight.getDepartureLocation().toString();
+        String arrival = selectedFlight.getArrivalLocation().toString();
         UUID ID;
         String flightID = UUID.randomUUID().toString();
         String available = "true";
@@ -204,8 +204,10 @@ public class FlightUI {
         boolean hasTransfer = true;
         int numTransfers = selectedFlight.numTransfers;
         String transferDuration = "60 minutes";
+        String seatNums = Flight.seatNumtoString(seatNumbers);
+        
 
         flightBookingsSingleton.getInstance().addBooking(flightID, airline, available, departure, date, departureTime,
-                arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration, seatNumbers);
+                arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration, seatNums);
     }
 }

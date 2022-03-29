@@ -22,7 +22,8 @@ public class Flight {
     protected Plane plane;
     protected boolean carryOn;
     protected int numOfLuggage;
-    protected String[] seatNumber;
+    protected String seatNumber;
+    protected String[] seatNumberArr;
     protected boolean hasTransfer;
     protected int numTransfers;
     protected String transferDuration;
@@ -49,7 +50,7 @@ public class Flight {
      */
     public Flight(String flightID, String airline, String available, String departureLocation, String departureDate,
             String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer,
-            int numTransfers, String transferDuration) {
+            int numTransfers, String transferDuration, String seatNumber) {
         this.flightID = flightID;
         this.airline = airline;
         this.available = available;
@@ -59,8 +60,10 @@ public class Flight {
         this.arrivalLocation = arrivalLocation;
         this.arrivalDate = arrivalDate;
         this.arrivalTime = arrivalTime;
+        this.seatNumber = seatNumber;
+
     }
-    public Flight(String flightID, String airline, String available, Location departureLocation, String departureDate, String departureTime, Location arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration, String [] seatNumber) {
+    public Flight(String flightID, String airline, String available, Location departureLocation, String departureDate, String departureTime, Location arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration, String seatNumber) {
         this.flightID = flightID;
         this.airline = airline;
         this.available = available;
@@ -84,7 +87,7 @@ public class Flight {
      * @param seatNumber   The seat number on the flight
      */
     public Flight(Location aDeparting, Location aDestination, String date, String airline, int duration,
-            String[] seatNumber) {
+            String seatNumber) {
         this.depLocation = aDeparting;
         this.arrLocation = aDestination;
         this.duration = duration;
@@ -405,7 +408,11 @@ public class Flight {
      * 
      * @return this.seatNumber The seat number
      */
-    public String[] getSeatNumber() {
+    public String[] getSeatNumberArr() {
+        return this.seatNumberArr;
+    }
+
+    public String getSeatNumber(){
         return this.seatNumber;
     }
 
@@ -417,7 +424,7 @@ public class Flight {
         return arrivalLocation;
     }
 
-    public String seatNumtoString(String [] seatNums){
+    public static String seatNumtoString(String [] seatNums){
         StringBuffer sb = new StringBuffer();
 
         for (String seat : seatNums) {
