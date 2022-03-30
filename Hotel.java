@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * A hotel
@@ -81,6 +82,7 @@ public class Hotel {
         this.pool = pool;
         this.gym = gym;
         this.rs = rs;
+        this.rating = ThreadLocalRandom.current().nextInt(2, 5 + 1);
     }
 
     public Hotel(Location desiredCity, int numGuests, String bedType) {
@@ -191,8 +193,18 @@ public class Hotel {
     }
 
     public void printRoomOption(Location location, int num, String bedType) {
-        System.out.println("\nRoom: \n A " + bedType + " style room for " + num + " located at " + location
-                + ". \nRating: " + rating +
+        // wanted to use the enum we made, but could not figure out implementation in t
+        ArrayList<String> roomTypes = new ArrayList<String>();
+        roomTypes.add("king-couch");
+        roomTypes.add("king");
+        roomTypes.add("queen-queen-couch");
+        roomTypes.add("queen-queen");
+        roomTypes.add("double-double");
+        roomTypes.add("double");
+        roomTypes.add("twin");
+
+        System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType)) + " style room for " + num + " located at " + location
+                + ". \nRating: " + rating + " out of 5 stars " +
                 "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " + rs);
     }
 }

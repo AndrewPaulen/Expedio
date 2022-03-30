@@ -4,11 +4,11 @@
  */
 public enum RoomType
 {
-    QUEEN_QUEEN,
-    KING,
     KING_COUCH,
-    DOUBLE,
-    TWIN,
+    KING,
     QUEEN_QUEEN_COUCH,
-    DOUBLE_DOUBLE
+    QUEEN_QUEEN,
+    DOUBLE_DOUBLE,
+    DOUBLE,
+    TWIN
 }
