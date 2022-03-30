@@ -152,12 +152,12 @@ public class Plane {
             log(pageBreak);
             log("\n          *****" + chosenFlight.getAirline() + " Flight Ticket*****\n");
             log("Name: " + names.get(i) + DELIM + "Seat Number: " + seatNumbers[i]);
-            log(decor);
-            log("Destination: " + destination);
-            log("Departing From: " + departing);
-            log("Flight Duration: " + duration + " minutes");
-            log("Departure Date: " + date);
-            log(pageBreak + "\n\n\n");
+            log("\n"+decor);
+            log("\nDestination: " + destination);
+            log("\nDeparting From: " + departing);
+            log("\nFlight Duration: " + duration + " minutes");
+            log("\nDeparture Date: " + date+"\n");
+            log("\n"+pageBreak + "\n\n\n");
         }
     }
 
@@ -174,5 +174,25 @@ public class Plane {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void logToConsole(){
+        try {
+            BufferedReader in = new BufferedReader(new FileReader("tickets.txt"));
+            try {
+                String line = in.readLine();
+                while(line!=null){
+                    System.out.println(line);
+                    line=in.readLine();
+                }
+                in.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        
     }
 }

@@ -431,4 +431,24 @@ public class Hotel {
             exception.printStackTrace();
         }
     }
+
+    public void logToConsole(){
+        try {
+            BufferedReader in = new BufferedReader(new FileReader("itineraries.txt"));
+            try {
+                String line = in.readLine();
+                while(line!=null){
+                    System.out.println(line);
+                    line=in.readLine();
+                }
+                in.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        
+    }
 }
