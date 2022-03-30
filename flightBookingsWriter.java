@@ -52,8 +52,7 @@ public class flightBookingsWriter extends flightBookingsConstants{
         flightBookingsDetails.put(ARRIVAL_TIME, flight.getArrivalTime().toString());
         flightBookingsDetails.put(ARRIVAL_DATE, flight.getArrivalDate());
         flightBookingsDetails.put(ARRIVAL_LOCATION, flight.getArrLocation());
-        String[] seats = flight.getSeatNumber();
-        flightBookingsDetails.put(SEAT_NUMBER, flight.seatNumtoString(seats));
+        flightBookingsDetails.put(SEAT_NUMBER, flight.getSeatNumber());
         flightBookingsDetails.put(AIRLINE, flight.getAirline().toString());
         flightBookingsDetails.put(AVAIL, flight.getAvailable().toString());
         flightBookingsDetails.put(FLIGHT_ID, flight.getFlightID().toString());

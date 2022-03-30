@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -62,8 +63,8 @@ public class Plane {
     public String[] seating(int passengers) {
         String[] seatNums = new String[passengers];
         int count = 0;
-        char[][] seats = new char[7][4];
-        for (int i = 0; i < 7; i++) {
+        char[][] seats = new char[9][4];
+        for (int i = 0; i < 9; i++) {
             seats[i][0] = 'A';
             seats[i][1] = 'B';
             seats[i][2] = 'C';
@@ -81,10 +82,10 @@ public class Plane {
             MainMenuLoginUI ui = new MainMenuLoginUI();
             ui.MainMenuUI();
         }
-        while (filled < 28 && seatNumber.length() > 0) {
+        while (filled < 36 && seatNumber.length() > 0) {
             int row = seatNumber.charAt(0) - '1';
             int col = seatNumber.charAt(1) - 'A';
-            if (row < 0 || row > 7 || col < 0 || col > 4) {
+            if (row < 0 || row > 9 || col < 0 || col > 4) {
                 System.out.println("Input error, Enter seat to assign (e.g., '1A')");
                 seatNumber = keyboard.nextLine();
                 if (seatNumber.equals('b')) {
@@ -103,7 +104,7 @@ public class Plane {
                 }
                 if (passengers == filled) {
                     break;
-                } else if (filled < 28) {
+                } else if (filled < 36) {
                     System.out.println("Enter a seat to assign (e.g., '1A')");
                     seatNumber = keyboard.nextLine();
                 }
@@ -127,4 +128,25 @@ public class Plane {
         int numberOfSeatsAvailable = (28 - filled);
         System.out.println("There are " + numberOfSeatsAvailable + " seats available");
     }
+
+    public void printTicket(LinkedList<String> names, Flight chosenFlight, String[] seatNumbers){
+        String DELIM = "          ";
+        String decor = "*************************************************************\n*************************************************************";
+        String pageBreak = "__________________________________________________________________________________";
+        String departing = chosenFlight.getDepartureLocation().toString();
+        String destination = chosenFlight.getArrivalLocation().toString();
+        int duration = chosenFlight.getDuration();
+        for (int i = 0; i < names.size(); i++) {
+            System.out.println(pageBreak);
+            System.out.println("\n          *****"+chosenFlight.getAirline()+" Flight Ticket*****\n");
+            System.out.println("Name: "+names.get(i)+DELIM+"Seat Number: "+seatNumbers[i]);
+            System.out.println(decor);
+            System.out.println("Destination: "+destination);
+            System.out.println("Departing From: "+departing);
+            System.out.println("Flight Duration: "+duration+" minutes");
+            System.out.println(pageBreak+"\n\n\n");
+
+        }
+    }
+
 }

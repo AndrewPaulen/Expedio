@@ -39,11 +39,10 @@ public class flightBookingsLoader extends flightBookingsConstants{
                     String airline = (String)flightBookingJSON.get(AIRLINE);
                     String available = (String)flightBookingJSON.get(AVAIL);
                     String flightID = (String)flightBookingJSON.get(FLIGHT_ID);
-                    boolean hasTransfer = (boolean)flightBookingJSON.get(HAS_TRANSFER);
-                    String transferDuration = (String)flightBookingJSON.get(TRANSFER_DURATION);
-                    
+                    String seatNumber = (String)flightBookingJSON.get(SEAT_NUMBER);
+                 
 
-                   flightBookings.add(new Flight(flightID, airline, available, departureLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, hasTransfer, 1, transferDuration));
+                   flightBookings.add(new Flight(flightID, airline, available, departureLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, true, 0, "60 minutes", seatNumber));
                    
                 }
                 return flightBookings;

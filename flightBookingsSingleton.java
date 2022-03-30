@@ -91,7 +91,7 @@ public class flightBookingsSingleton {
 		return false;
 	}
 
-    public boolean addBooking(String flightID, String airline, String available, Location departureLocation, String departureDate, String departureTime, Location arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration, String[] seatNumber){
+    public boolean addBooking(String flightID, String airline, String available, String departureLocation, String departureDate, String departureTime, String arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration, String seatNumber){
         if(haveBooking(flightID)) return true;
 
         flightBookingsList.add(new Flight(flightID, airline, available, departureLocation, departureDate, departureTime, arrivalLocation, arrivalDate, arrivalTime, hasTransfer, numTransfers, transferDuration, seatNumber));

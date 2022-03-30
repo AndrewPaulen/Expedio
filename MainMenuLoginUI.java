@@ -72,6 +72,7 @@ public class MainMenuLoginUI {
 
             switch (input) {
                 case "1":
+                    registeredUser = new RegisteredUser(firstName, lastName);
                     System.out.print("Enter your username: ");
                     username = scanner.nextLine();
                     if (registeredUser.login(username)) {
@@ -144,6 +145,7 @@ public class MainMenuLoginUI {
                     }
                     break;
                 case "4":
+                    //printTicket();
                     flight.toString(); // come back to this
                     break;
                 case "5":

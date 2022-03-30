@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.UUID;
@@ -30,24 +31,31 @@ public class FlightUI {
      */
     public void depatureArrival() {
         Scanner input = new Scanner(System.in);
+        LinkedList<String> names = collectNames();
+       
         System.out.println("Please enter your desired departure airport:");
         departureDest = input.nextLine();
         Location departing = LocationsLoader.getLocation(departureDest);
         System.out.println("Please enter your desired arrival airport:");
         arrivalDest = input.nextLine();
         Location destination = LocationsLoader.getLocation(arrivalDest);
+        
         System.out.println("Please enter departure date (e.g., MM/DD/YY):");
         String date = input.nextLine();
+       
         int numFriends = friendCheck();
+        
         ArrayList<Flight> availableFlights = availableFlights(departing, destination, date);
         Flight chosenFlight = chooseFlight(availableFlights);
+       
         Plane plane = new Plane();
         String[] seatNumbers = plane.seating(numFriends);
         finalize(seatNumbers, chosenFlight);
-
-        System.out.println("Sucessfully booked tickets! Returning to Main Menu..."); // getting rid of this soon
+        System.out.println("Sucessfully booked tickets! Printing them now...");
+         
+        plane.printTicket(names, chosenFlight, seatNumbers);
         MainMenuLoginUI ui = new MainMenuLoginUI();
-        input.close();
+    
         ui.MainMenuUI();
     }
 
@@ -172,7 +180,7 @@ public class FlightUI {
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
         Flight selectedFlight = availableFlights.get(input - 1);
-        System.out.println("You've chosen: " + selectedFlight.toString());
+        System.out.println("\nYou've chosen: " + selectedFlight.toString()+"\n");
 
         return selectedFlight;
     }
@@ -193,8 +201,8 @@ public class FlightUI {
         String airline = selectedFlight.getAirline();
         String date = selectedFlight.getDepartureDate();
         int duration = selectedFlight.getDuration();
-        Location departure = selectedFlight.getDepartureLocation();
-        Location arrival = selectedFlight.getArrivalLocation();
+        String departure = selectedFlight.getDepartureLocation().toString();
+        String arrival = selectedFlight.getArrivalLocation().toString();
         UUID ID;
         String flightID = UUID.randomUUID().toString();
         String available = "true";
@@ -204,8 +212,36 @@ public class FlightUI {
         boolean hasTransfer = true;
         int numTransfers = selectedFlight.numTransfers;
         String transferDuration = "60 minutes";
+        String seatNums = Flight.seatNumtoString(seatNumbers);
+        
 
         flightBookingsSingleton.getInstance().addBooking(flightID, airline, available, departure, date, departureTime,
-                arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration, seatNumbers);
+                arrival, date, arrivalTime, hasTransfer, numTransfers, transferDuration, seatNums);
+    }
+
+    public LinkedList<String> collectNames(){
+        Scanner scanner = new Scanner(System.in);
+        int count = 0;
+        LinkedList<String> names = new LinkedList<String>();
+
+        System.out.println("Please enter the full names of each passenger you wish to book for, hit enter to save the name");
+        String decision = "n";
+        do{
+            if(count!=0){
+                System.out.println("Would you like to add another passenger? (Enter (y/n))");
+                decision = scanner.nextLine();
+                if(decision.equals("y")){
+                    System.out.println("Enter name: ");
+                    names.add(scanner.nextLine());
+                }
+            } else {
+                System.out.println("Enter name: ");
+                names.add(scanner.nextLine());
+                decision = "y";
+                count++;
+            }
+        } while(decision.equals("y"));
+
+        return names;
     }
 }
