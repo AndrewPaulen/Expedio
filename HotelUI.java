@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 /**
  * The UI for booking a hotel
- * 
- * @author Sophia Riley
+ *
  * @author Shash Comandur
+ * @author Sophia Riley
  */
 public class HotelUI {
 
