@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -127,4 +128,25 @@ public class Plane {
         int numberOfSeatsAvailable = (28 - filled);
         System.out.println("There are " + numberOfSeatsAvailable + " seats available");
     }
+
+    public void printTicket(LinkedList<String> names, Flight chosenFlight, String[] seatNumbers){
+        String DELIM = "          ";
+        String decor = "*************************************************************\n*************************************************************";
+        String pageBreak = "__________________________________________________________________________________";
+        String departing = chosenFlight.getDepartureLocation().toString();
+        String destination = chosenFlight.getArrivalLocation().toString();
+        int duration = chosenFlight.getDuration();
+        for (int i = 0; i < names.size(); i++) {
+            System.out.println(pageBreak);
+            System.out.println("\n          *****"+chosenFlight.getAirline()+" Flight Ticket*****\n");
+            System.out.println("Name: "+names.get(i)+DELIM+"Seat Number: "+seatNumbers[i]);
+            System.out.println(decor);
+            System.out.println("Destination: "+destination);
+            System.out.println("Departing From: "+departing);
+            System.out.println("Flight Duration: "+duration+" minutes");
+            System.out.println(pageBreak+"\n\n\n");
+
+        }
+    }
+
 }
