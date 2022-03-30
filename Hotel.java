@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -115,6 +116,11 @@ public class Hotel {
         System.out.println(roomType);
         System.out.println(checkInDate);
         System.out.println(checkOutDate);
+
+        log(roomHeader);
+        log(roomType);
+        log(checkInDate);
+        log(checkOutDate);
     }
 
     public UUID getID() {
@@ -232,5 +238,15 @@ public class Hotel {
         System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType)) + " style room for " + num + " located at " + location
                 + ". \nRating: " + rating + " out of 5 stars " +
                 "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " + rs);
+    }
+
+    public void log(String line){
+        try{
+            PrintWriter out = new PrintWriter(new FileWriter("itineraries.txt", true), true);
+            out.write(line);
+            out.close();
+        } catch(IOException exception) {
+            exception.printStackTrace();
+        }
     }
 }
