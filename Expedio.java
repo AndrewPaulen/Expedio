@@ -1,6 +1,5 @@
 /**
  * The driver file
- * 
  * @author Andrew Paulen
  */
 public class Expedio {
@@ -9,9 +8,7 @@ public class Expedio {
         expedio.run();
     }
 
-    public Expedio() {
-
-    }
+    public Expedio() {    }
 
     public void run() {
         MainMenuLoginUI mainMenuUI = new MainMenuLoginUI();

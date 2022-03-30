@@ -83,7 +83,7 @@ public class HotelUI {
         ArrayList <Hotel> hotelList = availableHotels(desiredCity, guests, bedType, startDate, endDate, pool, gym, rs);
 
         // choose hotel
-        chooseHotel(hotelList);
+        chooseHotel(hotelList, desiredCity, guests, bedType, startDate, endDate, pool, gym, rs);
 
         // exit back to main menu
         MainMenuLoginUI ui = new MainMenuLoginUI();
@@ -238,20 +238,21 @@ public class HotelUI {
         hotel3.printRoomOption(desiredCity, guests, bedType);
         hotel4.printRoomOption(desiredCity, guests, bedType);
         ArrayList <Hotel> hotelList = new ArrayList <Hotel>();
-        hotelList.add (hotel1);
-        hotelList.add (hotel2);
-        hotelList.add (hotel3);
-        hotelList.add (hotel4);
+        hotelList.add(hotel1);
+        hotelList.add(hotel2);
+        hotelList.add(hotel3);
+        hotelList.add(hotel4);
         return hotelList;
     }
 
-    public void chooseHotel(ArrayList <Hotel> hotelList) {
+    public void chooseHotel(ArrayList <Hotel> hotelList, Location desiredCity, int guests, String bedType,
+    String startDate, String endDate, boolean pool, boolean gym, boolean rs) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Which hotel would you like to stay at? Please select an option (1-4).");
         int hotelChoice = scanner.nextInt();
         Hotel selectedHotel = hotelList.get(hotelChoice - 1);
         System.out.println("\nYou've chosen hotel: " + hotelChoice+"\n");
         System.out.println ("Printing your hotel information now...\n");
-        selectedHotel.printHotel();
+        selectedHotel.printHotel(desiredCity, guests, bedType, startDate, endDate);
     }
 }
