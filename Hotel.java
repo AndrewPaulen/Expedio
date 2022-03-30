@@ -26,6 +26,7 @@ public class Hotel {
     private boolean gym;
     private boolean rs;
     private int guests;
+    private String price;
     private String bedType;
 
     /**
@@ -74,7 +75,7 @@ public class Hotel {
     }
 
     /**
-     * An instance of a hotel
+     * An instance of a hotel, with randomly generated rating and price.
      * 
      * @param desiredCity The city where the user wants to stay
      * @param guests      The number of guests in a room
@@ -96,6 +97,32 @@ public class Hotel {
         this.gym = gym;
         this.rs = rs;
         this.rating = ThreadLocalRandom.current().nextInt(2, 5 + 1);
+        int randPrice = ThreadLocalRandom.current().nextInt(1, 4);
+        switch(randPrice) {
+                case 1:
+                    this.price = "low";
+                    break;
+                case 2:
+                    this.price = "moderate";
+                    break;
+                case 3:
+                    this.price = "expensive";
+                    break;
+        }
+    }
+
+    public Hotel(Location desiredCity, int guests, String bedType, String startDate,
+            String endDate, boolean pool, boolean gym, boolean rs, int rating, String price) {
+        this.location = desiredCity;
+        this.guests = guests;
+        this.bedType = bedType;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.pool = pool;
+        this.gym = gym;
+        this.rs = rs;
+        this.rating = rating;
+        this.price = price;
     }
 
     /**
@@ -131,6 +158,7 @@ public class Hotel {
         roomTypes.add("twin");
 
         String hotelName = "Hotel " + hotelChoice + "\n";
+        String price = "Price: " + this.price + "\n";
         String roomHeader = "Room: ";
         String roomType = "A " + roomTypes.get(Integer.parseInt(bedType)) + " style room for " + num + " located at "
                 + location + ".";
@@ -387,10 +415,11 @@ public class Hotel {
         roomTypes.add("double");
         roomTypes.add("twin");
 
-        System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType)-1) + " style room for " + num
-                + " located at " + location
-                + ". \nRating: " + rating + " out of 5 stars " +
-                "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " + rs);
+        System.out.println("\nRoom: A " + roomTypes.get(Integer.parseInt(bedType)-1) + " style room for " + num
+                + " located at " + location + "."
+                + "\nPrice: " + price
+                + "\nRating: " + rating + " out of 5 stars "
+                + "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " + rs);
     }
 
     public void log(String line){

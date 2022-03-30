@@ -232,7 +232,7 @@ public class HotelUI {
         Hotel hotel1 = new Hotel(desiredCity, guests, bedType, startDate, endDate, !pool, !gym, !rs);
         Hotel hotel2 = new Hotel(desiredCity, guests+3, bedType, startDate, endDate, !pool, !gym, rs);
         Hotel hotel3 = new Hotel(desiredCity, guests+2, bedType, startDate, endDate, pool, gym, rs);
-        Hotel hotel4 = new Hotel(desiredCity, guests, bedType, startDate, endDate, pool, !gym, !rs);
+        Hotel hotel4 = new Hotel(desiredCity, guests, bedType, startDate, endDate, pool, gym, rs, 4, "moderate");
         hotel1.printRoomOption(desiredCity, guests, bedType);
         hotel2.printRoomOption(desiredCity, guests, bedType);
         hotel3.printRoomOption(desiredCity, guests, bedType);
