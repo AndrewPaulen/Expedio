@@ -17,6 +17,7 @@ public class HotelUI {
     private boolean pool;
     private boolean gym;
     private boolean rs;
+    private String hotelChoice;
 
     /**
      * The first string printed to the terminal.
@@ -77,7 +78,13 @@ public class HotelUI {
         String rsAnswer = scanner.next();
         rsSelection(rsAnswer);
 
+        // search for and print hotels
         availableHotels(desiredCity, guests, bedType, startDate, endDate, pool, gym, rs);
+
+        // choose hotel
+        System.out.println("Which hotel would you like to stay at? Please select an option (1-4).");
+        String hotelChoice = scanner.next();
+        chooseHotel(hotelChoice);
     }
 
     /**
@@ -216,6 +223,7 @@ public class HotelUI {
      */
     public void availableHotels(Location desiredCity, int guests, String bedType,
     String startDate, String endDate, boolean pool, boolean gym, boolean rs) {
+        Scanner scanner = new Scanner(System.in); 
         System.out.println("\nFetching available hotel rooms...\n" +
                 "\n*** Available Hotels: ***");
         Hotel hotel1 = new Hotel(desiredCity, guests, bedType, startDate, endDate, !pool, !gym, !rs);
@@ -226,5 +234,26 @@ public class HotelUI {
         hotel2.printRoomOption(desiredCity, guests, bedType);
         hotel3.printRoomOption(desiredCity, guests, bedType);
         hotel4.printRoomOption(desiredCity, guests, bedType);
+    }
+
+    public void chooseHotel(String hotelChoice) {
+        Scanner scanner = new Scanner(System.in);
+        switch (hotelChoice) {
+            case "1":
+                System.out.println("You have selected hotel 1.");
+                break;
+            case "2":
+                System.out.println("You have selected hotel 2.");
+                break;
+            case "3":
+                System.out.println("You have selected hotel 3.");
+                break;
+            case "4":
+                System.out.println("You have selected hotel 4.");
+                break;
+            default:
+                System.out.println("Sorry! Invalid input. Please choose again (1-4)");
+                chooseHotel(hotelChoice);
+        }
     }
 }
