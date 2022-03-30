@@ -53,7 +53,7 @@ public class FlightUI {
         finalize(seatNumbers, chosenFlight);
         System.out.println("Sucessfully booked tickets! Printing them now...");
          
-        plane.printTicket(names, chosenFlight, seatNumbers);
+        plane.printTicket(names, chosenFlight, seatNumbers, date);
         MainMenuLoginUI ui = new MainMenuLoginUI();
     
         ui.MainMenuUI();
