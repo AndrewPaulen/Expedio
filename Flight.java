@@ -97,13 +97,6 @@ public class Flight {
     }
 
     /**
-     * 
-     */
-    public void bookFlight() {
-
-    }
-
-    /**
      * Method that will allow the program to print out the users flight details
      * 
      * @return The users flight details
@@ -111,15 +104,6 @@ public class Flight {
     public String toString() {
         return depLocation + " to " + arrLocation + " on " + date + " with " + airline + ". Your flight will last "
                 + duration + " minutes.";
-    }
-
-    /**
-     * Sorts the flights
-     * 
-     * @param preferences
-     */
-    public void sortFlights(ArrayList<Preferences> preferences) {
-
     }
 
     /**

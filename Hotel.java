@@ -110,11 +110,33 @@ public class Hotel {
         this.bedType = bedType;
     }
 
-    /**
-     * 
-     */
-    public void printHotel() {
-        System.out.println("gets here");
+    public void printHotel(Location location, int num, String bedType, String startDate, String endDate) {
+        // System.out.println ("gets here");
+        ArrayList<String> roomTypes = new ArrayList<String>();
+        roomTypes.add("king-couch");
+        roomTypes.add("king");
+        roomTypes.add("queen-queen-couch");
+        roomTypes.add("queen-queen");
+        roomTypes.add("double-double");
+        roomTypes.add("double");
+        roomTypes.add("twin");
+
+        // System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType))
+        // + " style room for " + num + " located at " + location
+        // + ". \nRating: " + rating + " out of 5 stars " +
+        // "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " +
+        // rs);
+
+        String roomHeader = "Room: ";
+        String roomType = "A " + roomTypes.get(Integer.parseInt(bedType)) + " style room for " + num + " located at "
+                + location + ".";
+        String checkInDate = "Check In Date: " + startDate;
+        String checkOutDate = "Check Out Date: " + endDate;
+
+        System.out.println(roomHeader);
+        System.out.println(roomType);
+        System.out.println(checkInDate);
+        System.out.println(checkOutDate);
     }
 
     /**
