@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -129,13 +130,13 @@ public class Plane {
         System.out.println("There are " + numberOfSeatsAvailable + " seats available");
     }
 
-    public void printTicket(LinkedList<String> names, Flight chosenFlight, String[] seatNumbers){
+    public void printTicket(LinkedList<String> names, Flight chosenFlight, String[] seatNumbers, String date){
+       
         String DELIM = "          ";
         String decor = "*************************************************************\n*************************************************************";
         String pageBreak = "__________________________________________________________________________________";
         String departing = chosenFlight.getDepartureLocation().toString();
         String destination = chosenFlight.getArrivalLocation().toString();
-        String date = chosenFlight.getDepartureDate();
         int duration = chosenFlight.getDuration();
         for (int i = 0; i < names.size(); i++) {
             System.out.println(pageBreak);
@@ -146,9 +147,27 @@ public class Plane {
             System.out.println("Departing From: "+departing);
             System.out.println("Flight Duration: "+duration+" minutes");
             System.out.println("Departure Date: "+date);
-            System.out.println(pageBreak+"\n\n\n");
+            System.out.println(pageBreak+"\n\n\n");  
 
+            log(pageBreak);
+            log("\n          *****"+chosenFlight.getAirline()+" Flight Ticket*****\n");
+            log("Name: "+names.get(i)+DELIM+"Seat Number: "+seatNumbers[i]);
+            log(decor);
+            log("Destination: "+destination);
+            log("Departing From: "+departing);
+            log("Flight Duration: "+duration+" minutes");
+            log("Departure Date: "+date);
+            log(pageBreak+"\n\n\n");
         }
     }
 
+    public void log(String line){
+        try {
+            PrintWriter out = new PrintWriter(new FileWriter("tickets.txt", true), true);
+            out.write(line);
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
