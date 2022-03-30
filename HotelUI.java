@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -79,12 +80,14 @@ public class HotelUI {
         rsSelection(rsAnswer);
 
         // search for and print hotels
-        availableHotels(desiredCity, guests, bedType, startDate, endDate, pool, gym, rs);
+        ArrayList <Hotel> hotelList = availableHotels(desiredCity, guests, bedType, startDate, endDate, pool, gym, rs);
 
         // choose hotel
-        System.out.println("Which hotel would you like to stay at? Please select an option (1-4).");
-        String hotelChoice = scanner.next();
-        chooseHotel(hotelChoice);
+        chooseHotel(hotelList);
+
+        // exit back to main menu
+        MainMenuLoginUI ui = new MainMenuLoginUI();
+        ui.MainMenuUI();
     }
 
     /**
@@ -221,7 +224,7 @@ public class HotelUI {
      * @param guests      How many guests are staying in the hotel room
      * @param bedType     The type of bed(s) in the hotel room
      */
-    public void availableHotels(Location desiredCity, int guests, String bedType,
+    public ArrayList <Hotel> availableHotels(Location desiredCity, int guests, String bedType,
     String startDate, String endDate, boolean pool, boolean gym, boolean rs) {
         Scanner scanner = new Scanner(System.in); 
         System.out.println("\nFetching available hotel rooms...\n" +
@@ -234,26 +237,21 @@ public class HotelUI {
         hotel2.printRoomOption(desiredCity, guests, bedType);
         hotel3.printRoomOption(desiredCity, guests, bedType);
         hotel4.printRoomOption(desiredCity, guests, bedType);
+        ArrayList <Hotel> hotelList = new ArrayList <Hotel>();
+        hotelList.add (hotel1);
+        hotelList.add (hotel2);
+        hotelList.add (hotel3);
+        hotelList.add (hotel4);
+        return hotelList;
     }
 
-    public void chooseHotel(String hotelChoice) {
+    public void chooseHotel(ArrayList <Hotel> hotelList) {
         Scanner scanner = new Scanner(System.in);
-        switch (hotelChoice) {
-            case "1":
-                System.out.println("You have selected hotel 1.");
-                break;
-            case "2":
-                System.out.println("You have selected hotel 2.");
-                break;
-            case "3":
-                System.out.println("You have selected hotel 3.");
-                break;
-            case "4":
-                System.out.println("You have selected hotel 4.");
-                break;
-            default:
-                System.out.println("Sorry! Invalid input. Please choose again (1-4)");
-                chooseHotel(hotelChoice);
-        }
+        System.out.println("Which hotel would you like to stay at? Please select an option (1-4).");
+        int hotelChoice = scanner.nextInt();
+        Hotel selectedHotel = hotelList.get(hotelChoice - 1);
+        System.out.println("\nYou've chosen hotel: " + hotelChoice+"\n");
+        System.out.println ("Printing your hotel information now...\n");
+        selectedHotel.printHotel();
     }
 }

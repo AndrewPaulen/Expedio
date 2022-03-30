@@ -91,6 +91,11 @@ public class Hotel {
         this.bedType = bedType;
     }
 
+    public void printHotel()
+    {
+        System.out.println ("gets here");
+    }
+
     public UUID getID() {
         return id;
     }
