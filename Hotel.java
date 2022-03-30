@@ -53,7 +53,7 @@ public class Hotel {
     }
 
     /**
-     * 
+     * An instance of a hotel
      * 
      * @param id       The hotels's ID
      * @param name     The name of the hotel
@@ -72,8 +72,20 @@ public class Hotel {
         this.roomNumber = roomNumber;
     }
 
+    /**
+     * An instance of a hotel
+     * 
+     * @param desiredCity The city where the user wants to stay
+     * @param guests      The number of guests in a room
+     * @param bedType     The type of bed(s) in the room
+     * @param startDate   The check in date/when the booking starts
+     * @param endDate     The check out date/when the booking ends
+     * @param pool        If the hotel has a pool
+     * @param gym         If the hotel has a gym
+     * @param rs          If the hotel has room service
+     */
     public Hotel(Location desiredCity, int guests, String bedType, String startDate,
-    String endDate, boolean pool, boolean gym, boolean rs) {
+            String endDate, boolean pool, boolean gym, boolean rs) {
         this.location = desiredCity;
         this.guests = guests;
         this.bedType = bedType;
@@ -85,49 +97,103 @@ public class Hotel {
         this.rating = ThreadLocalRandom.current().nextInt(2, 5 + 1);
     }
 
+    /**
+     * An instance of a hotel
+     * 
+     * @param desiredCity The city where the user wants to stay
+     * @param guests      The number of guests in a room
+     * @param bedType     The type of bed(s) in the room
+     */
     public Hotel(Location desiredCity, int numGuests, String bedType) {
         this.location = desiredCity;
         this.guests = numGuests;
         this.bedType = bedType;
     }
 
-    public void printHotel()
-    {
-        System.out.println ("gets here");
+    /**
+     * 
+     */
+    public void printHotel() {
+        System.out.println("gets here");
     }
 
+    /**
+     * Gets the hotel's ID
+     * 
+     * @return id The hotel's ID
+     */
     public UUID getID() {
         return id;
     }
 
+    /**
+     * Sets the hotel's ID
+     * 
+     * @param id The hotel's ID
+     */
     public void setID(UUID id) {
         this.id = id;
     }
 
+    /**
+     * Gets the name of the hotel
+     * 
+     * @return name The name of the hotel
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets the name of the hotel
+     * 
+     * @param name The name of the hotel
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Gets the location of the hotel
+     * 
+     * @return location The location of the hotel
+     */
     public Location getLocation() {
         return location;
     }
 
+    /**
+     * Sets the location of the hotel
+     * 
+     * @param location The location of the hotel
+     */
     public void setLocation(Location location) {
         this.location = location;
     }
 
+    /**
+     * Gets the vacancy of the hotel
+     * 
+     * @return vacancy Whether or not the hotel has vacancy
+     */
     public boolean getVacancy() {
         return vacancy;
     }
 
+    /**
+     * Sets the vacancy of the hotel
+     * 
+     * @param vacancy Whether or nor the hotel has vacancy
+     */
     public void setVacancy(boolean vacancy) {
         this.vacancy = vacancy;
     }
 
+    /**
+     * Sets the rating of the hotel
+     * 
+     * @param rating The rating of the hotel
+     */
     public void setRating(int rating) {
         // only outputs 0- come back to this
         Random r = new Random();
@@ -136,69 +202,149 @@ public class Hotel {
         this.rating = rating;
     }
 
+    /**
+     * Gets the rating of the hotel
+     * 
+     * @return this.rating The rating of the hotel
+     */
     public int getRating() {
         return this.rating;
     }
 
-    // pool, gym, room service- come back to this
+    /**
+     * Sets the pool of the hotel
+     * 
+     * @param pool Whether or not the hotel has a pool
+     */
     public void setPool(boolean pool) {
         this.pool = pool;
     }
 
-    public void setGym(boolean gym) {
-        this.gym = gym;
-    }
-
-    public void setRS(boolean rs) {
-        this.rs = rs;
-    }
-
-    public void setBedType(String bedType) {
-        this.bedType = bedType;
-    }
-
-    public boolean getGym() {
-        return this.gym;
-    }
-
-    public boolean getRS() {
-        return this.rs;
-    }
-
+    /**
+     * Gets the pool of the hotel
+     * 
+     * @return this.pool The hotel's pool
+     */
     public boolean getPool() {
         return this.pool;
     }
 
-    public String getCheckInTime() {
-        return this.checkInTime;
+    /**
+     * Sets the gym of the hotel
+     * 
+     * @param gym Whether or not the hotel has a pool
+     */
+    public void setGym(boolean gym) {
+        this.gym = gym;
     }
 
-    public String getCheckInDate() {
-        return this.checkInDate;
+    /**
+     * Gets the gym of the hotel
+     * 
+     * @return this.gym The gym of the hotel
+     */
+    public boolean getGym() {
+        return this.gym;
     }
 
-    public String getCheckOutTime() {
-        return this.checkOutTime;
+    /**
+     * Sets the room service of the hotel
+     * 
+     * @param rs Whether or not the hotel has a gym
+     */
+    public void setRS(boolean rs) {
+        this.rs = rs;
     }
 
-    public String getCheckOutDate() {
-        return this.checkOutDate;
+    /**
+     * Gets the room service of the hotel
+     * 
+     * @return this.rs The hotel's room service
+     */
+    public boolean getRS() {
+        return this.rs;
     }
 
-    public String getRoomNumber() {
-        return this.roomNumber;
+    /**
+     * Sets the bed type in the hotel room
+     * 
+     * @param bedType The type of bed(s) in the hotel room
+     */
+    public void setBedType(String bedType) {
+        this.bedType = bedType;
     }
 
-    public UUID getHotelID() {
-        return this.id;
-    }
-
+    /**
+     * Gets the bed type in the hotel room
+     * 
+     * @return this.bedType The hotel room's type of bed(s)
+     */
     public String getBedType() {
         return this.bedType;
     }
 
+    /**
+     * Gets the check in time
+     * 
+     * @return this.checkInTime The user's check in time
+     */
+    public String getCheckInTime() {
+        return this.checkInTime;
+    }
+
+    /**
+     * Gets the check in date
+     * 
+     * @return this.checkInDate The user's check in date
+     */
+    public String getCheckInDate() {
+        return this.checkInDate;
+    }
+
+    /**
+     * Gets the check out time
+     * 
+     * @return this.checkOutTime The user's check out time
+     */
+    public String getCheckOutTime() {
+        return this.checkOutTime;
+    }
+
+    /**
+     * Gets the check out date
+     * 
+     * @return this.checkOutDate The user's check out date
+     */
+    public String getCheckOutDate() {
+        return this.checkOutDate;
+    }
+
+    /**
+     * Gets the room number of the hotel room
+     * 
+     * @return this.roomNumber The hotel room's room number
+     */
+    public String getRoomNumber() {
+        return this.roomNumber;
+    }
+
+    /**
+     * Gets the ID of the hotel
+     * 
+     * @return this.id The hotel's ID
+     */
+    public UUID getHotelID() {
+        return this.id;
+    }
+
+    /**
+     * Prints the available room options
+     * 
+     * @param location The location of the hotel
+     * @param num      The number of people able to stay in a room
+     * @param bedType  The type of bed(s) in the room
+     */
     public void printRoomOption(Location location, int num, String bedType) {
-        // wanted to use the enum we made, but could not figure out implementation in t
         ArrayList<String> roomTypes = new ArrayList<String>();
         roomTypes.add("king-couch");
         roomTypes.add("king");
@@ -208,7 +354,8 @@ public class Hotel {
         roomTypes.add("double");
         roomTypes.add("twin");
 
-        System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType)) + " style room for " + num + " located at " + location
+        System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType)) + " style room for " + num
+                + " located at " + location
                 + ". \nRating: " + rating + " out of 5 stars " +
                 "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " + rs);
     }
