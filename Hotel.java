@@ -4,7 +4,10 @@ import java.util.Random;
 /**
  * A hotel
  * 
- * @authors Andrew Paulen, Shash Comandur, Sophia Riley, David Wamai
+ * @author Andrew Paulen
+ * @author Shash Comandur
+ * @author Sophia Riley
+ * @author David Wamai
  */
 public class Hotel {
     private UUID id;

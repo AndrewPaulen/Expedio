@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * A registered user
+ * A registered user, whose login information is saved.
+ * @author Shash Comandur
  */
 public class RegisteredUser extends User {
     MainMenuLoginUI main;
