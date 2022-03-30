@@ -2,6 +2,8 @@ import java.util.UUID;
 
 /**
  * A user
+ * 
+ * @author
  */
 public class User {
 	private UUID id;
