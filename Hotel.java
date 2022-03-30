@@ -110,8 +110,16 @@ public class Hotel {
         this.bedType = bedType;
     }
 
+    /**
+     * Prints the hotel room
+     * 
+     * @param location  The location of the hotel
+     * @param num       The number of guests a room can accomodate
+     * @param bedType   The type of bed(s) in the room
+     * @param startDate The date the booking starts
+     * @param endDate   The date the booking ends
+     */
     public void printHotel(Location location, int num, String bedType, String startDate, String endDate) {
-        // System.out.println ("gets here");
         ArrayList<String> roomTypes = new ArrayList<String>();
         roomTypes.add("king-couch");
         roomTypes.add("king");
