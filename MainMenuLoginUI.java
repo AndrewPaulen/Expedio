@@ -18,7 +18,7 @@ public class MainMenuLoginUI {
     private String username;
 
     /**
-     * Prompts the user to enter their first and last names
+     * Prints the first line to the login menu
      */
     public void LoginUI() {
         Scanner scanner = new Scanner(System.in);
