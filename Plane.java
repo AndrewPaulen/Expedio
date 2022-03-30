@@ -135,6 +135,7 @@ public class Plane {
         String pageBreak = "__________________________________________________________________________________";
         String departing = chosenFlight.getDepartureLocation().toString();
         String destination = chosenFlight.getArrivalLocation().toString();
+        String date = chosenFlight.getDepartureDate();
         int duration = chosenFlight.getDuration();
         for (int i = 0; i < names.size(); i++) {
             System.out.println(pageBreak);
@@ -144,6 +145,7 @@ public class Plane {
             System.out.println("Destination: "+destination);
             System.out.println("Departing From: "+departing);
             System.out.println("Flight Duration: "+duration+" minutes");
+            System.out.println("Departure Date: "+date);
             System.out.println(pageBreak+"\n\n\n");
 
         }
