@@ -1,1 +1,14 @@
-Room: A queen-queen-couch style room for 2 located at Seattle/Tacoma, WA, USA.Check In Date: 09/22/22Check Out Date: 09/24/22
+Room: A double style room for 2 located at Seattle/Tacoma, WA, USA.
+Check In Date: 03/29/22
+Check Out Date: 04/07/22Hotel 4
+
+Room: A double style room for 2 located at Seattle/Tacoma, WA, USA.
+Check In Date: 03/29/22
+Check Out Date: 04/07/22Hotel 2
+
+Room: A double style room for 2 located at Seattle/Tacoma, WA, USA.
+Check In Date: 03/29/22
+Check Out Date: 04/07/22Hotel 3
+Room: A double-double style room for 2 located at Seattle/Tacoma, WA, USA.
+Check In Date: 03/29/22
+Check Out Date: 04/07/22

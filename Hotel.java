@@ -120,7 +120,7 @@ public class Hotel {
      * @param startDate The date the booking starts
      * @param endDate   The date the booking ends
      */
-    public void printHotel(Location location, int num, String bedType, String startDate, String endDate) {
+    public void printHotel(Location location, int num, String bedType, String startDate, String endDate, int hotelChoice) {
         ArrayList<String> roomTypes = new ArrayList<String>();
         roomTypes.add("king-couch");
         roomTypes.add("king");
@@ -130,23 +130,20 @@ public class Hotel {
         roomTypes.add("double");
         roomTypes.add("twin");
 
-        // System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType))
-        // + " style room for " + num + " located at " + location
-        // + ". \nRating: " + rating + " out of 5 stars " +
-        // "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " +
-        // rs);
-
+        String hotelName = "Hotel " + hotelChoice + "\n";
         String roomHeader = "Room: ";
         String roomType = "A " + roomTypes.get(Integer.parseInt(bedType)) + " style room for " + num + " located at "
                 + location + ".";
-        String checkInDate = "Check In Date: " + startDate;
-        String checkOutDate = "Check Out Date: " + endDate;
+        String checkInDate = "\nCheck In Date: " + startDate;
+        String checkOutDate = "\nCheck Out Date: " + endDate + "\n";
 
-        System.out.println(roomHeader);
-        System.out.println(roomType);
-        System.out.println(checkInDate);
-        System.out.println(checkOutDate);
+        System.out.print(hotelName);
+        System.out.print(roomHeader);
+        System.out.print(roomType);
+        System.out.print(checkInDate);
+        System.out.print(checkOutDate);
 
+        log(hotelName);
         log(roomHeader);
         log(roomType);
         log(checkInDate);
@@ -390,7 +387,7 @@ public class Hotel {
         roomTypes.add("double");
         roomTypes.add("twin");
 
-        System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType)) + " style room for " + num
+        System.out.println("\nRoom: \nA " + roomTypes.get(Integer.parseInt(bedType)-1) + " style room for " + num
                 + " located at " + location
                 + ". \nRating: " + rating + " out of 5 stars " +
                 "\nAmenities: \n-Pool: " + pool + " \n-Gym: " + gym + " \n-Room Service: " + rs);

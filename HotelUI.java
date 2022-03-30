@@ -253,7 +253,7 @@ public class HotelUI {
         Hotel selectedHotel = hotelList.get(hotelChoice - 1);
         System.out.println("\nYou've chosen hotel: " + hotelChoice+"\n");
         System.out.println ("Printing your hotel itinerary now...\n");
-        selectedHotel.printHotel(desiredCity, guests, bedType, startDate, endDate);
+        selectedHotel.printHotel(desiredCity, guests, bedType, startDate, endDate, hotelChoice);
     }
 
 
