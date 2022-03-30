@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.UUID;
 
 /**
  * The login and main menu UI
@@ -115,10 +116,12 @@ public class MainMenuLoginUI {
                     }
                     break;
                 case "4":
-                    flight.toString();
+                    Plane plane = new Plane();
+                    plane.logToConsole();
                     break;
                 case "5":
-                    hotel.toString();
+                   Hotel hotel = new Hotel(UUID.randomUUID(), " ", null, true);
+                   hotel.logToConsole();
                     break;
                 case "6":
                     System.out.println("Thank you for using Expedio! Goodbye!");
