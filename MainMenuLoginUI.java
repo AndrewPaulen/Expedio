@@ -155,8 +155,9 @@ public class MainMenuLoginUI {
                     System.out.println("Thank you for using Expedio! Goodbye 👋😃");
                     System.exit(0);
                     break;
+                default:
+                    System.out.println("Sorry! Please enter a valid input");
             }
-            System.out.println("Sorry! Please enter a valid input");
         }
     }
 }
