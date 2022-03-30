@@ -104,15 +104,58 @@ public class MainMenuLoginUI {
      * Prints the main menu and prompts the user to make a selection
      */
     public void MainMenuUI() {
-        System.out.println("\n*** Main Menu ***");
-        System.out.print("1. Book flight\n" +
-                "2. Book hotel room\n" +
-                "3. View hotel and flight bookings\n" +
-                "4. Print flight ticket\n" +
-                "5. Print hotel itinerary\n" +
-                "6. Exit program\n" +
-                "Please make a selection (enter a number): ");
-        mmSelection();
+        flightUI = new FlightUI();
+        hotelUI = new HotelUI();
+        boolean exit = false;
+
+        while (!exit)
+        {
+            System.out.println("\n*** Main Menu ***");
+            System.out.print("1. Book flight\n" +
+                    "2. Book hotel room\n" +
+                    "3. View hotel and flight bookings\n" +
+                    "4. Print flight ticket\n" +
+                    "5. Print hotel itinerary\n" +
+                    "6. Exit program\n" +
+                    "Please make a selection (enter a number): ");
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+            switch (input) {
+                case "1":
+                    flightUI.bookFlight(); // come back to this
+                    break;
+                case "2":
+                    hotelUI.bookHotel(); // come back to this
+                    break;
+                case "3":
+                    System.out.println("Enter \"F\" to view flight bookings." +
+                            "Enter \"H\' to view hotel bookings." +
+                            "Enter \"B\" to go back.");
+                    input = scanner.nextLine();
+                    if (input.equalsIgnoreCase("F")) {
+                        flight.toString(); // come back to this
+                    } else if (input.equalsIgnoreCase("H")) {
+                        hotel.toString(); // come back to this
+                    } else if (input.equalsIgnoreCase("B")) {
+                        MainMenuUI();
+                    }
+                    break;
+                case "4":
+                    //printTicket();
+                    flight.toString(); // come back to this
+                    break;
+                case "5":
+                    hotel.toString(); // come back to this
+                    break;
+                case "6":
+                    System.out.println("Thank you for using Expedio! Goodbye 👋😃");
+                    exit = true;
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Sorry! Please enter a valid input");
+            }
+        }    
     }
 
     /**
