@@ -176,7 +176,7 @@ public class FlightUI {
      * @return selectedFlight The flight the user is booking
      */
     public Flight chooseFlight(ArrayList<Flight> availableFlights) {
-        System.out.println("Please select your perferred flight (Enter a number): \n");
+        System.out.println("Please select your preferred flight (Enter a number): \n");
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
         Flight selectedFlight = availableFlights.get(input - 1);
