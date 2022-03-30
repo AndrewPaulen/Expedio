@@ -23,31 +23,6 @@ public class MainMenuLoginUI {
     public void LoginUI() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("*** Welcome to Expedio! ***");
-
-        // not really using this code- uncomment later if needed
-        // boolean exit = false;
-        // while (!exit) {
-        // System.out.print("Enter your first name: ");
-        // firstName = scanner.nextLine();
-
-        // if (firstName.length() > 0)
-        // exit = true;
-
-        // else
-        // System.out.println("It looks like you didn't type anything in, try again!");
-        // }
-        // exit = false;
-        // while (!exit) {
-        // System.out.print("Enter your last name: ");
-        // lastName = scanner.nextLine();
-
-        // if (lastName.length() > 0)
-        // exit = true;
-
-        // else
-        // System.out.println("It looks like you didn't type anything in, try again!");
-        // }
-        // registeredUser = new RegisteredUser(firstName, lastName);
         loginSelection();
         scanner.close();
     }
@@ -108,8 +83,7 @@ public class MainMenuLoginUI {
         hotelUI = new HotelUI();
         boolean exit = false;
 
-        while (!exit)
-        {
+        while (!exit) {
             System.out.println("\n*** Main Menu ***");
             System.out.print("1. Book flight\n" +
                     "2. Book hotel room\n" +
@@ -122,10 +96,10 @@ public class MainMenuLoginUI {
             String input = scanner.nextLine();
             switch (input) {
                 case "1":
-                    flightUI.bookFlight(); // come back to this
+                    flightUI.bookFlight();
                     break;
                 case "2":
-                    hotelUI.bookHotel(); // come back to this
+                    hotelUI.bookHotel();
                     break;
                 case "3":
                     System.out.println("Enter \"F\" to view flight bookings." +
@@ -133,29 +107,28 @@ public class MainMenuLoginUI {
                             "Enter \"B\" to go back.");
                     input = scanner.nextLine();
                     if (input.equalsIgnoreCase("F")) {
-                        flight.toString(); // come back to this
+                        flight.toString();
                     } else if (input.equalsIgnoreCase("H")) {
-                        hotel.toString(); // come back to this
+                        hotel.toString();
                     } else if (input.equalsIgnoreCase("B")) {
                         MainMenuUI();
                     }
                     break;
                 case "4":
-                    //printTicket();
-                    flight.toString(); // come back to this
+                    flight.toString();
                     break;
                 case "5":
-                    hotel.toString(); // come back to this
+                    hotel.toString();
                     break;
                 case "6":
-                    System.out.println("Thank you for using Expedio! Goodbye 👋😃");
+                    System.out.println("Thank you for using Expedio! Goodbye!");
                     exit = true;
                     System.exit(0);
                     break;
                 default:
                     System.out.println("Sorry! Please enter a valid input");
             }
-        }    
+        }
     }
 
     /**
@@ -169,10 +142,10 @@ public class MainMenuLoginUI {
         while (true) {
             switch (input) {
                 case "1":
-                    flightUI.bookFlight(); // come back to this
+                    flightUI.bookFlight();
                     break;
                 case "2":
-                    hotelUI.bookHotel(); // come back to this
+                    hotelUI.bookHotel();
                     break;
                 case "3":
                     System.out.println("Enter \"F\" to view flight bookings." +
@@ -180,19 +153,18 @@ public class MainMenuLoginUI {
                             "Enter \"B\" to go back.");
                     input = scanner.nextLine();
                     if (input.equalsIgnoreCase("F")) {
-                        flight.toString(); // come back to this
+                        flight.toString();
                     } else if (input.equalsIgnoreCase("H")) {
-                        hotel.toString(); // come back to this
+                        hotel.toString();
                     } else if (input.equalsIgnoreCase("B")) {
                         MainMenuUI();
                     }
                     break;
                 case "4":
-                    //printTicket();
-                    flight.toString(); // come back to this
+                    flight.toString();
                     break;
                 case "5":
-                    hotel.toString(); // come back to this
+                    hotel.toString();
                     break;
                 case "6":
                     System.out.println("Thank you for using Expedio! Goodbye 👋😃");

@@ -63,7 +63,27 @@ public class Flight {
         this.seatNumber = seatNumber;
 
     }
-    public Flight(String flightID, String airline, String available, Location departureLocation, String departureDate, String departureTime, Location arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer, int numTransfers, String transferDuration, String seatNumber) {
+
+    /**
+     * An instance of a flight
+     * 
+     * @param flightID          The flight's ID
+     * @param airline           The name of the airline
+     * @param available         If the flight is available
+     * @param departureLocation The departure location of the flight
+     * @param departureDate     The date of departure
+     * @param departureTime     The time of departure
+     * @param arrivalLocation   The arrival location
+     * @param arrivalDate       The date of arrival
+     * @param arrivalTime       The time of arrival
+     * @param hasTransfer       If the flight has transfers
+     * @param numTransfers      The number of transfers a flight has
+     * @param transferDuration  The duration of a transfer
+     * @param seatNumber        The seat number on the flight
+     */
+    public Flight(String flightID, String airline, String available, Location departureLocation, String departureDate,
+            String departureTime, Location arrivalLocation, String arrivalDate, String arrivalTime, boolean hasTransfer,
+            int numTransfers, String transferDuration, String seatNumber) {
         this.flightID = flightID;
         this.airline = airline;
         this.available = available;
@@ -396,23 +416,44 @@ public class Flight {
         return this.seatNumberArr;
     }
 
-    public String getSeatNumber(){
+    /**
+     * Gets the seat number
+     * 
+     * @return this.seatNumber The user's seat number
+     */
+    public String getSeatNumber() {
         return this.seatNumber;
     }
 
-    public String getDepLocation(){
+    /**
+     * Gets the departure location
+     * 
+     * @return departureLocation Where the flight is departing
+     */
+    public String getDepLocation() {
         return departureLocation;
     }
 
-    public String getArrLocation(){
+    /**
+     * Gets the arrival location
+     * 
+     * @return arrivalLocation Where the flight is going to
+     */
+    public String getArrLocation() {
         return arrivalLocation;
     }
 
-    public static String seatNumtoString(String [] seatNums){
+    /**
+     * Converts a seat number into a string
+     * 
+     * @param seatNums The seat numbers on the plane
+     * @return str The seat numbers in string form
+     */
+    public static String seatNumtoString(String[] seatNums) {
         StringBuffer sb = new StringBuffer();
 
         for (String seat : seatNums) {
-            sb.append(seat+", ");
+            sb.append(seat + ", ");
         }
         String str = sb.toString();
 

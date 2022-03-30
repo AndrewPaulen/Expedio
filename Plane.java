@@ -130,8 +130,8 @@ public class Plane {
         System.out.println("There are " + numberOfSeatsAvailable + " seats available");
     }
 
-    public void printTicket(LinkedList<String> names, Flight chosenFlight, String[] seatNumbers, String date){
-       
+    public void printTicket(LinkedList<String> names, Flight chosenFlight, String[] seatNumbers, String date) {
+
         String DELIM = "          ";
         String decor = "*************************************************************\n*************************************************************";
         String pageBreak = "__________________________________________________________________________________";
@@ -140,28 +140,33 @@ public class Plane {
         int duration = chosenFlight.getDuration();
         for (int i = 0; i < names.size(); i++) {
             System.out.println(pageBreak);
-            System.out.println("\n          *****"+chosenFlight.getAirline()+" Flight Ticket*****\n");
-            System.out.println("Name: "+names.get(i)+DELIM+"Seat Number: "+seatNumbers[i]);
+            System.out.println("\n          *****" + chosenFlight.getAirline() + " Flight Ticket*****\n");
+            System.out.println("Name: " + names.get(i) + DELIM + "Seat Number: " + seatNumbers[i]);
             System.out.println(decor);
-            System.out.println("Destination: "+destination);
-            System.out.println("Departing From: "+departing);
-            System.out.println("Flight Duration: "+duration+" minutes");
-            System.out.println("Departure Date: "+date);
-            System.out.println(pageBreak+"\n\n\n");  
+            System.out.println("Destination: " + destination);
+            System.out.println("Departing From: " + departing);
+            System.out.println("Flight Duration: " + duration + " minutes");
+            System.out.println("Departure Date: " + date);
+            System.out.println(pageBreak + "\n\n\n");
 
             log(pageBreak);
-            log("\n          *****"+chosenFlight.getAirline()+" Flight Ticket*****\n");
-            log("Name: "+names.get(i)+DELIM+"Seat Number: "+seatNumbers[i]);
+            log("\n          *****" + chosenFlight.getAirline() + " Flight Ticket*****\n");
+            log("Name: " + names.get(i) + DELIM + "Seat Number: " + seatNumbers[i]);
             log(decor);
-            log("Destination: "+destination);
-            log("Departing From: "+departing);
-            log("Flight Duration: "+duration+" minutes");
-            log("Departure Date: "+date);
-            log(pageBreak+"\n\n\n");
+            log("Destination: " + destination);
+            log("Departing From: " + departing);
+            log("Flight Duration: " + duration + " minutes");
+            log("Departure Date: " + date);
+            log(pageBreak + "\n\n\n");
         }
     }
 
-    public void log(String line){
+    /**
+     * A file writer
+     * 
+     * @param line The line of the file
+     */
+    public void log(String line) {
         try {
             PrintWriter out = new PrintWriter(new FileWriter("tickets.txt", true), true);
             out.write(line);

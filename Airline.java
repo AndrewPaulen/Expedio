@@ -32,7 +32,4 @@ public class Airline {
         return this.name;
     }
 
-    // public String toString() {
-    // return null;
-    // }
 }
